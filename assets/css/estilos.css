@@ -758,7 +758,7 @@ body {
 }
 
 
-/* ROTEIRO DE FALA */
+/* MENU EXPANSÍVEL ESCURO */
 details.script-box {
     background: var(--slate-900);
     border-radius: 16px;
@@ -832,6 +832,82 @@ details.script-box summary .summary-text {
     background-color: yellow;
     color: #000;
     font-weight: bold;
+}
+
+/* MENU EXPANSÍVEL CLARA */
+details.accordion-light {
+    background: #ffffff;
+    border: 1px solid var(--slate-200);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+details.accordion-light[open] {
+    border-color: var(--slate-300);
+    box-shadow: var(--shadow-md);
+}
+
+details.accordion-light summary {
+    padding: 14px 20px;
+    color: var(--slate-700);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    user-select: none;
+    transition: background 0.2s, color 0.2s;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background-color: var(--slate-50);
+}
+
+details.accordion-light summary:hover {
+    background-color: var(--slate-100);
+    color: var(--slate-900);
+}
+
+details.accordion-light summary i {
+    color: var(--primary);
+}
+
+details.accordion-light summary .summary-text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.accordion-light-content {
+    padding: 7px;
+    border-top: 1px solid var(--slate-200);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--slate-600);
+    background-color: #ffffff;
+    position: relative;
+}
+
+.accordion-light-content p {
+    margin-bottom: 12px;
+}
+
+.accordion-light-content hr {
+    border: none;
+    border-top: 1px solid var(--slate-200);
+    margin: 20px 0;
+}
+
+.accordion-light-content .table-container {
+    border: none;
+}
+
+.accordion-light-content .custom-table th {
+    background: none;
+    color: var(--primary);
 }
 
 
