@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etapa 1: Overview e Governança do Sistema</title>
+    
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Estilo CSS Próprio Externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <div class="brand">
+                <div class="brand-logo">E1</div>
+                <div class="brand-info">
+                    <h1 class="brand-title">Guia de Onboarding SRM</h1>
+                    <p class="brand-subtitle">Etapa 1: Overview & Governança</p>
+                </div>
+            </div>
+
+            <!-- Global Search & Actions -->
+            <div class="header-actions">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="globalSearch" placeholder="Buscar no conteúdo..." class="search-input">
+                </div>
+                <button id="btnTasks" class="btn-tasks">
+                    <i class="fa-solid fa-square-check"></i>
+                    <span>Tarefas</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+
+        <!-- Sidebar Navigation (Desktop) -->
+        <aside class="sidebar">
+            <div class="sidebar-card">
+                <div class="sidebar-title">Navegação</div>
+
+                <a href="#hero" class="sidebar-link active">
+                    <i class="fa-solid fa-house"></i> 1. Introdução
+                </a>
+                <a href="#objetivo" class="sidebar-link">
+                    <i class="fa-solid fa-bullseye"></i> 2. Objetivo
+                </a>
+                <a href="#modulos" class="sidebar-link">
+                    <i class="fa-solid fa-cubes"></i> 3. Módulos
+                </a>
+                <a href="#acessos" class="sidebar-link">
+                    <i class="fa-solid fa-user-shield"></i> 4. Tipos de Acesso
+                </a>
+                <a href="#criacao-acessos" class="sidebar-link">
+                    <i class="fa-solid fa-user-plus"></i> 5. Pré-cadastro
+                </a>
+                <a href="#conceitos" class="sidebar-link">
+                    <i class="fa-solid fa-brain"></i> 6. Conceitos
+                </a>
+                <a href="#documentos" class="sidebar-link">
+                    <i class="fa-solid fa-file-contract"></i> 7. Documentação
+                </a>
+                <a href="#checklists" class="sidebar-link">
+                    <i class="fa-solid fa-list-check"></i> 8. Próximos Passos
+                </a>
+
+                <div class="sidebar-progress">
+                    <div class="progress-box">
+                        <span class="progress-title">Status da Implantação</span>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill"></div>
+                        </div>
+                        <span class="progress-text">Etapa 1 de 4 (25%)</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- HERO SECTION -->
+            <section id="hero" class="hero-section">
+                <div class="hero-content">
+                    <span class="badge-hero">Treinamento de Implantação</span>
+                    <h2 class="hero-title">Etapa 1: Overview e Governança do Sistema</h2>
+                    <p class="hero-description">
+                        Bem-vindo ao primeiro encontro de treinamento. Esta etapa é dedicada à configuração da plataforma, capacitação da sua equipe e apresentação da governança inicial de fornecedores.
+                    </p>
+                    <div class="hero-meta">
+                        <span class="hero-meta-item">
+                            <i class="fa-regular fa-clock"></i> Duração aprox: 1h
+                        </span>
+                        <span class="hero-meta-item">
+                            <i class="fa-solid fa-laptop-code"></i> Ambiente de Treinamento
+                        </span>
+                    </div>
+                </div>
+                <i class="fa-solid fa-shield-halved hero-bg-icon"></i>
+            </section>
+
+            <!-- 1. INTRODUÇÃO AO ONBOARDING -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="step-number">1</div>
+                    <h3 class="card-title">Introdução ao Onboarding</h3>
+                </div>
+
+                <div class="grid-2-cols">
+                    <div class="info-card">
+                        <div class="info-card-header">
+                            <i class="fa-solid fa-sliders"></i>
+                            <span>1. Configuração do Sistema</span>
+                        </div>
+                        <p class="info-card-text">
+                            Ajustes nas regras de negócio, parâmetros, formulários de documentos e linhas de fornecimento customizadas.
+                        </p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-card-header">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span>2. Capacitação dos Usuários</span>
+                        </div>
+                        <p class="info-card-text">
+                            Treinamentos práticos para equipes internas e orientações sobre como os fornecedores interagem no portal.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Roteiro da Reunião -->
+                <div class="script-box">
+                    <div class="script-header">
+                        <div class="script-title">
+                            <i class="fa-solid fa-comment-dots"></i>
+                            <span>Roteiro Sugerido de Fala</span>
+                        </div>
+                        <button id="btnCopyScript" class="btn-copy">
+                            <i class="fa-regular fa-copy"></i> Copiar Fala
+                        </button>
+                    </div>
+                    <p id="script1" class="script-text">
+                        "Olá pessoal, sejam bem-vindos novamente, e hoje nós vamos iniciar nosso primeiro encontro de treinamento. Na nossa primeira reunião nós demos as boas-vindas, onde eu mostrei um apanhado geral do nosso cronograma e de como vai funcionar esse projeto. Então esses encontros vão servir pra vocês aprenderem a mexer no sistema e também pra já configurar a plataforma, pra ficar do jeito que vocês precisam. E no final de cada encontro, eu vou enviar a ata da reunião com tudo que a gente viu, junto com a gravação e as tarefas pro próximo encontro."
+                    </p>
+                </div>
+            </section>
+
+            <!-- 2. OBJETIVO DO ENCONTRO -->
+            <section id="objetivo" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h3 class="card-title">Objetivo do Encontro</h3>
+                        <p class="card-subtitle">Alinhamento conceitual e operacional inicial</p>
+                    </div>
+                </div>
+
+                <div class="grid-4-cols">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-compass"></i></div>
+                        <h4 class="feature-title">Navegação Geral</h4>
+                        <p class="feature-text">Conhecer a interface do usuário e o menu de navegação da plataforma.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-stamp"></i></div>
+                        <h4 class="feature-title">Homologação</h4>
+                        <p class="feature-text">Entender o fluxo de aprovação e governança de fornecedores.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-id-card"></i></div>
+                        <h4 class="feature-title">Cadastro de Fornecedor</h4>
+                        <p class="feature-text">Aprender como enviar convites e pré-cadastrar empresas parceiras.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-book"></i></div>
+                        <h4 class="feature-title">Conceitos Base</h4>
+                        <p class="feature-text">Entender RFI, Ramos, Linhas de Fornecimento e Backgroud Check.</p>
+                    </div>
+                </div>
+
+                <div class="alert-box alert-amber">
+                    <div class="alert-header">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <span>Importante: Serviço de BPO e Gestão Documental</span>
+                    </div>
+                    <p class="alert-text">
+                        O objetivo do sistema é descentralizar o envio dos documentos, tornando o <strong>próprio fornecedor responsável</strong> por manter a documentação em dia. A verificação das análises cadastrais e BPO fica sob responsabilidade do time de gestão documental especializado.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 3. OVERVIEW DOS MÓDULOS DA PLATAFORMA -->
+            <section id="modulos" class="content-card">
+                <div class="card-header space-between flex-wrap">
+                    <div class="flex-align-center">
+                        <div class="step-number">3</div>
+                        <div>
+                            <h3 class="card-title">Módulos do Sistema</h3>
+                            <p class="card-subtitle">Visão geral do menu principal da plataforma</p>
+                        </div>
+                    </div>
+                    <div class="filter-box">
+                        <input type="text" id="moduleFilter" placeholder="Filtrar módulo..." class="filter-input">
+                    </div>
+                </div>
+
+                <div class="grid-2-cols" id="modulesGrid">
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                        <div class="module-info">
+                            <h4 class="module-title">Página Inicial (Dashboard)</h4>
+                            <p class="module-text">Indicadores de conformidade, fornecedores certificados, impedidos e tarefas pendentes.</p>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fa-solid fa-user-plus"></i></div>
+                        <div class="module-info">
+                            <h4 class="module-title">Pré-cadastro</h4>
+                            <p class="module-text">Envio de convites para que novas empresas realizem o autocadastro.</p>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fa-solid fa-building-user"></i></div>
+                        <div class="module-info">
+                            <h4 class="module-title">Fornecedores</h4>
+                            <p class="module-text">Base oficial de fornecedores já homologados e aprovados ao menos uma vez.</p>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fa-solid fa-users"></i></div>
+                        <div class="module-info">
+                            <h4 class="module-title">Terceiros</h4>
+                            <p class="module-text">Gestão de colaboradores vinculados às empresas fornecedoras homologadas.</p>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fa-solid fa-inbox"></i></div>
+                        <div class="module-info">
+                            <h4 class="module-title">Solicitações</h4>
+                            <p class="module-text">Histórico de todas as atualizações de cadastros e novas entradas pendentes de validação.</p>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                        <div class="module-info">
+                            <h4 class="module-title">Histórico de Análises</h4>
+                            <p class="module-text">Registro detalhado de análises realizadas, datas, responsáveis e resultados.</p>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                        <div class="module-info">
+                            <h4 class="module-title">Avaliações</h4>
+                            <p class="module-text">Criação e gestão de questionários/formulários de avaliação e RFIs.</p>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                        <div class="module-info">
+                            <h4 class="module-title">Ocorrências</h4>
+                            <p class="module-text">Notificações manuais e alinhamentos específicos diretamente com fornecedores.</p>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fa-solid fa-file-excel"></i></div>
+                        <div class="module-info">
+                            <h4 class="module-title">Relatórios</h4>
+                            <p class="module-text">Exportação de planilhas customizadas e extração detalhada de dados do sistema.</p>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fa-solid fa-gear"></i></div>
+                        <div class="module-info">
+                            <h4 class="module-title">Configurações</h4>
+                            <p class="module-text">Criação de parâmetros, documentos obrigatórios, regras e parametrização geral.</p>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                        <div class="module-info">
+                            <h4 class="module-title">Novidades & Sugestões</h4>
+                            <p class="module-text">Release notes das atualizações e canal direto para envio de feedbacks do sistema.</p>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fa-solid fa-circle-question"></i></div>
+                        <div class="module-info">
+                            <h4 class="module-title">Documentação de Ajuda</h4>
+                            <p class="module-text">Base de conhecimento com tutoriais passo a passo para usuários e fornecedores.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. TIPOS DE ACESSO -->
+            <section id="acessos" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">4</div>
+                    <div>
+                        <h3 class="card-title">Tipos de Acesso</h3>
+                        <p class="card-subtitle">Perfis Internos vs. Externos</p>
+                    </div>
+                </div>
+
+                <div class="grid-2-cols">
+                    <div class="access-box">
+                        <div class="access-header">
+                            <div class="access-icon bg-primary"><i class="fa-solid fa-user-lock"></i></div>
+                            <span class="access-title">Usuários Internos (Sua Empresa)</span>
+                        </div>
+                        <ul class="access-list">
+                            <li><i class="fa-solid fa-check text-primary"></i> <span><strong>Administrador:</strong> Acesso total às configurações e funcionalidades.</span></li>
+                            <li><i class="fa-solid fa-check text-primary"></i> <span><strong>Analista de Cadastro:</strong> Realiza análises e aprovações sem alterar configurações.</span></li>
+                            <li><i class="fa-solid fa-check text-primary"></i> <span><strong>Parecerista Técnico:</strong> Responde formulários e pareceres quando acionado.</span></li>
+                            <li><i class="fa-solid fa-check text-primary"></i> <span><strong>Perfis Personalizados:</strong> Permissões adaptáveis conforme fluxo interno.</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="access-box">
+                        <div class="access-header">
+                            <div class="access-icon bg-emerald"><i class="fa-solid fa-truck-field"></i></div>
+                            <span class="access-title">Usuários Externos (Fornecedores)</span>
+                        </div>
+                        <ul class="access-list">
+                            <li><i class="fa-solid fa-check text-emerald"></i> <span><strong>Acesso Restrito:</strong> Visualizam estritamente a própria empresa.</span></li>
+                            <li><i class="fa-solid fa-check text-emerald"></i> <span><strong>Isolamento de Dados:</strong> NENHUM fornecedor enxerga dados de terceiros.</span></li>
+                            <li><i class="fa-solid fa-check text-emerald"></i> <span><strong>Autonomia:</strong> Acompanham solicitações, pendências e atualizam documentos.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. CRIAÇÃO DE ACESSO & PRÉ-CADASTRO -->
+            <section id="criacao-acessos" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">5</div>
+                    <div>
+                        <h3 class="card-title">Fluxo de Criação de Acessos</h3>
+                        <p class="card-subtitle">Como convidar e cadastrar novos parceiros</p>
+                    </div>
+                </div>
+
+                <div class="stack-space">
+                    <div class="grid-2-cols">
+                        <div class="mode-card">
+                            <span class="mode-tag text-primary">Modalidade 1</span>
+                            <h4 class="mode-title">Cadastro Direto / Simples</h4>
+                            <p class="mode-text">O fornecedor acessa a tela inicial, clica em "Não tem cadastro" e cria sua conta de forma autônoma. Indicado para menor esforço operacional.</p>
+                        </div>
+                        <div class="mode-card mode-recommended">
+                            <span class="mode-tag text-primary">Modalidade 2 (Recomendado)</span>
+                            <h4 class="mode-title">Pré-cadastro Ativo (Convite)</h4>
+                            <p class="mode-text">A empresa insere o CNPJ, dados básicos e pré-define as Categorias/Linhas de fornecimento. O fornecedor recebe um e-mail pré-preenchido para complementar.</p>
+                        </div>
+                    </div>
+
+                    <div class="tutorial-card">
+                        <h4 class="tutorial-title">
+                            <i class="fa-solid fa-list-ol text-primary"></i>
+                            <span>Passo a Passo Guiado no Pré-Cadastro</span>
+                        </h4>
+
+                        <div class="grid-3-cols">
+                            <div class="step-box">
+                                <span class="step-box-title text-primary">1. Validação Automática</span>
+                                <p class="step-box-text">Ao digitar o CNPJ, o sistema valida a Receita Federal e verifica presença na lista de trabalho escravo.</p>
+                            </div>
+                            <div class="step-box">
+                                <span class="step-box-title text-primary">2. Categorização</span>
+                                <p class="step-box-text">A seleção da Linha de Fornecimento determina automaticamente os documentos exigidos.</p>
+                            </div>
+                            <div class="step-box">
+                                <span class="step-box-title text-primary">3. Homologadores</span>
+                                <p class="step-box-text">Opção de vincular responsáveis internos ou disponibilizar para aprovação geral da equipe.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. CONCEITOS IMPORTANTES -->
+            <section id="conceitos" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">6</div>
+                    <div>
+                        <h3 class="card-title">Conceitos Chave da Plataforma</h3>
+                        <p class="card-subtitle">Diferenças fundamentais que regem a operação</p>
+                    </div>
+                </div>
+
+                <div class="stack-space">
+                    <div class="grid-2-cols">
+                        <div class="concept-card">
+                            <div class="concept-title text-primary">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                                <span>Solicitações (Histórico)</span>
+                            </div>
+                            <p class="concept-text">Representa o <strong>histórico de movimentações</strong>. Cada novo cadastro, alteração ou envio de novos documentos gera uma nova solicitação que deve ser analisada e aprovada.</p>
+                        </div>
+
+                        <div class="concept-card">
+                            <div class="concept-title text-emerald">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Fornecedores (Versão Vigente)</span>
+                            </div>
+                            <p class="concept-text">Representa a <strong>versão atual e homologada</strong> da empresa. Um parceiro só passa a figurar nesta lista após ter sua primeira solicitação devidamente aprovada.</p>
+                        </div>
+                    </div>
+
+                    <div class="tutorial-card">
+                        <h4 class="tutorial-title">
+                            <i class="fa-solid fa-sitemap text-primary"></i>
+                            <span>Ramo de Atividade vs. Linha de Fornecimento</span>
+                        </h4>
+
+                        <div class="grid-2-cols">
+                            <div class="step-box">
+                                <span class="step-box-title">Ramo de Atividade (Abrangente)</span>
+                                <p class="step-box-text">Classificação macro. Exemplo: <i>Construção Civil, Alimentício, Serviços Gerais</i>.</p>
+                                <span class="tag-badge tag-amber">Sobrepõe regras da Linha</span>
+                            </div>
+
+                            <div class="step-box">
+                                <span class="step-box-title">Linha de Fornecimento (Específica)</span>
+                                <p class="step-box-text">Classificação detalhada. Exemplo: <i>Manutenção Predial, Material Elétrico, EPIs</i>.</p>
+                                <span class="tag-badge tag-blue">Define RFI e Score</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. GESTÃO DE DOCUMENTAÇÃO -->
+            <section id="documentos" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">7</div>
+                    <div>
+                        <h3 class="card-title">Gestão de Documentação</h3>
+                        <p class="card-subtitle">Documentos automáticos, manuais e critérios de análise</p>
+                    </div>
+                </div>
+
+                <div class="grid-2-cols">
+                    <div class="info-card">
+                        <div class="info-card-header text-primary">
+                            <i class="fa-solid fa-robot"></i>
+                            <span>Documentos Automáticos (Background Check)</span>
+                        </div>
+                        <p class="info-card-text">Obtidos automaticamente pelo sistema via integrações públicas. Ex: Certidões Negativas, Consultas na Receita.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-card-header text-primary">
+                            <i class="fa-solid fa-upload"></i>
+                            <span>Documentos Manuais (Upload Fornecedor)</span>
+                        </div>
+                        <p class="info-card-text">Enviados ativamente pelo fornecedor. Ex: Contrato Social, Licenças Ambientais, ASO, Comprovantes.</p>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <h4 class="table-title">Exemplo de Critérios Parametrizados de Análise</h4>
+                    <div class="table-container">
+                        <table class="custom-table">
+                            <thead>
+                                <tr>
+                                    <th>Documento</th>
+                                    <th>Critério de Verificação</th>
+                                    <th>Texto de Pendência Automático</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-medium">Contrato Social</td>
+                                    <td>Assinaturas válidas dos sócios</td>
+                                    <td class="text-muted">Documento sem assinatura legível do representante legal.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">ASO</td>
+                                    <td>Data de emissão dentro da validade (1 ano)</td>
+                                    <td class="text-muted">ASO com data de validade expirada. Favor reordenar exame.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. PRÓXIMOS PASSOS & CHECKLIST INTERATIVO -->
+            <section id="checklists" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">8</div>
+                    <div>
+                        <h3 class="card-title">Próximos Passos & Tarefas</h3>
+                        <p class="card-subtitle">Atividades a serem concluídas antes do 2º Encontro</p>
+                    </div>
+                </div>
+
+                <div class="checklist-container" id="checklistContainer">
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Revisar e preencher a Planilha de Usuários Internos</span>
+                            <span class="task-subtitle">Definir os nomes, e-mails e cargos dos usuários da equipe que acessarão a plataforma.</span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Enviar Logomarca e Link Personalizado (Tenant)</span>
+                            <span class="task-subtitle">Disponibilizar a logo em alta resolução e a URL desejada para estilização do ambiente.</span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Preencher a Planilha de Mapeamento de Documentos</span>
+                            <span class="task-subtitle">Mapear quais documentos serão solicitados por cada Linha de Fornecimento ou Ramo.</span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Registrar Dúvidas para o Encontro 2</span>
+                            <span class="task-subtitle">Anotar pontos específicos de governança para esclarecimento na próxima reunião.</span>
+                        </div>
+                    </label>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden">
+        <i class="fa-solid fa-circle-check toast-icon"></i>
+        <span id="toastMsg">Texto copiado com sucesso!</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            &copy; 2026 Plataforma SRM - Gestão e Governança de Fornecedores. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <!-- Script JS Externo -->
+    <script src="script.js"></script>
+</body>
+</html>

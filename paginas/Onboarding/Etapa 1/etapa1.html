@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etapa 1: Overview e Governança do Sistema</title>
+    
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Ícones FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Ícones Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Estilos CSS Externo -->
+    <link rel="stylesheet" href="../../../assets/css/estilos.css">
+
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header" style="display: none;">
+        <div class="header-container">
+            <div class="brand">
+                <a href="https://sites.google.com/efcaz.com.br/interno/onboarding" target="_blank" class="brand-logo">
+                    <i id="meuIcone" class="bi bi-stack" 
+                        onmouseenter="this.className='bi bi-layers-fill'" 
+                        onmouseleave="this.className='bi bi-stack'">
+                    </i>
+                </a>
+
+                <div class="brand-info">
+                    <a href="https://sites.google.com/efcaz.com.br/interno/onboarding">
+                        <h1 class="brand-title">Onboarding</h1>
+                    </a>
+
+                    <p class="brand-subtitle">Etapa 1: Overview & Governança</p>
+                </div>
+            </div>
+
+            <!-- Global Actions -->
+            <div class="header-actions">
+                <button id="btnAction" class="btn btn-primary-light">
+                    <i class="fa-solid fa-square-check"></i>
+                    <span>Tarefas</span>
+                </button>
+
+                <button id="btnAction" class="btn btn-primary-light">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Template de ata</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+
+        <!-- Sidebar (Desktop) -->
+        <aside class="sidebar">
+
+        <!-- Anotações -->
+        <div class="sidebar-card">
+            <div class="sidebar-title">Anotações</div>
+
+            <div class="notes-field-group">
+                <label for="noteActivePre" class="notes-label">Cadastro ativo e/ou Pré-cadastro?</label>
+                <textarea id="noteActivePre" class="note-input" placeholder="Escreva aqui..."></textarea>
+            </div>
+
+            <div class="notes-field-group">
+                <label for="noteApproval" class="notes-label">Terá aprovação de pré-cadastro?</label>
+                <textarea id="noteApproval" class="note-input" placeholder="Escreva aqui..."></textarea>
+            </div>
+
+            <div class="notes-field-group">
+                <label for="noteBranchLine" class="notes-label">Ramo ou Linha?</label>
+                <textarea id="noteBranchLine" class="note-input" placeholder="Escreva aqui..."></textarea>
+            </div>
+
+            <div class="notes-field-group">
+                <label for="noteOthers" class="notes-label">Outras anotações</label>
+                <textarea id="noteOthers" class="note-input" placeholder="Escreva aqui..."></textarea>
+            </div>
+
+            <button class="btn-copy-notes" onclick="copyNotes()">Copiar Anotações</button>
+        </div>
+
+            <!-- Navegação -->
+            <div class="sidebar-card" style="margin-bottom: 0;">
+                <a href="#checklists" class="sidebar-link active">
+                    <i class="fa-solid fa-square-check"></i> Tarefas
+                </a>
+                <a href="#template-email" class="sidebar-link">
+                    <i class="fa-solid fa-envelope"></i> Template da Ata
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- HERO SECTION -->
+            <section id="hero" class="hero-section">
+                <div class="hero-content">
+                    <span class="badge-hero">Etapa 1</span>
+                    <h2 class="hero-title">Overview e Governança do Sistema</h2>
+                    <p class="hero-description">
+                        Esta etapa é dedicada à mostrar a estrutura da plataforma aos clientes, introduzir conceitos básicos e realizar o primeiro pré-cadastro.
+                    </p>
+                </div>
+                <img src="https://raw.githubusercontent.com/kethllen-dos-santos/EfcazKBInterno/refs/heads/main/assets/logomarca/efcaz-icone-branco.png" class="hero-bg-icon">
+            </section>
+
+            <!-- 1. INTRODUÇÃO AO ONBOARDING -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="step-number">1</div>
+                    <h3 class="card-title">Introdução ao Onboarding</h3>
+                </div>
+
+                <div class="guide-card">
+
+                    <ul>
+                        <li>Dar boas-vindas aos participantes e introduzir o primeiro encontro de treinamento.</li>
+                        <li>Explicar as duas grandes etapas: <strong>Configuração do sistema</strong> e <strong>Capacitação dos usuários</strong>.</li>
+                        <li>Relembrar os alinhamentos do Kick-off (boas-vindas, apanhado geral do cronograma, escopo do projeto e responsabilidades das equipes).</li>
+                        <li>Informar o envio das tarefas e gravações ao final de cada encontro.</li>
+                        <li>Apresentar o escopo prático do dia:</li>
+                    </ul>
+
+                    <div class="grid-4-cols">
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fa-solid fa-compass"></i></div>
+                            <h4 class="feature-title">Navegação Geral</h4>
+                            <p class="feature-text">Conhecer a interface do usuário e o menu de navegação da plataforma.</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fa-solid fa-stamp"></i></div>
+                            <h4 class="feature-title">Homologação</h4>
+                            <p class="feature-text">Entender o fluxo de aprovação e governança de fornecedores.</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fa-solid fa-id-card"></i></div>
+                            <h4 class="feature-title">Cadastro de Fornecedor</h4>
+                            <p class="feature-text">Aprender como enviar convites e pré-cadastrar empresas parceiras.</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fa-solid fa-book"></i></div>
+                            <h4 class="feature-title">Conceitos Base</h4>
+                            <p class="feature-text">Entender RFI, Ramos, Linhas de Fornecimento e Backgroud Check.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Roteiro -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><i class="fa-solid fa-comment-dots"></i> Roteiro de fala sugerido</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p>Olá <strong class="destaque2">Fulanos</strong>, sejam bem-vindos novamente, e hoje nós vamos iniciar nosso primeiro encontro de treinamento.</p>
+                        <p>Na nossa primeira reunião nós demos as boas-vindas, onde eu mostrei um apanhado geral do nosso cronograma e de como vai funcionar esse projeto. Então esses encontros vão servir pra vocês aprenderem a mexer no sistema e também pra já configurar a plataforma, pra ficar do jeito que vocês precisam.</p>
+                        <p>E no final de cada encontro, eu vou enviar a ata da reunião com tudo que a gente viu, junto com a gravação e as tarefas pro próximo encontro.</p>
+                        <p>Então hoje eu vou mostrar a navegação geral do sistema, pra vocês irem analisando como vão usar no dia a dia. Também vamos ver alguns conceitos básicos e vou mostrar como convida uma empresa pra dentro da plataforma.</p>
+                    </div>
+                </details>
+            </section>
+
+            <!-- 2. OBJETIVO DO ENCONTRO -->
+            <section id="objetivo" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h3 class="card-title">Objetivo do Encontro</h3>
+                        <p class="card-subtitle">Alinhamento conceitual e operacional inicial</p>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+
+                    <ul>
+                        <li>Explicar o conceito central e o propósito do sistema:
+                            <ul>
+                                <li>Retirar do cliente o peso operacional de abastecer e organizar os documentos;</li>
+                                <li>Transferir aos próprios fornecedores a responsabilidade de manter seus cadastros e documentos atualizados dentro da plataforma.</li>
+                            </ul>
+                        </li>
+                        <li>Se contratou <strong>BPO</strong>:
+                            <ul>
+                                <li>A análise e verificação de conformidade dos cadastros e documentos fica sob responsabilidade da equipe do BPO (especialista Thais);</li>
+                                <li>Caberá ao cliente a verificação final de conformidade e o envio dos convites aos fornecedores;</li>
+                                <li>Explicar que, especificamente durante a etapa de onboarding, o envio inicial de convites será realizado pela equipe interna com base na planilha de fornecedores enviada pelo cliente.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Roteiro (COM BPO) -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><i class="fa-solid fa-comment-dots"></i> Roteiro de fala sugerido <span style="color: var(--primary);">(com BPO)</span></span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p>Então gente, eu vou mostrando as coisas, e em alguns momentos eu vou pausar pra gente tirar algumas dúvidas caso alguém tenha.<p>
+
+                        <p>A tela tá num tamanho bom ou tá muito pequeno?<br><span class="destaque">Aguardar resposta</span></p>
+                        <br><br>
+                    
+                        <p>Esse daqui é um ambiente que vocês vão usar no dia a dia. Nós vamos criar coisas aqui dentro pra simular, mas eu vou excluir depois sem problemas.</p>
+
+                        <p>Então só pra dar um contexto, o nosso sistema foi desenvolvido pensando em tirar de vocês o peso de abastecer e organizar os documentos dos fornecedores, então o objetivo é que os próprios fornecedores sejam responsáveis manter os documentos atualizados no cadastro da empresa deles aqui dentro da plataforma, pra que chegue bem mastigadinho pra vocês, e fique apenas a responsabilidade de verificar se o fornecedor está ou não em conformidade.</p>
+
+                        <p>Como vocês contrataram o serviço de BPO, então essa parte de analisar os cadastros vai ficar sob responsabilidade da equipe da Thais, que é a nossa especialista em gestão documental.</p>
+
+                        <p>Além disso, fora a análise, você têm que enviar os convites de acesso ao fornecedores, que a gente vai ver mais pra frente como faz. Porém, durante o onboarding a gente faz essa etapa pra vocês com base na planilha de fornecedores que vocês vão enviar pra gente depois.</p>
+                    </div>
+                </details>
+
+
+                <!-- Roteiro (SEM BPO) -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><i class="fa-solid fa-comment-dots"></i> Roteiro de fala sugerido <span style="color: var(--primary);">(sem BPO)</span></span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p>Então gente, eu vou mostrando as coisas, e em alguns momentos eu vou pausar pra gente tirar algumas dúvidas caso alguém tenha.<p>
+
+                        <p>A tela tá num tamanho bom ou tá muito pequeno?<br><span class="destaque">Aguardar resposta</span></p>
+                        <br><br>
+                        
+                        <p>Esse daqui é um ambiente que vocês vão usar no dia a dia. Nós vamos criar coisas aqui dentro pra simular, mas eu vou excluir depois sem problemas.</p>
+
+                        <p>Então só pra dar um contexto, o nosso sistema foi desenvolvido pensando em tirar de vocês o peso de abastecer e organizar os documentos dos fornecedores, então o objetivo é que os próprios fornecedores sejam responsáveis manter os documentos atualizados no cadastro da empresa deles aqui dentro da plataforma, pra que chegue bem mastigadinho pra vocês, e fique apenas a responsabilidade de verificar se o fornecedor está ou não em conformidade.</p>
+
+                        <p>Além disso, outro trabalho que vocês têm, é enviar os convites de acesso ao fornecedores, que a gente vai ver mais pra frente como faz. Porém, durante o onboarding a gente faz essa etapa pra vocês com base na planilha de fornecedores que vocês vão enviar pra gente depois.</p>
+                    </div>
+                </details>
+            </section>
+
+            <!-- 3. OVERVIEW DOS MÓDULOS DA PLATAFORMA -->
+            <section id="modulos" class="content-card">
+                <div class="card-header space-between flex-wrap">
+                    <div class="flex-align-center">
+                        <div class="step-number">3</div>
+                        <div>
+                            <h3 class="card-title">Módulos do Sistema</h3>
+                            <p class="card-subtitle">Visão geral do menu principal da plataforma</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+
+                    <ul>
+                        <li>Acessar como admin.</li>
+                        <li>Indicar a navegação através do menu lateral esquerdo, destacando sua retração para ampliação do espaço de tela.</li>
+                        <li>Mostrar rapidamente os módulos disponíveis:</li>
+                    </ul>
+
+                    <div class="grid-2-cols" id="modulesGrid">
+                        <div class="module-card">
+                            <div class="module-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                            <div class="module-info">
+                                <h4 class="module-title">Página Inicial (Dashboard)</h4>
+                                <p class="module-text">Indicadores de conformidade, fornecedores certificados, impedidos e tarefas pendentes.</p>
+                            </div>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-icon"><i class="fa-solid fa-user-plus"></i></div>
+                            <div class="module-info">
+                                <h4 class="module-title">Pré-cadastro</h4>
+                                <p class="module-text">Envio de convites para que novas empresas realizem o autocadastro.</p>
+                            </div>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-icon"><i class="fa-solid fa-building-user"></i></div>
+                            <div class="module-info">
+                                <h4 class="module-title">Fornecedores</h4>
+                                <p class="module-text">Base oficial de fornecedores já homologados e aprovados ao menos uma vez.</p>
+                            </div>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-icon"><i class="fa-solid fa-users"></i></div>
+                            <div class="module-info">
+                                <h4 class="module-title">Terceiros</h4>
+                                <p class="module-text">Gestão de colaboradores vinculados às empresas fornecedoras homologadas.</p>
+                            </div>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-icon"><i class="fa-solid fa-inbox"></i></div>
+                            <div class="module-info">
+                                <h4 class="module-title">Solicitações</h4>
+                                <p class="module-text">Histórico de todas as atualizações de cadastros e novas entradas pendentes de validação.</p>
+                            </div>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                            <div class="module-info">
+                                <h4 class="module-title">Histórico de Análises</h4>
+                                <p class="module-text">Registro detalhado de análises realizadas, datas, responsáveis e resultados.</p>
+                            </div>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                            <div class="module-info">
+                                <h4 class="module-title">Avaliações</h4>
+                                <p class="module-text">Criação e gestão de questionários/formulários de avaliação e RFIs.</p>
+                            </div>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                            <div class="module-info">
+                                <h4 class="module-title">Ocorrências</h4>
+                                <p class="module-text">Notificações manuais e alinhamentos específicos diretamente com fornecedores.</p>
+                            </div>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-icon"><i class="fa-solid fa-file-excel"></i></div>
+                            <div class="module-info">
+                                <h4 class="module-title">Relatórios</h4>
+                                <p class="module-text">Exportação de planilhas customizadas e extração detalhada de dados do sistema.</p>
+                            </div>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-icon"><i class="fa-solid fa-gear"></i></div>
+                            <div class="module-info">
+                                <h4 class="module-title">Configurações</h4>
+                                <p class="module-text">Criação de parâmetros, documentos obrigatórios, regras e parametrização geral.</p>
+                            </div>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                            <div class="module-info">
+                                <h4 class="module-title">Novidades & Sugestões</h4>
+                                <p class="module-text">Release notes das atualizações e canal direto para envio de feedbacks do sistema.</p>
+                            </div>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-icon"><i class="fa-solid fa-circle-question"></i></div>
+                            <div class="module-info">
+                                <h4 class="module-title">Documentação de Ajuda</h4>
+                                <p class="module-text">Base de conhecimento com tutoriais passo a passo para usuários e fornecedores.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Roteiro -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><i class="fa-solid fa-comment-dots"></i> Roteiro de fala sugerido</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p><span class="destaque">PÁGINA INICIAL</span><br>Então esse é o nosso sistema pessoal.</p>
+                        <p>A gente vai fazer a navegação principalmente por esse menu azul aqui à esquerda, que inclusive pode ser retraído se vocês quiserem aumentar a área do conteúdo principal.</p>
+                        <p>Aqui na página inicial vocês vão ter um dashboard que mostra o status de conformidade e o volume total da sua base de fornecedores. Então são vários indicadores que vão facilitar a gestão dos fornecedores no dia a dia.</p>
+                        
+                        <p><span class="destaque">DASHBOARD "MEUS FORNECEDORES"</span><br>Então vocês podem ver aqui quantos fornecedores têm cadastrados atualmente, quantos estão ou não certificados, quantos estão com alguma penalidade aplicada, que seriam os impedidos.</p>
+
+                        <p><span class="destaque-variacao">DASHBOARD "MEUS TERCEIROS"</span><br>Logo abaixo tem os indicadores dos terceiros, basicamente a quantidade total e quantos deles estão com documentos vencidos.</p>
+
+                        <p><span class="destaque">COLUNA À DIREITA</span><br>Aqui à direita são os que demandam alguma ação, então vai ter quantas solicitações e ocorrências tem pendentes para serem analisadas.</p>
+                        <p>Quantas ocorrências estão pendentes de resposta pelo fornecedor.</p>
+                        <p>E quantos fornecedores estão com documentos vencidos.</p>
+
+                        <p><span class="destaque-variacao">OUTROS DASHBOARDS</span><br>Tem também o top 10 fornecedores mais bem avaliados na base de vocês e descendo mais um pouco, a quantidade de fornecedores em cada linha de fornecimento.</p>
+                        
+                        <p>E gente, se vocês clicarem em qualquer um desses indicadores, vocês vão ser direcionados para a listagem deles. Então por exemplo, se eu quero saber quais são os fornecedores com documentos vencidos, eu clico aqui e o sistema já me mostra a lista.</p>
+                        <p>Então pessoal, a página inicial oferece pra vocês um resumo dinâmico sobre a gestão dos seus fornecedores e terceiros. Basicamente direciona a atenção para os pontos críticos.</p>
+                        <p>Alguma dúvida sobre essa parte da plataforma?<br><span class="destaque">Aguardar resposta</span></p>
+                        <br><br>
+
+                        <p>O restante eu vou passar mais rapidamente, só pra vocês darem uma olhada mesmo, porque nós vamos nos aprofundar neles quando for a hora.</p>
+
+                        <p><span class="destaque">PRÉ-CADASTRO</span><br>O menu de Pré-cadastro é onde vocês vão enviar os convites para que as empresas se cadastrem na plataforma, pra que se tornem fornecedores.</p>
+                        
+                        <p><span class="destaque">FORNECEDORES</span><br>O menu Fornecedores é onde vão ficar as empresas que já foram homologadas como fornecedores de fato. Pra uma empresa vir parar aqui ela tem que ter sido aprovada ao menos uma vez.</p>
+                        
+                        <p><span class="destaque-variacao">TERCEIROS</span><br>O menu Terceiros está vinculado ao de Fornecedores, porque só ficam aqui os terceiros relacionados às empresas homologadas.</p>
+                        
+                        <p><span class="destaque">SOLICITAÇÕES</span><br>Aqui nas Solicitações fica o histórico dos cadastros de novos fornecedores e atualizações que eles fazem. Então eles primeiro aparecem aqui e depois de aprovados vão para o menu Fornecedores.</p>
+                        
+                        <p><span class="destaque">HISTÓRICO DE ANÁLISES</span><br>O Histórico de Análises a lista das análises realizadas, quem é o fornecedor, quando foi feito, quem analisou e qual o resultado da análise.</p>
+                        
+                        <p><span class="destaque-variacao">AVALIAÇÕES</span><br>As Avaliações são os formulários que o fornecedor ou o um usuário internos de vocês deve responder. Nesse menu é possível criar os modelos de avaliações, vincular avaliações aos fornecedores e gerenciar elas. Esse módulo a gente vai ver mais no penúltimo encontro, dos módulos adicionais.</p>
+                        
+                        <p><span class="destaque-variacao">OCORRÊNCIAS</span><br>Ocorrências são como um sistema de notificação manual, onde vocês vão enviar uma mensagem para o fornecedor solicitando que ele faça uma ação. Nosso sistema já possui várias notificações automáticas, mas a gente tem esse módulo para tornar a comunicação com o fornecedor mais flexível. É também um dos módulos que vamos nos aprofundar melhor no nosso penúltimo encontro.</p>
+                        
+                        <p><span class="destaque">RELATÓRIOS</span><br>Nos Relatórios vocês vão poder exportar diversas informações que vocês julguem necessárias. Apesar da gente ter aquele dashboard inicial, eles são focados nos pontos críticos, mas se vocês precisarem de informações adicionais, é nos relatórios que vocês devem ir. Nós vamos ver mais sobre eles no nosso 4º encontro, mas por agora o que eu posso dizer, é que eles servem pra mostrar as informações que vocês precisam sobre os fornecedores, além de poder exportar como planilha.</p>
+                        
+                        <p><span class="destaque">CONFIGURAÇÕES</span><br>Tá, então passando pro próximo, temos o gigantesco menu de Configurações. Aqui é onde a gente vai criar, personalizar e gerenciar todo o funcionamento da plataforma. Então, criar documentos, linhas de fornecimento, configurar as notificações e etc, tudo aqui. também vamos fuçar mais esse menu lá no 4º encontro.</p>
+                        
+                        <p><span class="destaque">NOVIDADES</span><br>No menu de Novidades é onde vocês podem ver as últimas comunicações do nosso time de desenvolvimento. Então qualquer nova funcionalidade ou correção de bugs vão estar descritos aqui. Nós também fazemos essa comunicação por e-mail, mas se vocês quiserem um histórico centralizado, vai ser aqui.</p>
+                        
+                        <p><span class="destaque">SUGESTÕES</span><br>Se vocês tiverem Sugestões de melhoria na plataforma, é só vir nesse menu e escrever a sua sugestão. Claro, vocês também podem trazer isso para o time de CS, mas essa também é uma forma que a gente disponibiliza pra vocês.</p>
+                        
+                        <p><span class="destaque">BASE DE CONHECIMENTO</span><br>E por fim, a Documentação para Ajuda, que é onde está a nossa base de conhecimento, tanto pra vocês, quanto para o fornecedor. Então basta escolher qual o guia mais adequado pra vocês e pesquisar pelo que precisa. Nesse guia tem bastante coisa, então se surgir qualquer dúvida sobre como fazer algo dentro da plataforma, vocês podem consultar aqui também.</p>
+
+                        <p>Gente, eu mostrei bastante coisa até aqui então eu sei podem surgir dúvidas. Vocês têm alguma?<br><span class="destaque">Aguardar resposta</span></p>
+                    </div>
+                </details>
+            </section>
+
+            <!-- 4. TIPOS DE ACESSO -->
+            <section id="acessos" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">4</div>
+                    <div>
+                        <h3 class="card-title">Tipos de Acesso</h3>
+                        <p class="card-subtitle">Perfis Internos vs. Externos</p>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+
+                    <p style="margin-bottom: 5px;">Diferenciar os dois grandes grupos de acessos à plataforma:</p>
+
+                    <div class="grid-2-cols">
+                        <div class="access-box">
+                            <div class="access-header">
+                                <div class="access-icon"><i class="fa-solid fa-user-lock"></i></div>
+                                <span class="access-title">Usuários Internos (Cliente)</span>
+                            </div>
+                            <ul class="access-list">
+                                <li><strong>Perfis Personalizados:</strong> permissões adaptáveis às necessidades de cada função.</li>
+                                <li><strong>Exemplo:</strong> Administrador que possui acesso total; Analista de cadastro; Responsável por parecer técnico pontual; Gestor de ocorrências.</li>
+                            </ul>
+                        </div>
+
+                        <div class="access-box">
+                            <div class="access-header">
+                                <div class="access-icon"><i class="fa-solid fa-truck-field"></i></div>
+                                <span class="access-title">Usuários Externos (Fornecedores)</span>
+                            </div>
+                            <ul class="access-list">
+                                <li><strong>Acesso Restrito:</strong> Visualizam estritamente a própria empresa.</li>
+                                <li><strong>Isolamento de Dados:</strong> NENHUM fornecedor enxerga dados de terceiros.</li>
+                                <li><strong>Autonomia:</strong> Acompanham solicitações, pendências e atualizam documentos.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Roteiro -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><i class="fa-solid fa-comment-dots"></i> Roteiro de fala sugerido</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p>Agora vocês já têm uma noção do que a nossa plataforma tem pra ajudar vocês na gestão dos fornecedores, então eu quero falar um pouco sobre acessos. Como é o acesso de vocês e dos fornecedores.</p>
+                        <p>Então nós temos 2 tipos de usuários que vão acessar o sistema, usuários internos, que são vocês, e os usuários externos, que são os fornecedores.</p>
+                        <p>O fornecedor vai ter acesso apenas à empresa dele, ou seja, não vão poder ver os dados dos outros fornecedores. E eles vão poder acompanhar as solicitações e pendências envolvidas no cadastro da empresa também.</p>
+                        <p>Os usuários internos, que são vocês, vão ter diferentes perfis de acesso dependendo do que cada um precisa fazer aqui dentro do sistema, então nós temos o administrador, que pode tudo, o analista de cadastro, que pode quase tudo, só não vai conseguir mexer nas configurações, tem a pessoa que só vai responder parecer técnico quando for chamada e mais nada, a pessoa que só vai poder gerenciar as ocorrências. Enfim, nós temos vários tipos de acesso que se adapta ao que cada usuário realmente precisa fazer.</p>
+                        <p>Vocês têm alguma dúvida sobre essa parte de usuários e tipos de acesso?<br><span class="destaque">Aguardar resposta</span></p>
+                    </div>
+                </details>
+            </section>
+
+            <!-- 5. CRIAÇÃO DE ACESSO & PRÉ-CADASTRO -->
+            <section id="criacao-acessos" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">5</div>
+                    <div>
+                        <h3 class="card-title">Criação de Acessos</h3>
+                        <p class="card-subtitle">Como convidar e cadastrar novos parceiros</p>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+
+                    <div class="grid-2-cols">
+                        <div class="access-box">
+                            <div class="access-header">
+                                <div class="access-icon"><i class="bi bi-person-plus-fill"></i></div>
+                                <span class="access-title">Usuários Internos</span>
+                            </div>
+                            <ul class="access-list">
+                                <li>Explicar que por motivos de segurança, os usuários internos não são criados de forma autônoma. A criação é feita pela equipe autorizada da Efcaz (CS ou Suporte) a partir da planilha de usuários.</li>
+                                <li>Alertar que a tentativa de autocadastro na tela de login resultará na criação de um perfil de fornecedor.</li>
+                            </ul>
+                        </div>
+
+                        <div class="access-box">
+                            <div class="access-header">
+                                <div class="access-icon"><i class="bi bi-clipboard2-plus-fill"></i></div>
+                                <span class="access-title">Fornecedores</span>
+                            </div>
+                            <ul class="access-list">
+                                <li><strong>Cadastro Ativo:</strong> O fornecedor acessa a tela inicial, clica em "Não tem cadastro" e cria sua conta de forma autônoma. Indicado para menor esforço operacional.</li>
+                                <li><strong>Pré-cadastro / Convite:</strong> A empresa contratante insere os dados básicos do fornecedor e pré-define as Categorias/Linhas de fornecimento. O fornecedor recebe um e-mail de acesso para continuar o cadastro.
+                                    <br>
+                                    <a href="https://efcaz.movidesk.com/kb/pt-br/article/547502/kb90011-srm-como-criar-um-pre-cadastro?menuId=51758-142328-547502&ticketId=&q=" target="_blank" class="direcionar-artigo">
+                                        <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 15px;" class="alert-box alert-amber">
+                        <div class="alert-header">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <span>Anotações</span>
+                        </div>
+                        <ul class="alert-text">
+                            <li>Cadastro ativo e/ou Pré-cadastro?</li>
+                            <li>Terá aprovação de pré-cadastro?</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Roteiro -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><i class="fa-solid fa-comment-dots"></i> Roteiro de fala sugerido</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p>Tá, então, como cada tipo de usuário é criado?</p>
+                        <p>Vou falar primeiro o de vocês, que são usuários internos. Por uma questão de segurança, vocês não podem criar seu usuários sozinhos. Quem faz isso é somente o pessoal autorizado da Efcaz. Então ou o time de CS ou o time de suporte que vai fazer a criação desses usuários com os perfis de acesso que vocês precisarem.</p>
+                        <p>Se vocês tentarem criar usuários sozinhos, vão acabar criando um usuário fornecedor.</p>
+                        <p>Já aproveitando, se vocês precisam da gente pra ter acesso à plataforma, como o fornecedor faz? Ele tem que entrar em contato com o suporte também? Não. O caso deles é diferente.</p>
+                        <p>Então uma forma deles acessarem a plataforma é criando um usuário. Aqui na tela de acesso, é só ele clicar em “Não tem cadastro” e seguir as etapas de cadastro de usuário. Assim como em qualquer plataforma, eles vão receber um e-mail pra confirmar a criação do usuário, vão cadastrar a senha e pronto, já conseguem acessar a plataforma normalmente. Mas é claro, a visão deles é bem mais limitada que a de vocês, porque o foco é apenas cadastrar e atualizar os dados da empresa.</p>
+                        <p>Outra maneira deles terem acesso é vocês enviando um convite pra eles.</p>
+                        <p>Pessoal, no dia a dia de vocês, é o fornecedor que vai se cadastrar ativamente, ou só vão poder entrar na plataforma mediante convite de vocês? Ou as duas coisas?<br><span class="destaque-anotacao">&nbsp;Anotar resposta&nbsp;</span><br><br></p>
+                        
+                        <p class="destaque">Selecionar alguém para compartilhar a tela e guiá-lo em como fazer o Pré-cadastro</p>
+
+                        <p><strong class="destaque2">Fulano</strong>, vai ali no menu Azul em Pré-cadastro e clica em <strong>Novo</strong>.</p>
+                        <p>Agora você tem que preencher os dados. Pode ser pessoa física ou jurídica.</p>
+                        <p>Eu vou te passar um aqui no chat, e você coloca aí por favor: 93.172.054/0001-15</p>
+                        <p>Quando você coloca o CNPJ já vão vir duas informações. Se a situação na receita federal estiver baixada ou se essa empresa ou pessoa constar na lista de trabalho escravo, o sistema já vai te avisar. Então se surgir um desses casos, você já sabe que esse não vai ser um fornecedor confiável e já podem descartar ele logo de cara.</p>
+                        <p><strong class="destaque2">Fulano</strong>, apaga esse CNPJ e coloca o da sua empresa mesmo tá, só pra simular, e também a razão social.</p>
+                        <p>Agora, em “Nome”, “E-mail” e “Telefone” você vai colocar os dados da pessoa que vai ser responsável pelo cadastro da empresa na plataforma.</p>
+                        <p>Como é uma simulação, vamos usar um e-mail descartável. <strong class="destaque2">Fulano</strong>, pesquisa no Google por “E-mail descartável” ou acessa o link que eu coloquei no chat: <span class="destaque">https://www.invertexto.com/gerador-email-temporario</span></p>
+                        <p>Pega esse e-mail e coloca lá no sistema.</p>
+                        <p>Coloca um nome qualquer e um telefone genérico.</p>
+                        <p>Agora você pode colocar o site dessa empresa se quiser.</p>
+                        <p>E logo embaixo você vai escolher a categoria do que essa empresa vai fornecer. Pode escolher mais de uma. Inclusive, essa categoria é o que vai definir quais documentos esse fornecedor vai ter que anexar.</p>
+                        <p>Em <strong>Observações e Anexo</strong>, tudo o que vocês colocarem é para visualização interna. o fornecedor não vai pode ver o que vocês colocarem aí.</p>
+                        <p>Eu também habilitei essa opção de Homologadores, mas dá pra tirar se quiser. O que acontece. Alguns clientes nossos fazem uma separação na equipe de pré-cadastro, então tem as pessoas que colocam os dados e enviam pra avaliação de um supervisor, e tem clientes que fazem tudo numa etapa só. Aí na equipe de vocês, vai ter essa separação?</p>
+                        <p><span class="destaque-anotacao">&nbsp;Anotar resposta&nbsp;</span></p>
+
+                        <div class="grid-2-cols">
+                            <div class="concept-card-dark">
+                                <div class="concept-title text-mediumseagreen">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <span>Se Sim</span>
+                                </div>
+                                <p class="concept-text-dark">Então, essa opção de Homologares, é justamente pra isso, clica aí em “Vincular Homologadores”. Você pode escolher quais pessoas vão ser responsáveis pela aprovação desse pré-cadastro. Se você não marcar ninguém, todos os que estão nessa lista vão poder pegar esse pré-cadastro pra validar.<br>Como o seu usuário tem acesso administrador, você vai poder fazer as duas etapas tá.</p>
+                            </div>
+
+                            <div class="concept-card-dark">
+                                <div class="concept-title text-indianred">
+                                    <i class="fa-solid fa-circle-xmark"></i>
+                                    <span>Se Não</span>
+                                </div>
+                                <p class="concept-text-dark">Ah então eu retiro essa opção depois. Não vai ser útil pra vocês.</p>
+                            </div>
+                        </div>
+
+                        <br><br>
+                        <p>Agora clica ali em <strong>Salvar</strong>. Clica em <strong>Enviar para Análise</strong>. E agora em <strong>Aprovar</strong>.</p>
+                        <p>Volta lá pra página inicial.</p>
+                        <p>Agora que o Pré-cadastro foi criado, o que aconteceu?</p>
+                        <p>O fornecedor recebeu um e-mail com o link, login e senha para acessar o sistema. E assim que ele acessar, ele já vai poder atualizar os dados da empresa dele.</p>
+                        <p><strong class="destaque2">Fulano</strong>, vai lá no site do e-mail descartável por favor, pra você ver como que ele recebe.</p>
+                        <p>Então esse é o e-mail padrão que já vem configurado no sistema, mas se precisar, a gente pode modificar algumas coisas.<br><br></p>
+                        <p>Mas vamos supor que o fornecedor por acaso não recebeuesse e-mail. <strong class="destaque2">Fulano</strong>, vai lá no menu de Pré-cadastro de novo e acessa o que você criou.</p>
+                        <p>Primeiro, você vai ver se não colocou o e-mail errado. Se for o caso, é só clicar nesse ícone de lápis, alterar e Salvar. Mas como não é, pode clicar em Cancelar.</p>
+                        <p>Se o e-mail tá correto, você pode só Reenviar o e-mail tá bom.</p>
+                        <p>Alguma dúvida até aqui pessoal?<br><span class="destaque">Aguardar resposta</span></p>
+
+                    </div>
+                </details>
+            </section>
+
+
+            <!-- 6. CONCEITOS IMPORTANTES -->
+            <section id="conceitos" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">6</div>
+                    <div>
+                        <h3 class="card-title">Conceitos Chave da Plataforma</h3>
+                        <p class="card-subtitle">Diferenças fundamentais que regem a operação</p>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+
+                    <ul><li>Explicar a diferença entre as áreas do sistema.</li></ul>
+
+                    <div class="grid-2-cols">
+
+                        <div class="access-box">
+                            <div class="access-header">
+                                <div class="access-icon"><i class="bi bi-person-plus-fill"></i></div>
+                                <span class="access-title">Cadastro do Fornecedor</span>
+                            </div>
+                            <ul class="access-list">
+                                <li><strong>Solicitações (Histórico):</strong> Representa o histórico de movimentações. Cada novo cadastro, alteração ou envio de novos documentos gera uma nova solicitação que deve ser analisada e aprovada.</li>
+                                <li><strong>Fornecedores (Versão Vigente):</strong> Representa a versão atual e homologada da empresa. Um parceiro só passa a figurar nesta lista após ter sua primeira solicitação devidamente aprovada.</li>
+                            </ul>
+
+                            <div class="alert-box alert-red" style="padding: 10px;">
+                                <p class="alert-text">Reforçar que em caso de auditoria, apenas o cadastro vigente deve ser considerado.</p>
+                            </div>
+                        </div>
+
+                        <div class="access-box">
+                            <div class="access-header">
+                                <div class="access-icon"><i class="bi bi-clipboard2-plus-fill"></i></div>
+                                <span class="access-title">Categorização</span>
+                            </div>
+
+                            <ul class="access-list">
+                                <li><strong>Ramo de Atividade:</strong> Abrangente. Em caso de divergência, sobrepõe os critérios da linha.<br>Exemplo: <i>Construção Civil, Alimentício, Serviços Gerais</i>.</li>
+                                <li><strong>Linha de Fornecimento:</strong> Especifica o que é fornecido. Algumas configurações dependem somente da linha, como RFIs e Score.<br>Exemplo: <i>Manutenção Predial, Material Elétrico, EPIs</i>.</li>
+                            </ul>
+
+                            <div class="alert-box alert-red" style="padding: 10px;">
+                                <p class="alert-text">Reforçar que essa definição deve ser feita com atenção, pois impacta toda a operação.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="access-box" style="margin-top: 6px;"><img src="https://github.com/kethllen-dos-santos/EfcazKBInterno/blob/main/assets/images/Ramos%20x%20Linhas%202.png?raw=true" style="width: 100%;"></div>
+
+                    <div style="margin-top: 15px;" class="alert-box alert-amber">
+                        <div class="alert-header">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <span>Anotações</span>
+                        </div>
+                        <ul class="alert-text">
+                            <li>Ramo ou Linha?</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+
+                <!-- Roteiro -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><i class="fa-solid fa-comment-dots"></i> Roteiro de fala sugerido</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p><strong class="destaque">SOLICITAÇÕES</strong><br>
+                        <strong class="destaque2">Fulano</strong>, agora volta lá no SRM por favor.</p>
+                        <p>Tá, gente, além do fornecedor receber aquele e-mail, tem mais uma ação que o sistema fez. Toda e qualquer criação ou alteração de cadastro é feita através de uma solicitação, porque ela precisa ser validada antes de se tornar oficial.</p>
+                        <p><strong class="destaque2">Fulano</strong>, ali no menu azul clica em <strong>Solicitações</strong>.</p>
+                        <p>Gente, considerem esse menu como um histórico de movimentações dos fornecedores, então todo novo fornecedor vai estar aí. Um fornecedor atualizou os documentos, vai estar aí também.</p>
+                        <p>Então aquele pré-cadastro que o <strong class="destaque2">Fulano</strong> fez gerou essa solicitação de <strong>Novo Fornecedor</strong>.<br><br></p>
+
+                        <p><strong class="destaque">FORNECEDOR E HOMOLOGAÇÃO</strong><br>
+                        <strong class="destaque2">Fulano</strong>, agora vai lá no menu Fornecedores por favor.</p>
+                        <p>Gente, apesar do <strong class="destaque2">Fulano</strong> ter feito o pré-cadastro da empresa, ela não está aparecendo na lista de fornecedores. Vocês sabem o motivo?<br><span class="destaque">Aguardar resposta</span></p>
+                        <p>Então, é que só aparece na lista de <strong>Fornecedores</strong>, aqueles que já foram aprovados. Enquanto não são aprovados, eles ficam somente no menu <strong>Solicitações</strong>.</p>
+                        <p>Esses que ficam na lista de Fornecedores é o que a gente chama de homologados né, que é a mesma coisa que aprovado mediante validação.</p>
+                        <p>Pessoal, se tiver uma auditoria ou algo assim, onde que vocês vão mostrar os dados pro auditor?<br><span class="destaque">Aguardar resposta</span></p>
+                        <p>Isso mesmo, no menu Fornecedores.</p>
+                        <p>Então recapitulando, no menu Solicitações fica o histórico e em Fornecedores ficam os cadastros vigentes e oficiais.</p>
+                        <p>Alguma dúvida pessoal?<br><span class="destaque">Aguardar resposta</span></p>
+
+                        <hr>
+                        <p><strong class="destaque">CATEGORIZAR FORNECEDOR</strong><br>
+                        Pessoal, agora vamos falar um pouco sobre como categorizar os fornecedores. Me diz uma coisa. Vocês sabem o que é linha de fornecimento e ramo de atividade? Já ouviram falar nesses termos?<br><span class="destaque">Aguardar resposta</span></p>
+                        <p><strong class="destaque2">Fulano</strong>, vai lá no Pré-Cadastro de novo e acessa o que se chama “Ramos x Linhas”. Agora abre a imagem anexada por favor.</p>
+                        <p>Então, os dois são formas de categorizar um fornecedor, porém o ramo de atividade é mais abrangente e a linha de fornecimento é mais específico.</p>
+
+                        <p><span class="destaque">Mostrar a imagem de referência e explicá-la</span><br>
+                        É basicamente isso pessoal. A gente pode categorizar um fornecedor de duas formas ao mesmo tempo.</p>
+                        <p>Eu posso dizer que um fornecedor é do ramo de Construção e fornece “Material de Construção” e “Ferramentas”.</p>
+                        <p>Ou então ele é do ramo Alimentício e fornece “Bebidas” e “Perecíveis”.</p>
+                        <p>E vai seguindo essa lógica.</p>
+                        <p>Fez sentido pra vocês?<br><span class="destaque">Aguardar resposta</span></p>
+                        <p>Então, vocês podem usar os dois ou só a linha de fornecimento. Se vocês forem usar os dois, é bom lembrar que as configurações do ramo de atividade são mais relevantes que os da linha de fornecimento. Então se tiver uma configuração nas linhas que contradiz uma configuração do ramo, o sistema vai considerar a do ramo.</p>
+                        <p>Por exemplo, tem o documento do Ibama. Aí lá nas configurações tá dizendo que pro ramo de atividade "Construção" o documento do Ibama é opcional, mas pra linha de fornecimento "Material de Construção" o documento do Ibama é obrigatório. E aí, na hora que o fornecedor estiver anexando os documentos, o documento do Ibama vai ser opcional ou obrigatório?<br><span class="destaque">Aguardar resposta e perguntar o motivo, se necessário</span></p>
+                        <p><span class="destque">Resposta:</span> Vai ser opcional, porque o sistema vai priorizar a configuração que tá no ramo de atividade.</p>
+                        <p>Agora que vocês já sabem o que é ramo e linha, quero que vocês me falem, vocês vão querer usar os dois ou só a linha de fornecimento mesmo?<br><span class="destaque-anotacao">&nbsp;Anotar resposta&nbsp;</span><br><span class="destaque">Se o cliente não souber, informe que colocará isso como tarefa para o próximo encontro e que eles devem preencher a planilha que vai na ata da reunião.</span><br><br></p>
+
+                        <p><strong class="destaque">CADASTRAR RAMO DE ATIVIDADE</strong><br>
+                        Agora vamos ver onde que a gente cadastra essas categorias.</p>
+                        <p><strong class="destaque2">Fulano</strong>, no menu principal, vai lá em <strong>Configurações</strong>.</p>
+                        <p>Agora procura por <strong>Ramos de Atividade</strong> lá embaixo.</p>
+                        <p>Clica em <strong>Novo</strong>.</p>
+                        <p>Coloca o nome do Ramo, por exemplo, “Comércio”.</p>
+                        <p>Escolhe se esse ramo vai ser para fornecedores que são pessoas físicas ou jurídicas. E salva.</p>
+                        <p>E pronto, criou um ramo de atividade. Bem simples né.<br><br></p>
+
+                        <p><strong class="destaque">CADASTRAR LINHA DE FORNECIMENTO</strong><br>
+                        Agora clica lá em <strong>Linha de Fornecimento</strong>.</p>
+                        <p>Agora clica em <strong>Novo</strong>.</p>
+                        <p>Você vai colocar o nome, pode ser “Manutenção Predial”, apenas para exemplo.</p>
+                        <p>E na linha de fornecimento você pode vincular uma RFI, que é um formulário para o fornecedor responder.</p>
+
+
+                        <div class="grid-2-cols">
+                            <div class="concept-card-dark">
+                                <div class="concept-title text-mediumseagreen">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <span>Módulo Avaliações contratado</span>
+                                </div>
+                                <p class="concept-text-dark">A gente vai ver mais sobre isso em outro encontro que vamos ter mais pra frente, mas pode selecionar um que eu deixei criado previamente.</p>
+                            </div>
+
+                            <div class="concept-card-dark">
+                                <div class="concept-title text-indianred">
+                                    <i class="fa-solid fa-circle-xmark"></i>
+                                    <span>Módulo Avaliações não contratado</span>
+                                </div>
+                                <p class="concept-text-dark">Como vocês não contrataram o módulo avaliações, não vai dar pra adicionar nenhum formulário pro fornecedor responder.</p>
+                            </div>
+                        </div>
+
+                        <br><br>
+
+                        <p>Também tem como vincular o score para os fornecedores dessa linha de fornecimento. Eu criei um exemplo, mas quando a gente for mexer nas configurações da plataforma vamos mexer mais nisso. Pode selecionar todas por favor.</p>
+                        <p>E por último, devemos escolher se essa linha de fornecimento é do tipo Material ou Serviço. No caso desse nosso exemplo, "Manutenção Predial", é Serviço.</p>
+                        <p>Agora é só salvar.</p>
+                        <p>Pessoal, vocês têm alguma dúvida até aqui?<br><span class="destaque">Aguardar resposta</span></p>
+                        <p><span class="destaque">Se disserem não ter dúvidas, pede para eles explicarem o que é cada conceito falado: Solicitações, Fornecedores homologados, Ramos de Atividade e Linha de Fornecimento</span><br><br></p>
+
+                        <p>Se tiver uma auditoria aí, vocês vão pegar os dados aonde?<br>
+                        <span class="destaque">Resposta: Menu Fornecedores</span></p>
+                        <p>Porque no menu Fornecedores?<br>
+                        <span class="destaque">Resposta: É onde estão os dados e documentos aprovados. Menu Solicitações pode estar com atualização não concluída.</span><br><br></p>
+
+                        <p>"Locação de Máquina" é ramo de atividade ou linha de fornecimento?<br>
+                        <span class="destaque">Resposta: Linha de fornecimento</span></p>
+                        <p>Porque é linha de fornecimento?<br>
+                        <span class="destaque">Resposta: Porque indica o que a empresa está forneceendo realmente. Ramo de Atividade se refere mais à categoria genérica da empresa, como "Engenharia" e "Comércio".</span></p>
+
+                    </div>
+                </details>
+            </section>
+
+
+            <!-- 7. GESTÃO DE DOCUMENTAÇÃO -->
+            <section id="documentos" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">7</div>
+                    <div>
+                        <h3 class="card-title">Gestão de Documentação</h3>
+                        <p class="card-subtitle">Documentos automáticos, manuais e critérios de análise</p>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+
+                    <ul><li>Diferenciar os dois tipos de documentos suportados na plataforma:</li></ul>
+
+                    <div class="grid-2-cols" id="modulesGrid">
+                        <div class="module-card">
+                            <div class="module-icon"><i class="fa-solid fa-robot"></i></div>
+                            <div class="module-info">
+                                <h4 class="module-title">Documentos Automáticos (Background Check)</h4>
+                                <p class="module-text">Obtidos automaticamente pelo sistema via integrações públicas. Ex: Certidões Negativas, Consultas na Receita.</p>
+                            </div>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-icon"><i class="fa-solid fa-upload"></i></div>
+                            <div class="module-info">
+                                <h4 class="module-title">Documentos Manuais (Upload Fornecedor)</h4>
+                                <p class="module-text">Enviados ativamente pelo fornecedor. Ex: Contrato Social, Licenças Ambientais, ASO, Comprovantes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 20px">
+                        <h4 class="guide-title" style="text-transform: uppercase; padding-bottom: 10px;">Configurações dos Documentos</h4>
+                        <ul>
+                            <li>Orientar como cadastrar documentos, destacando que o nome do documento, o subtítulo e o informativo devem ser muito claros para evitar que o fornecedor fique confuso.
+                                <a href="https://efcaz.movidesk.com/kb/pt-br/article/560808/kb90038-srm-como-configurar-os-documentos-exigidos?ticketId=&q=" target="_blank" class="direcionar-artigo">
+                                        <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </a></li>
+                            <li>Explicar a vantagem de cadastrar critérios padronizados de análise em cada documento para guiar o analista no momento da verificação.</li>
+                            <li>Demonstrar a criação de critérios a partir de arquivo de apoio enviado no chat.</li>
+                            <li>Realizar as configurações gerais do documento com o cliente.</li>
+                            <li>Configurar restrições de visibilidade por perfil de usuário, se aplicável.</li>
+                            <li>Vincular a exigência dos documentos aos Ramos de Atividade e Linhas de Fornecimento correspondentes, definindo a obrigatoriedade.</li>
+                            <li>Orientar que o participante cadastre o segundo documento de forma autônoma para fixação do aprendizado.</li>
+                        </ul>
+                    </div>
+
+                    <div class="table-wrapper" style="margin-top: 20px">
+                        <div class="grid-2-cols">
+                            <h4 class="table-title">Exemplos de Critérios de Análise</h4>
+                            <div style="justify-self: end;">
+                                <a href="https://raw.githubusercontent.com/kethllen-dos-santos/EfcazKBInterno/main/assets/docs/Exemplos%20de%20documentos.pdf" download="Exemplos de documentos.pdf" target="_blank" class="btn btn-primary" style="padding: 5px 7px; font-size: 0.8rem;">
+                                    <i class="fa-solid fa-download"></i>
+                                    <span>Baixar documentos de exemplo</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="table-container">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Documento</th>
+                                        <th>Critério de Verificação</th>
+                                        <th>Texto de Pendência para Reprovação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="font-medium">Contrato Social</td>
+                                        <td>Assinaturas válidas dos sócios</td>
+                                        <td class="text-muted">Documento sem assinatura legível do representante legal.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-medium">ASO</td>
+                                        <td>Data de emissão dentro da validade (1 ano)</td>
+                                        <td class="text-muted">ASO com data de validade expirada. Por favor, envie o ASO atualizado/periódico do colaborador.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-medium">Alvará de funcionamento</td>
+                                        <td>A Razão Social e o CNPJ impressos no alvará correspondem aos dados cadastrais da empresa no sistema?</td>
+                                        <td class="text-muted">A Razão Social e/ou o CNPJ constantes no Alvará de Funcionamento divergem dos dados cadastrados em nosso sistema. Por favor, anexe o alvará correto correspondente ao CNPJ cadastrado ou solicite a atualização de seus dados cadastrais conosco.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Roteiro -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><i class="fa-solid fa-comment-dots"></i> Roteiro de fala sugerido</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p>Pessoal, agora o último assunto que vamos ver hoje são sobre os documentos que os fornecedores têm que preencher.</p>
+                        <p><strong class="destaque2">Fulano</strong>, aí nas <strong>Configurações</strong>, vai em <strong>Documentos</strong> por favor.</p>
+                        <p>Nesse menu vocês podem ver a lista de documentos que já tem cadastrados. Estão vendo que tem uma coluna chamada Background Check? Ele indica quais são de busca automática e quais não são.</p>
+                        <p>No momento só tem os automáticos, mas vamos criar dois documentos juntos, que não vão ser automáticos.</p>
+                        <p><strong class="destaque2">Fulano</strong>, clica aí em <strong>Novo</strong>.</p>
+                        <p class="destaque">Enviar arquivo no chat</p>
+                        <p>Pra começar, coloca o nome do documento.</p>
+                        <p>Também tem como colocar subtítulo, que é um texto que fica embaixo do nome do documento e um informativo, que é um izinho, que quando o fornecedor passar o mouse, vai mostrar o texto que vocês colocarem aí.</p>
+                        <p>Essas 3 informações tem que ser muito claras tá pessoal, porque é o único meio que o fornecedor vai ter pra saber o que ele tem que anexar.</p>
+                        <p class="destaque">Orientar o preenchimento até Link de Acesso e Anexar Modelo</p>
+                        <p>Então pessoal, agora tem uma parte opcional, mas muito útil, já que vocês vão ter que analisar os mesmos documentos para todos os fornecedores.</p>
+                        <p>Quando vocês vão analisar um documentos, sempre vão ter alguns critérios que vocês utilizam pra verificar se ele está correto né. Exemplo: Todo contrato social tem que ter assinatura dos sócios. Todo ASO tem que ter sido feito a menos de 1 ano. Então são critérios fixos pra esses documentos.</p>
+                        <p>Ao invés de vocês terem que sempre ficar lembrando de cabeça toda vez, vocês podem deixar esses critérios configurados para aquele documento, e quando vocês forem fazer a análise, vocês vão marcando se cada critério foi atendido ou não.</p>
+                        <p><strong class="destaque2">Fulano</strong>, aí no chat eu enviei um arquivo, abre ele por favor.</p>
+                        <p>Desce até a parte onde tem uma tabela.</p>
+                        <p>Cada linha dessa tabela tem o critério que deve ser analisado e o texto de pendência caso esse critério não tenha sido atingido.</p>
+                        <p>Volta lá no sistema e clica em <strong>Novo Critério</strong> e preenche conforme tá aí nessa tabela.</p>
+                        <p>Deixa o critério como ativo tá.</p>
+                        <p>Aí cria mais uns 2 critérios por favor.<br><span class="destaque">Aguardar cliente terminar de preencher os campos</span></p>
+                        <p>Agora, esse documento está configurado. Pode clicar em <strong>Salvar</strong>.</p>
+                        <p>Perfeito, o documento foi criado, mas agora a gente precisa falar pro sistema em que situação esse documento deve ser pedido pro fornecedor.</p>
+                        <p><strong class="destaque2">Fulano</strong>, acha aí esse documento e clica no ícone de lápis pra editar.</p>
+                        <p>Vai descendo.</p>
+                        <p><span class="destaque">Restrição de usuários</span><br>
+                        Caso vocês queiram restringir esse documento a determinados usuários, é só deixar marcado quem não vai poder ter acesso a ele.</p>
+                        <p><span class="destaque">Ramos e Linhas</span><br>
+                        Pode descer mais um pouco que a parte de critérios a gente já fez.</p>
+                        <p>Agora vocês vão selecionar quais Ramos de Atividade e quais Linhas de Fornecimento devem solicitar esse documento. Marcando a coluna da esquerda, o sistema vai exibir o documento pro fornecedor, e marcando a coluna da direita, o sistema vai tornar esse documento obrigatório.</p>
+                        <p>Pode marcar todos por favor, só pra gente simular depois.</p>
+                        <p>E agora é só <strong>Salvar</strong>.</p>
+                        <p class="destaque">Pedir para o cliente cadastrar o outro documento sozinho com base no arquivo enviado no chat.</p>
+                    </div>
+                </details>
+            </section>
+
+            <!-- 8. FINALIZAÇÃO E PRÓXIMOS PASSOS -->
+            <section id="finalizacao" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">8</div>
+                    <div>
+                        <h3 class="card-title">Finalização e Próximos Passos</h3>
+                        <p class="card-subtitle">Atividades a serem concluídas antes do 2º Encontro</p>
+                    </div>
+                </div>
+
+
+                <div class="guide-card">
+                    <ul>
+                        <li>Realizar a recapitulação dos tópicos trabalhados no encontro
+                            <ul>
+                                <li>Overview de módulos</li>
+                                <li>Convite de acesso</li>
+                                <li>Diferenças entre solicitações e fornecedores homologados</li>
+                                <li>Ramos vs. Linhas</li>
+                                <li>Cadastro de documentos e critérios</li>
+                            </ul>
+                        <li>Informar o envio formal da ata de reunião acompanhada dos materiais de apoio e das planilhas que o cliente deve preencher (destacando o preenchimento inicial da planilha de documentos).</li>
+                        <li>Listar as tarefas pendentes para o cliente antes do próximo encontro:</li>
+                            <ul>
+                                <li>Revisar e preencher a planilha de usuários internos (caso pendente)</li>
+                                <li>Iniciar o preenchimento da planilha de documentos</li>
+                                <li>Anotar dúvidas para serem tratadas na reunião seguinte</li>
+                            </ul>
+                        <li>Colocar o canal do WhatsApp à disposição para dúvidas pontuais.</li>
+                        <li>Agendar/confirmar a data e horário do próximo encontro.</li>
+                    </ul>
+
+                </div>
+
+
+                <!-- Roteiro -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><i class="fa-solid fa-comment-dots"></i> Roteiro de fala sugerido</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p>Pessoal, então, do nosso encontro de hoje é isso. A gente viu quais módulos a plataforma tem, a gente falou brevemente sobre como o fornecedor pode ter acesso à plataforma, a também fizemos o primeiro convite a um fornecedor fictício e como esse convite aparece pra ele. Também vimos a diferença entre Ramo de Atividade e Linha de Fornecimento, e cadastramos 2 documentos.</p>
+                        <p>Hoje a gente também viu um pouco sobre o que é solicitação e quando que uma empresa passa a ser fornecedora de fato, mas vamos ver mais sobre isso no próximo encontro.</p>
+                        <p>Eu vou mandar a ata dessa reunião pra vocês, e lá vai ter os materiais de apoio e também as planilhas que vocês devem preencher. Então eu peço que vocês já vão preenchendo a de documentos tá bem?</p>
+                        <p>Gente, ficou alguma dúvida?<br><span class="destaque">Aguardar resposta</span></p>
+                        <p>Tudo bem, mas se precisarem, podem me chamar lá no WhatsApp.</p>
+                        <p class="destaque">Marcar / Confirmar data e hora do próximo encontro.</p>
+                    </div>
+                </details>
+            </section>
+
+            <!-- 9. CHECKLIST INTERATIVO -->
+            <section id="checklists" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">9</div>
+                    <div>
+                        <h3 class="card-title">Tarefas</h3>
+                        <p class="card-subtitle">Atividades internas a serem concluídas antes do próximo encontro</p>
+                    </div>
+                </div>
+
+                <div class="checklist-container" id="checklistContainer">
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Copiar Anotações</span>
+                            <span class="task-subtitle">Copie as anotações feitas ao lado e adicione como comentário na task "Etapa 1" da jornada Onboarding (CustomerX).</span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Enviar ata de reunião</span>
+                            <span class="task-subtitle">Utilize o template da CustomerX (<i>ONBOARDING | Etapa 1 - Overview e Governança do Sistema</i>) ou o daqui para enviar a ata de reunião por e-mail. Incluir <strong>renato.pedroso@efcaz.com.br</strong> como CCO.</span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Baixar o e-mail em PDF e anexar na tarefa da CX</span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Resolver todas as dúvidas ou solicitações pendentes</span>
+                            <span class="task-subtitle">Retornar ao cliente sobre essas pendências</span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Planilhas</span>
+                            <span class="task-subtitle">Verificar andamento das planilhas durante a semana</span>
+                        </div>
+                    </label>
+                </div>
+            </section>
+
+
+            <!-- 10. TEMPLATE DE E-MAIL -->
+            <section id="template-email" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">10</div>
+                    <div>
+                        <h3 class="card-title">Template para ata de reunião</h3>
+                        <p class="card-subtitle">Código HTML para ser usado na formatação do e-mail</p>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+                    <ul>
+                        <li>Utilize o template de e-mail disponível na CustomerX; ou</li>
+                        <li>A extensão <strong>HTMaiL</strong> permite formatar e-mails com HTML</li>
+                    </ul>
+
+                    <div>
+                        <button class="btn btn-primary" onclick="copyGithubFile('https://raw.githubusercontent.com/kethllen-dos-santos/EfcazKBInterno/refs/heads/main/paginas/onboarding/Etapa%201/etapa_1_ata_reuniao.html', this)">
+                            <i class="fa-regular fa-copy"></i>
+                            <span>Copiar template HTML</span>
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Botão Flutuante Subir ao Topo (Centralizado) -->
+    <button id="btnBackToTop" class="btn-back-to-top" onclick="scrollToTop()" title="Voltar ao topo">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            &copy; 2026 Plataforma SRM Efcaz - Guia do CS Onboarding
+        </div>
+    </footer>
+
+    <!-- Script JS Externo -->
+    <script src="../../../assets/js/scripts.js"></script>
+
+</body>
+</html>
