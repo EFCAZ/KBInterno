@@ -20,7 +20,10 @@
 
     --emerald-50: #ecfdf5;
     --emerald-200: #a7f3d0;
+    --emerald-500: #00bc7d
     --emerald-600: #059669;
+    --emerald-700: #007a55;
+    --emerald-800: #006045;
 
     --amber-50: #fffbeb;
     --amber-100: #fef3c7;
@@ -733,6 +736,25 @@ body {
 
 .alert-red .alert-header i {
     color: var(--red-500);
+}
+
+
+/* Cor Verde */
+.alert-emerald {
+    background-color: var(--emerald-50);
+    border-left: 4px solid var(--emerald-500);
+}
+
+.alert-emerald .alert-text {
+    color: var(--emerald-700);
+}
+
+.alert-emerald .alert-header {
+    color: var(--emerald-800);
+}
+
+.alert-emerald .alert-header i {
+    color: var(--emerald-500);
 }
 
 
