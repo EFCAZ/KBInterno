@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preparação do ambiente para Onboarding</title>
+    
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Ícones FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Ícones Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Estilos CSS Externo -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EFCAZ/KBInterno@latest/assets/css/estilos.css">
+    <link rel="stylesheet" href="../../../assets/css/estilos.css">
+
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header" style="display: none;">
+        <div class="header-container">
+            <div class="brand">
+                <a href="https://sites.google.com/efcaz.com.br/interno/onboarding" target="_blank" class="brand-logo">
+                    <i id="meuIcone" class="bi bi-stack" 
+                        onmouseenter="this.className='bi bi-layers-fill'" 
+                        onmouseleave="this.className='bi bi-stack'">
+                    </i>
+                </a>
+
+                <div class="brand-info">
+                    <a href="https://sites.google.com/efcaz.com.br/interno/onboarding">
+                        <h1 class="brand-title">Onboarding</h1>
+                    </a>
+
+                    <p class="brand-subtitle">Etapa 0: Preparação do ambiente</p>
+                </div>
+            </div>
+
+            <!-- Global Actions -->
+            <div class="header-actions">
+                <button id="btnAction" class="btn btn-primary-light">
+                    <i class="fa-solid fa-square-check"></i>
+                    <span>Tarefas</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+
+        <!-- Sidebar (Desktop) -->
+        <aside class="sidebar">
+
+            <!-- Navegação -->
+            <div class="sidebar-card" style="margin-bottom: 0;">
+                <a href="#checklists" class="sidebar-link active">
+                    <i class="fa-solid fa-square-check"></i> Tarefas
+                </a>
+                <a href="#score" class="sidebar-link active">
+                    <i class="fa-solid fa-star"></i> Score
+                </a>
+                <a href="#escopos" class="sidebar-link active">
+                    <i class="fa-solid fa-layer-group"></i> Escopos
+                </a>
+                <a href="#categorias" class="sidebar-link active">
+                    <i class="fa-solid fa-folder-open"></i> Categorias
+                </a>
+                <a href="#documentos" class="sidebar-link active">
+                    <i class="fa-solid fa-file"></i> Documentos
+                </a>
+                <a href="#rfi" class="sidebar-link active">
+                    <i class="fa-solid fa-clipboard-list"></i> RFI
+                </a>
+                <a href="https://sites.google.com/efcaz.com.br/interno/onboarding/etapa-1" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="sidebar-link"
+                   onmouseenter="this.querySelector('i').className = 'fa-solid fa-circle-right'" 
+                   onmouseleave="this.querySelector('i').className = 'fa-regular fa-circle-right'">
+                    <i class="fa-regular fa-circle-right"></i> Próxima Etapa
+                </a>
+            </div>
+
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- HERO SECTION -->
+            <section id="hero" class="hero-section">
+                <div class="hero-content">
+                    <span class="badge-hero">Etapa 0</span>
+                    <h2 class="hero-title">Preparação do ambiente</h2>
+                    <p class="hero-description">
+                        Esta etapa é dedicada à auxiliar na preparação do ambiente para os treinamentos.
+                    </p>
+                </div>
+                <img src="https://github.com/EFCAZ/KBInterno/blob/main/assets/images/logomarca/efcaz-icone-branco.png?raw=true" class="hero-bg-icon">
+            </section>
+
+            <!-- 1. CONFIGURAÇÃO DO TENANT -->
+            <section id="checklists" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">1</div>
+                    <div>
+                        <h3 class="card-title">Tenant</h3>
+                        <p class="card-subtitle">Configurar o ambiente de produção do cliente</p>
+                    </div>
+                </div>
+
+                <div class="checklist-container" id="checklistContainer">
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Confirmar criação do tenant</span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Adicionar logomarca</span>
+                            <span class="task-subtitle">
+                                <a href="https://efcaz.movidesk.com/kb/pt-br/article/609112/sd-como-configurar-logomarca-no-tenant?menuId=51975-132135-609112&ticketId=&q=" target="_blank" class="direcionar-artigo" style="text-decoration: none;">
+                                    <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Conferir se os módulos contratados estão habilitados</span>
+                            <span class="task-subtitle">
+                                <ul>
+                                    <li>Terceiros</li>
+                                    <li>Avaliações</li>
+                                    <li>Ocorrências</li>
+                                    <li>Dashboard de terceiros</li>
+                                    <li>Relatório "Todos os fornecedores"</li>
+                                </ul>
+                            </span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Resolver todas as dúvidas ou solicitações pendentes</span>
+                            <span class="task-subtitle">Retornar ao cliente sobre essas pendências</span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Conferir se as buscas automáticas contratadas estão ativas</span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Criar um Pré-Cadastro chamado "Ramos x Linhas" e enexar a <a href="https://raw.githubusercontent.com/EFCAZ/KBInterno/main/assets/images/geral/Ramos%20x%20Linhas.png" download="Ramos_Linhas.png" target="_blank">imagem</a></span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Habilitar seleção de homologadores em Configurações Gerais</span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Criar usuários internos e enviar dados de acesso</span>
+                        </div>
+                    </label>
+                </div>
+            </section>
+
+
+            <!-- 2. SCORE -->
+            <section id="score" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h3 class="card-title">Score</h3>
+                        <p class="card-subtitle">Cadastrar um Score inicial para o cliente usar</p>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+
+                    <div class="grid-3-cols">
+                    <div class="alert-box alert-red">
+                        <div class="alert-header">
+                            <i class="fa-solid fa-triangle-exclamation"></i> Risco Alto
+                        </div>
+                        <div class="alert-text"><strong>Pontuação:</strong> 0 a 5</div>
+                    </div>
+                    <div class="alert-box alert-amber">
+                        <div class="alert-header">
+                            <i class="fa-solid fa-circle-exclamation"></i> Risco Médio
+                        </div>
+                        <div class="alert-text"><strong>Pontuação:</strong> 5,01 a 8</div>
+                    </div>
+                    <div class="alert-box alert-emerald">
+                        <div class="alert-header">
+                            <i class="fa-solid fa-circle-check"></i> Risco Baixo
+                        </div>
+                        <div class="alert-text"><strong>Pontuação:</strong> 8,01 a 10</div>
+                    </div>
+                </div>
+                </div>
+
+
+                <!-- PILARES -->
+
+                <!-- Ambiental -->
+                <details class="accordion-light">
+                    <summary>
+                        <span class="summary-text"><i class="fa-solid fa-seedling"></i>Ambiental <span style="color: var(--primary-dark)">(Peso: 20)</span></span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="accordion-light-content">
+                        <table class="custom-table">
+                            <thead>
+                                <tr>
+                                    <th>Descrição</th>
+                                    <th>Nota a reduzir</th>
+                                    <th>Eliminatória</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>IBAMA - Certidão Negativa de Débitos</td>
+                                    <td>7.5</td>
+                                    <td><span>Não</span></td>
+                                </tr>
+                                <tr>
+                                    <td>IBAMA - Certidão Negativa de Embargos</td>
+                                    <td>10.0</td>
+                                    <td><span>Não</span></td>
+                                </tr>
+                                <tr>
+                                    <td>IBAMA - Consulta de Regularidade</td>
+                                    <td>10.0</td>
+                                    <td><span>Não</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </details>
+
+                <!-- Judiciário e Risco Processual -->
+                <details class="accordion-light">
+                    <summary>
+                        <span class="summary-text"><i class="fa-solid fa-scale-balanced"></i> Judiciário e Risco Processual <span style="color: var(--primary-dark)">(Peso: 20)</span></span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="accordion-light-content">
+                        <table class="custom-table">
+                            <thead>
+                                <tr>
+                                    <th>Descrição</th>
+                                    <th>Nota a reduzir</th>
+                                    <th>Eliminatória</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-medium">Certidão de Distribuição - Justiça Federal 1º Grau SP (Cível - MS)</td>
+                                    <td>5.0</td>
+                                    <td><span>Não</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Certidão de Distribuição - Justiça Federal 1º Grau SP (Cível - SP)</td>
+                                    <td>5.0</td>
+                                    <td><span>Não</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Certidão de Distribuição - Justiça Federal 1º Grau SP (Criminal - MS)</td>
+                                    <td>7.5</td>
+                                    <td><span>Não</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Certidão de Distribuição - Justiça Federal 1º Grau SP (Criminal - SP)</td>
+                                    <td>7.5</td>
+                                    <td><span>Não</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Certidão de Distribuição Cível em Geral</td>
+                                    <td>5.0</td>
+                                    <td><span>Não</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Processos Judiciais</td>
+                                    <td>7.5</td>
+                                    <td><span>Não</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </details>
+
+                <!-- Trabalhista e Previdenciário -->
+                <details class="accordion-light">
+                    <summary>
+                        <span class="summary-text"><i class="fa-solid fa-briefcase"></i>Trabalhista e Previdenciário <span style="color: var(--primary-dark)">(Peso: 20)</span></span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="accordion-light-content">
+                        <table class="custom-table">
+                            <thead>
+                                <tr>
+                                    <th>Descrição</th>
+                                    <th>Nota a reduzir</th>
+                                    <th>Eliminatória</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-medium">Caixa - Certidão de Regularidade Empregador</td>
+                                    <td>10.0</td>
+                                    <td><span>Não</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Certidão de Ações Trabalhista - TRT1 - RJ</td>
+                                    <td>5.0</td>
+                                    <td><span>Não</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Certidão de Ações Trabalhista - TRT2 - SP</td>
+                                    <td>5.0</td>
+                                    <td><span>Não</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">SIT/MTE - Infrações Trabalhistas (Eletrônicos)</td>
+                                    <td>7.5</td>
+                                    <td><span>Não</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">SIT/MTE - Infrações Trabalhistas (Físicos)</td>
+                                    <td>7.5</td>
+                                    <td><span>Não</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">TST - Certidão Negativa de Débitos Trabalhistas</td>
+                                    <td>10.0</td>
+                                    <td><span>Não</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </details>
+
+                <!-- Compliance e Integridade -->
+                <details class="accordion-light">
+                    <summary>
+                        <span class="summary-text"><i class="fa-solid fa-shield-halved"></i>Compliance e Integridade <span style="color: var(--primary-dark)">(Peso: 20)</span></span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="accordion-light-content">
+                        <table class="custom-table">
+                            <thead>
+                                <tr>
+                                    <th>Descrição</th>
+                                    <th>Nota a reduzir</th>
+                                    <th>Eliminatória</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-medium">Antecedentes Criminais</td>
+                                    <td>10.0</td>
+                                    <td><span class="text-red">Sim</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">CGU - Certidão Negativa Correcional - CEIS</td>
+                                    <td>10.0</td>
+                                    <td><span>Não</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">CNJ</td>
+                                    <td>5.0</td>
+                                    <td><span>Não</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Lista Suja de Trabalho Escravo</td>
+                                    <td>10.0</td>
+                                    <td><span class="text-red">Sim</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </details>
+
+                <!-- Regularidade Fiscal e Cadastral -->
+                <details class="accordion-light">
+                    <summary>
+                        <span class="summary-text"><i class="fa-solid fa-address-book"></i>Regularidade Fiscal e Cadastral <span style="color: var(--primary-dark)">(Peso: 20)</span></span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="accordion-light-content">
+                        <table class="custom-table">
+                            <thead>
+                                <tr>
+                                    <th>Descrição</th>
+                                    <th>Nota a reduzir</th>
+                                    <th>Eliminatória</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-medium">Atualizar situação Receita Federal</td>
+                                    <td>10.0</td>
+                                    <td><span class="text-red">Sim</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Dividas ativas - PGFN</td>
+                                    <td>7.5</td>
+                                    <td><span>Não</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Receita Federal - Cópia do CNPJ</td>
+                                    <td>2.5</td>
+                                    <td><span>Não</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Receita Federal - Cópia do CPF</td>
+                                    <td>2.5</td>
+                                    <td><span>Não</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Receita Federal Sintegra</td>
+                                    <td>5.0</td>
+                                    <td><span>Não</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">SEFAZ - Certidão Negativa de Débitos Estaduais</td>
+                                    <td>7.5</td>
+                                    <td><span>Não</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </details>
+            </section>
+
+
+            <!-- 3. ESCOPOS -->
+            <section id="escopos" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">3</div>
+                    <div>
+                        <h3 class="card-title">Escopo de Atuação</h3>
+                        <p class="card-subtitle">Cadastrar os escopos para exemplificar ao cliente</p>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+
+                    <div class="grid-3-cols">
+                        <div class="info-card">
+                            <div class="info-card-header">
+                                <i class="fa-solid fa-industry"></i> Ramo de Atividade
+                            </div>
+                            <ul class="info-card-text">
+                                <li>Construção</li>
+                                <li>Terceirizados</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-card-header">
+                                <i class="fa-solid fa-boxes-packing"></i> Linhas de Fornecimento
+                            </div>
+                            <ul class="info-card-text">
+                                <li>Locação de Máquinas</li>
+                                <li>Manutenção Predial e Facilities</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-card-header">
+                                <i class="fa-solid fa-boxes-packing"></i> Setores
+                            </div>
+                            <ul class="info-card-text">
+                                <li>Departamento Pessoal</li>
+                                <li>Financeiro</li>
+                                <li>Jurídico</li>
+                            </ul>
+                        </div>
+
+                    </div> <!-- fim grid-2-cols -->
+                </div>
+            </section>
+
+
+            <!-- 4. CATEGORIAS -->
+            <section id="categorias" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">4</div>
+                    <div>
+                        <h3 class="card-title">Categorias</h3>
+                        <p class="card-subtitle">Cadastrar apenas 2 categorias e deixar o restante dos documentos sem</p>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Categoria</th>
+                                <th>Documentos</th>
+                            </tr>
+                        </thead>
+                      
+                        <tbody>
+                            <tr>
+                                <td><strong>Identificação</strong></td>
+                                <td>Cartão CNPJ, Cartão CPF, Sintegra</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Regularidade Fiscal</strong></td>
+                                <td>CND Federal e Estadual, Certidão de Regularidade do FGTS, CNDT (Certidão Negativa Trabalhista)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Jurídico</strong></td>
+                                <td>Certidão de Ações Trabalhistas - TRTs, Certidão de Distribuição Cível e Criminal SP (TJSP), Tribunais Regionais Federais - TRFs (Cível, Criminal e Eleitoral)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Integridade, Compliance e Anticorrupção</strong></td>
+                                <td>Certidão Negativa Correcional (ePAD, CGU-PJ, CEIS, CNEP e CEPIM)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Socioambiental</strong></td>
+                                <td>IBAMA (Embargos, Regularidade e Débitos)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </section>
+
+
+            <!-- 5. DOCUMENTOS -->
+            <section id="documentos" class="content-card">
+                <div class="card-header space-between flex-wrap">
+                    <div class="flex-align-center">
+                        <div class="step-number">5</div>
+                        <div>
+                            <h3 class="card-title">Documentos</h3>
+                            <p class="card-subtitle">Cadastrar documentos de exemplo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+
+                    <!-- Para Fornecedor -->
+                    <h4 class="text-primary-dark">Fornecedores</h4>
+                    
+                    <details class="accordion-light">
+                        <summary>
+                            <span class="summary-text"><i class="fa-solid fa-gear"></i>Configurações</span>
+                            <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                        </summary>
+                        
+                        <table class="custom-table">
+                            <tbody>
+                                <tr><th style="width: 40%;">Título</th><td>Alvará de funcionamento</td></tr>
+                                <tr><th>Solicitar documento ao</th><td>FORNECEDOR</td></tr>
+                                <tr><th>Validade</th><td>Sim</td></tr>
+                                <tr><th>Identificação / Número obrigatório</th><td>Sim</td></tr>
+                                <tr><th>Anexo obrigatório</th><td>Sim</td></tr>
+                                <tr><th>Constar no Certificado Cadastral</th><td>Sim</td></tr>
+                                <tr><th>Restringir documento a</th><td>Brasil</td></tr>
+                                <tr><th>Exibir N/A</th><td>Não</td></tr>
+                                <tr><th>Categoria</th><td>Regularidade Fiscal</td></tr>
+                                <tr><th>Tipo de pessoa</th><td>Jurídica</td></tr>
+                            </tbody>
+                        </table>
+                    </details>
+
+                    <details class="accordion-light">
+                        <summary>
+                            <span class="summary-text"><i class="fa-solid fa-circle-check"></i>Matrizes de Pendências e Aprovações</span>
+                            <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                        </summary>
+                        
+                        <div class="accordion-light-content">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 40%;">Critério</th>
+                                        <th>Texto da Pendência</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="font-medium">O documento anexado é o Alvará de Funcionamento oficial, completo, legível e sem cortes?</td>
+                                        <td class="text-muted">Solicitamos o envio do Alvará de Funcionamento legível, completo e em formato digital oficial. O arquivo anexado apresenta rasuras, cortes ou baixa resolução que impedem a validação das informações essenciais.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-medium">O Alvará de Funcionamento está dentro do prazo de validade vigente?</td>
+                                        <td class="text-muted">O Alvará de Funcionamento apresentado encontra-se vencido. Por favor, anexe o documento renovado e vigente ou o comprovante oficial de protocolo de renovação emitido pela Prefeitura dentro do prazo legal.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-medium">A Razão Social e o CNPJ impressos no alvará correspondem aos dados cadastrais da empresa no sistema?</td>
+                                        <td class="text-muted">A Razão Social e/ou o CNPJ constantes no Alvará de Funcionamento divergem dos dados cadastrados em nosso sistema. Por favor, anexe o alvará correto correspondente ao CNPJ cadastrado ou solicite a atualização de seus dados cadastrais conosco.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-medium">O endereço constante no alvará coincide com o endereço da unidade/filial cadastrada para prestação de serviços/fornecimento?</td>
+                                        <td class="text-muted">O endereço indicado no Alvará de Funcionamento não coincide com o endereço do estabelecimento/unidade cadastrada. Favor disponibilizar o alvará emitido especificamente para o endereço cadastrado em nossa base.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-medium">As atividades autorizadas no alvará abrangem o escopo dos produtos fornecidos ou serviços prestados à nossa empresa?</td>
+                                        <td class="text-muted">As atividades econômicas (CNAE) descritas no Alvará de Funcionamento não contemplam os serviços ou produtos contratados. Favor regularizar o alvará junto à Prefeitura ou apresentar a licença correspondente à atividade exercida.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-medium">Caso seja um alvará Provisório ou Condicionado, o prazo estipulado para as exigências está vigente?</td>
+                                        <td class="text-muted">O Alvará de Funcionamento enviado é de caráter Provisório/Temporário e o prazo concedido para cumprimento das exigências encontra-se expirado. Favor anexe o Alvará Definitivo ou o documento oficial da Prefeitura atestando a prorrogação da vigência.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-medium">A autenticidade do alvará foi confirmada via QR Code ou Código de Verificação no portal da Prefeitura?</td>
+                                        <td class="text-muted">Não foi possível validar a autenticidade do Alvará de Funcionamento no portal do órgão emissor por meio do código/QR Code constante no arquivo. Favor disponibilizar a certidão de autenticidade ou o documento digital nativo emitido pela Prefeitura.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </details>
+
+                    <!-- Para Terceiros -->
+                    <h4 class="text-primary-dark" style="margin-top: 24px;">Terceiros</h4>
+                    
+                    <details class="accordion-light">
+                        <summary>
+                            <span class="summary-text"><i class="fa-solid fa-gear"></i>Configurações</span>
+                            <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                        </summary>
+                        
+                        <table class="custom-table">
+                            <tbody>
+                                <tr><th style="width: 40%;">Título</th><td>Atestado de Saúde Ocupacional (ASO)</td></tr>
+                                <tr><th>Subtítulo</th><td>Comprovação de Aptidão Médica Ocupacional para Trabalho nas Instalações</td></tr>
+                                <tr><th>Informativo</th><td>Anexe o ASO do colaborador emitido pelo médico do trabalho responsável, comprovando a aptidão para a função a ser desempenhada (incluindo trabalho em altura/espaço confinado, se aplicável).</td></tr>
+                                <tr><th>Solicitar documento ao</th><td>TERCEIRO</td></tr>
+                                <tr><th>Validade</th><td>Não</td></tr>
+                                <tr><th>Identificação / Número obrigatório</th><td>Não</td></tr>
+                                <tr><th>Anexo obrigatório</th><td>Sim</td></tr>
+                                <tr><th>Constar no Certificado Cadastral</th><td>Não</td></tr>
+                                <tr><th>Restringir documento a</th><td>Brasil e Estrangeiro</td></tr>
+                                <tr><th>Exibir N/A</th><td>Não</td></tr>
+                                <tr><th>Ocultar campo de vencimento</th><td>Sim</td></tr>
+                                <tr><th>Categoria</th><td>-</td></tr>
+                                <tr><th>Tipo de pessoa</th><td>Física</td></tr>
+                            </tbody>
+                        </table>
+                    </details>
+
+                    <details class="accordion-light">
+                        <summary>
+                            <span class="summary-text"><i class="fa-solid fa-circle-check"></i>Matrizes de Pendências e Aprovações</span>
+                            <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                        </summary>
+                        
+                        <div class="accordion-light-content">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 40%;">Critério</th>
+                                        <th>Texto da Pendência</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="font-medium">O ASO atesta explicitamente que o colaborador está 'APTO' para a função contratada?</td>
+                                        <td class="text-muted">O ASO anexado indica inaptidão, restrição pendente ou não possui a indicação clara de 'APTO' para o exercício da função. Favor regularizar com a medicina do trabalho.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-medium">A data do exame médico está dentro da validade exigida (normalmente 12 meses ou conforme PCMSO)?</td>
+                                        <td class="text-muted">O ASO apresentado está vencido ou próximo do vencimento sem prazo hábil de vigência. Por favor, envie o ASO atualizado/periódico do colaborador.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-medium">O nome completo e CPF/Documento no ASO conferem com a identificação do terceiro cadastrado?</td>
+                                        <td class="text-muted">Os dados de identificação do colaborador no documento enviado não correspondem ao cadastro do terceiro informado no sistema. Favor reenviar o ASO correto.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </details>
+
+                </div>
+            </section>
+
+
+            <!-- 6. RFI -->
+            <section id="rfi" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">6</div>
+                    <div>
+                        <h3 class="card-title">Questionários RFI</h3>
+                        <p class="card-subtitle">Cadastrar um formulário RFI</p>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+
+                    <div class="grid-3-cols">
+                        <div class="alert-box alert-red">
+                            <div class="alert-header">
+                                <i class="fa-solid fa-triangle-exclamation"></i> Aprovado
+                            </div>
+                            <div class="alert-text"><strong>Pontuação:</strong> 8 a 10</div>
+                        </div>
+                        <div class="alert-box alert-amber">
+                            <div class="alert-header">
+                                <i class="fa-solid fa-circle-exclamation"></i> Aprovado com Ressalva
+                            </div>
+                            <div class="alert-text"><strong>Pontuação:</strong> 5 a 7.9</div>
+                        </div>
+                        <div class="alert-box alert-emerald">
+                            <div class="alert-header">
+                                <i class="fa-solid fa-circle-check"></i> Reprovado
+                            </div>
+                            <div class="alert-text"><strong>Pontuação:</strong> 0 a 5</div>
+                        </div>
+                    </div>
+
+                    <p style="margin-top: 20px;"><strong>Qual é o prazo garantido pela empresa para a substituição de lotes de materiais entregues com defeito ou avaria?</strong></p>
+                    <p><span class="tag-badge tag-amber" style="margin-right: 7px;">Não Eliminatória</span><span class="tag-badge tag-blue">Classificador</span></p>
+                    <div class="table-container">
+                        <table class="custom-table">
+                            <thead><tr><th>Resposta</th><th>Peso</th><th>Referência</th></tr></thead>
+                            <tbody>
+                                <tr><td>Troca imediata em até 48 horas úteis, sem custo adicional</td><td>5</td><td><span class="text-emerald font-medium">Referência</span></td></tr>
+                                <tr><td>Troca garantida em até 5 dias úteis</td><td>3</td><td>-</td></tr>
+                                <tr><td>Troca garantida com prazo maior que 5 dias úteis</td><td>2</td><td>-</td></tr>
+                                <tr><td>Não há prazo garantido em contrato para trocas</td><td>0</td><td>-</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p style="margin-top: 10px;"><strong>A empresa aceita a política padrão de faturamento da contratante (ex: boleto a prazo)?</strong></p>
+                    <p><span class="tag-badge tag-red" style="margin-right: 7px;">Eliminatória</span><span class="tag-badge tag-blue">Diferenciador</span></p>
+                    <div class="table-container">
+                        <table class="custom-table">
+                            <thead><tr><th>Resposta</th><th>Peso</th><th>Referência</th></tr></thead>
+                            <tbody>
+                                <tr><td>Aceita faturamento via boleto (30/60 dias)</td><td>5</td><td>-</td></tr>
+                                <tr><td>Aceita faturamento em até 15 dias ou via cartão corporativo</td><td>3</td><td><span class="text-emerald font-medium">Referência</span></td></tr>
+                                <tr><td>Exige exclusivamente pagamento antecipado ou à vista</td><td>0</td><td><span class="text-indianred font-medium">Reprova</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Botão Flutuante Subir ao Topo (Centralizado) -->
+    <button id="btnBackToTop" class="btn-back-to-top" onclick="scrollToTop()" title="Voltar ao topo">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            &copy; 2026 Plataforma SRM Efcaz - Guia do CS Onboarding
+        </div>
+    </footer>
+
+    <!-- Script JS Externo -->
+    <script src="https://cdn.jsdelivr.net/gh/EFCAZ/KBInterno@main/assets/js/scripts.js"></script>
+
+    <!-- Sites Google não está pegando o script externo -->
+    <script>
+
+        // Função para criar elemento temporário e executar a cópia
+        function fallbackCopy(textToCopy, buttonElement, originalLabel) {
+            const textArea = document.createElement('textarea');
+            textArea.value = textToCopy;
+
+            // Configurações visuais para não afetar o layout
+            textArea.style.position = 'fixed';
+            textArea.style.top = '0';
+            textArea.style.left = '0';
+            textArea.style.opacity = '0';
+            
+            document.body.appendChild(textArea);
+            
+            // Força o foco e a seleção do texto no iFrame
+            textArea.focus();
+            textArea.select();
+
+            let successful = false;
+            try {
+                successful = document.execCommand('copy');
+            } catch (err) {
+                console.error('Erro ao executar copy via execCommand:', err);
+            }
+
+            document.body.removeChild(textArea);
+
+            if (successful) {
+                showSuccess(buttonElement, originalLabel);
+            } else {
+                alert('Não foi possível copiar o texto automaticamente.');
+            }
+        }
+
+        // Função universal de cópia
+        function executeCopy(textToCopy, buttonElement, originalLabel) {
+            if (!textToCopy || !textToCopy.trim()) {
+                alert('Não há texto para copiar!');
+                return;
+            }
+
+            // No Google Sites, o fallback por textarea é mais confiável que a Clipboard API devido às restrições do iFrame
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(textToCopy)
+                    .then(() => {
+                        showSuccess(buttonElement, originalLabel);
+                    })
+                    .catch(() => {
+                        // Se falhar (bloqueio do iFrame), usa o método de fallback
+                        fallbackCopy(textToCopy, buttonElement, originalLabel);
+                    });
+            } else {
+                fallbackCopy(textToCopy, buttonElement, originalLabel);
+            }
+        }
+
+        function showSuccess(btn, originalHTML) {
+            btn.innerHTML = '<i class="fa-solid fa-check"></i> Copiado!';
+            btn.style.backgroundColor = '#10b981';
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+                btn.style.backgroundColor = '';
+            }, 2000);
+        }
+
+        // Copiar Anotações
+        function copyNotes() {
+            const fields = [
+                { label: 'CADASTRO ATIVO E/OU PRÉ CADASTRO?', id: 'noteActivePre' },
+                { label: 'APROVAÇÃO DE PRÉ-CADASTRO?', id: 'noteApproval' },
+                { label: 'RAMO DE ATIVIDADE OU LINHA DE FORNECIMENTO?', id: 'noteBranchLine' },
+                { label: 'OUTRAS ANOTAÇÕES', id: 'noteOthers' }
+            ];
+
+            const formattedNotes = fields.map(field => {
+                const el = document.getElementById(field.id);
+                const value = el ? el.value.trim() : '';
+                const content = value.length > 0 ? value : 'Nenhuma anotação';
+                return `${field.label}\n${content}`;
+            }).join('\n\n');
+
+            const btn = document.querySelector('.btn-copy-notes');
+            executeCopy(formattedNotes, btn, '<i class="fa-regular fa-copy"></i> Copiar Anotações');
+        }
+
+        // Copiar Template de arquivo HTML hospedado no GitHub
+        function copyGithubFile(rawUrl, btn) {
+            const originalLabel = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Carregando...';
+
+            // Trata URLs do raw.githubusercontent eliminando refs/heads e apontando para a CDN jsDelivr
+            let fetchUrl = rawUrl
+                .replace('https://raw.githubusercontent.com/', 'https://cdn.jsdelivr.net/gh/')
+                .replace('/refs/heads/main/', '@main/')
+                .replace('/main/', '@main/');
+
+            fetch(fetchUrl)
+                .then(response => {
+                    if (!response.ok) throw new Error('Erro ao buscar arquivo: ' + response.statusText);
+                    return response.text();
+                })
+                .then(content => {
+                    executeCopy(content, btn, originalLabel);
+                })
+                .catch(err => {
+                    console.error(err);
+                    alert('Erro ao carregar o arquivo do GitHub.');
+                    btn.innerHTML = originalLabel;
+                });
+        }
+    </script>
+
+</body>
+</html>
