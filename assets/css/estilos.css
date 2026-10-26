@@ -32,6 +32,7 @@
     --amber-800: #92400e;
 
     --red-50: #fef2f2;
+    --red-100: #ffe2e2;
     --red-400: #ff6467;
     --red-500: #fb2c36;
     --red-700: #c10007;
@@ -57,8 +58,10 @@
 .bg-emerald { background-color: var(--emerald-600); }
 .text-primary { color: var(--primary); }
 .text-primary-light { color: var(--primary-light); }
+.text-primary-dark { color: var(--primary-dark); }
 .text-emerald { color: var(--emerald-600); }
 .text-mediumseagreen { color: mediumseagreen; }
+.text-red { color: var(--red-700); }
 .text-indianred { color: indianred; }
 .flex-align-center { display: flex; align-items: center; gap: 12px; }
 .space-between { justify-content: space-between; }
@@ -95,6 +98,15 @@ body {
     background: var(--primary);
     border-radius: 4px;
 }
+
+.task-item a {
+    color: var(--primary);
+}
+
+.task-item a:hover {
+    color: var(--emerald-500);
+}
+
 
 
 /* ==========================================================================
@@ -550,7 +562,7 @@ body {
     margin-bottom: 7px;
 }
 
-.guide-card .direcionar-artigo {
+.direcionar-artigo {
     transition: all 0.3s ease;
     text-decoration: none;
     display: inline-flex;
@@ -560,8 +572,9 @@ body {
     font-weight: 600;
 }
 
-.guide-card .direcionar-artigo:hover {
+.direcionar-artigo:hover {
     transition: all 0.3s ease;
+    color: var(--primary) !important;
     gap: 16px;
 }
 
@@ -742,7 +755,7 @@ body {
 /* Cor Verde */
 .alert-emerald {
     background-color: var(--emerald-50);
-    border-left: 4px solid var(--emerald-500);
+    border-left: 4px solid var(--emerald-600);
 }
 
 .alert-emerald .alert-text {
@@ -1037,6 +1050,11 @@ details.accordion-light summary .summary-text {
     margin-top: 4px;
 }
 
+.tag-red {
+    background-color: var(--red-100);
+    color: var(--red-800);
+}
+
 .tag-amber {
     background-color: var(--amber-100);
     color: var(--amber-800);
@@ -1146,6 +1164,10 @@ details.accordion-light summary .summary-text {
 .task-subtitle {
     font-size: 0.75rem;
     color: var(--slate-500);
+}
+
+.task-subtitle ol, .task-subtitle ul {
+    padding-inline-start: 17px !important;
 }
 
 
