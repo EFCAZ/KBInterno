@@ -108,7 +108,6 @@ body {
 }
 
 
-
 /* ==========================================================================
     BOTÃO SUBIR AO TOPO
    ========================================================================== */
@@ -284,6 +283,19 @@ body {
         max-height: calc(100vh - 64px); /* Garante que caiba na tela */
         overflow-y: auto; /* Permite rolagem interna no sidebar se as anotações forem muito grandes */
         padding-right: 4px; /* Espaço para a scrollbar não colar no conteúdo */
+    }
+
+    .sidebar {
+        /* Firefox */
+        scrollbar-width: none; 
+
+        /* Internet Explorer e Edge antigo */
+        -ms-overflow-style: none; 
+    }
+
+    /* Chrome, Safari, Opera e Chrome para Android */
+    .sidebar::-webkit-scrollbar {
+        display: none;
     }
 }
 
