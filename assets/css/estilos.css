@@ -398,7 +398,26 @@ body {
     border-color: var(--primary);
 }
 
-#noteOthers {
+.sidebar-card .notes-checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.sidebar-card .notes-checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.sidebar-card .notes-checkbox-item input {
+    cursor: pointer;
+}
+
+#notaOutros {
     height: 70px;
 }
 
