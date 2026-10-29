@@ -68,23 +68,23 @@
             <div class="sidebar-title">Anotações</div>
 
             <div class="notes-field-group">
-                <label for="noteActivePre" class="notes-label">Cadastro ativo e/ou Pré-cadastro?</label>
-                <textarea id="noteActivePre" class="note-input" placeholder="Escreva aqui..."></textarea>
+                <label for="notaTipoEntrada" class="notes-label">Cadastro ativo e/ou Pré-cadastro?</label>
+                <textarea id="notaTipoEntrada" class="note-input" placeholder="Escreva aqui..."></textarea>
             </div>
 
             <div class="notes-field-group">
-                <label for="noteApproval" class="notes-label">Terá aprovação de pré-cadastro?</label>
-                <textarea id="noteApproval" class="note-input" placeholder="Escreva aqui..."></textarea>
+                <label for="notaAprovacaoPreCadastro" class="notes-label">Terá aprovação de pré-cadastro?</label>
+                <textarea id="notaAprovacaoPreCadastro" class="note-input" placeholder="Escreva aqui..."></textarea>
             </div>
 
             <div class="notes-field-group">
-                <label for="noteBranchLine" class="notes-label">Ramo ou Linha?</label>
-                <textarea id="noteBranchLine" class="note-input" placeholder="Escreva aqui..."></textarea>
+                <label for="notaRamoOuLinha" class="notes-label">Ramo ou Linha?</label>
+                <textarea id="notaRamoOuLinha" class="note-input" placeholder="Escreva aqui..."></textarea>
             </div>
 
             <div class="notes-field-group">
-                <label for="noteOthers" class="notes-label">Outras anotações</label>
-                <textarea id="noteOthers" class="note-input" placeholder="Escreva aqui..."></textarea>
+                <label for="notaOutros" class="notes-label">Outras anotações</label>
+                <textarea id="notaOutros" class="note-input" placeholder="Escreva aqui..."></textarea>
             </div>
 
             <button class="btn-copy-notes" onclick="copyNotes()">Copiar Anotações</button>
@@ -1135,10 +1135,10 @@
         // Copiar Anotações
         function copyNotes() {
             const fields = [
-                { label: 'CADASTRO ATIVO E/OU PRÉ CADASTRO?', id: 'noteActivePre' },
-                { label: 'APROVAÇÃO DE PRÉ-CADASTRO?', id: 'noteApproval' },
-                { label: 'RAMO DE ATIVIDADE OU LINHA DE FORNECIMENTO?', id: 'noteBranchLine' },
-                { label: 'OUTRAS ANOTAÇÕES', id: 'noteOthers' }
+                { label: 'CADASTRO ATIVO E/OU PRÉ CADASTRO?', id: 'notaTipoEntrada' },
+                { label: 'APROVAÇÃO DE PRÉ-CADASTRO?', id: 'notaAprovacaoPreCadastro' },
+                { label: 'RAMO DE ATIVIDADE OU LINHA DE FORNECIMENTO?', id: 'notaRamoOuLinha' },
+                { label: 'OUTRAS ANOTAÇÕES', id: 'notaOutros' }
             ];
 
             const formattedNotes = fields.map(field => {
