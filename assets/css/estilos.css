@@ -330,12 +330,13 @@ body {
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--slate-700);
+    background-color: #FFF;
     border-radius: var(--radius-md);
     text-decoration: none;
     transition: all 0.2s;
 }
 
-.sidebar-link i {
+.sidebar-link i{
     width: 16px;
     text-align: center;
 }
@@ -344,7 +345,6 @@ body {
     background-color: var(--primary-light);
     color: var(--primary);
 }
-
  .sidebar-card textarea {
    width: 100%;
    height: 200px;
@@ -536,6 +536,23 @@ body {
 /* ==========================================================================
    CARDS DE CONTEÚDO E COMPONENTES
    ========================================================================== */
+.flex {
+    display: flex;
+    gap: 15px;
+}
+
+.modules {
+    background-color: var(--primary);
+    flex-direction: row;
+    padding: 10px;
+}
+
+.modules button {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+}
+
+
 .content-card {
     background: #fff;
     border-radius: var(--radius-lg);
@@ -594,9 +611,12 @@ body {
     gap: 10px;
 }
 
-.guide-card ol, .guide-card ul {
+.guide-card p {
+    margin-bottom: 7px;
+}
+
+.guide-card ol, .guide-card ul,  {
     padding-left: 20px;
-    font-family: var(--font-text);
 }
 
 .guide-card ol > li, .guide-card ul > li {
