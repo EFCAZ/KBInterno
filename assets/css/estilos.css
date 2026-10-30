@@ -856,7 +856,7 @@ details.script-box summary .summary-text {
     position: relative;
 }
 
-.script-content p {
+.script-content p, .script-content ol, .script-content ul {
     margin-bottom: 12px;
 }
 
@@ -864,6 +864,10 @@ details.script-box summary .summary-text {
     border: 1px solid var(--slate-700);
     border-bottom: none;
     margin: 20px 0;
+}
+
+.script-content ol, .script-content ul {
+    margin-left: 25px;
 }
 
 .script-content .destaque, .script-content .destaque-variacao, .script-content .destaque-anotacao {
@@ -933,6 +937,13 @@ details.accordion-light summary .summary-text {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+details.accordion-light input, details.script-box input {
+    cursor: pointer;
+    accent-color: var(--primary);
+    width: 15px;
+    height: 15px;
 }
 
 .accordion-light-content {
