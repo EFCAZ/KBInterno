@@ -398,6 +398,14 @@ body {
     border-color: var(--primary);
 }
 
+.sidebar-card .note-input option[value="Sim"], .sidebar-card .notes-field-group select:has(option[value="Sim"]:checked) {
+    color: var(--primary);
+}
+
+.sidebar-card .note-input option[value="Não"], .sidebar-card .notes-field-group select:has(option[value="Não"]:checked) {
+    color: var(--red-700);
+}
+
 .sidebar-card .notes-checkbox-group {
     display: flex;
     flex-direction: column;
@@ -415,6 +423,7 @@ body {
 
 .sidebar-card .notes-checkbox-item input {
     cursor: pointer;
+    accent-color: var(--primary);
 }
 
 #notaOutros {
@@ -1009,8 +1018,9 @@ details.accordion-light summary .summary-text {
 }
 
 .access-icon {
-    width: 32px;
-    height: 32px;
+    padding: 15px;
+    /*width: 32px;
+    height: 32px;*/
     border-radius: var(--radius-sm);
     background-color: var(--primary-light);
     color: var(--primary);

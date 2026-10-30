@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etapa 2: Fluxo de Homologação e Análise de Cadastro</title>
+    
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Ícones FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Ícones Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Estilos CSS Externo -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EFCAZ/KBInterno@latest/assets/css/estilos.css">
+    <link rel="stylesheet" href="../../../assets/css/estilos.css">
+
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header" style="display: none;">
+        <div class="header-container">
+            <div class="brand">
+                <a href="https://sites.google.com/efcaz.com.br/interno/onboarding" target="_blank" class="brand-logo">
+                    <i id="meuIcone" class="bi bi-stack" 
+                        onmouseenter="this.className='bi bi-layers-fill'" 
+                        onmouseleave="this.className='bi bi-stack'">
+                    </i>
+                </a>
+
+                <div class="brand-info">
+                    <a href="https://sites.google.com/efcaz.com.br/interno/onboarding">
+                        <h1 class="brand-title">Onboarding</h1>
+                    </a>
+
+                    <p class="brand-subtitle">Etapa 1: Overview & Governança</p>
+                </div>
+            </div>
+
+            <!-- Global Actions -->
+            <div class="header-actions">
+                <button id="btnAction" class="btn btn-primary-light">
+                    <i class="fa-solid fa-square-check"></i>
+                    <span>Tarefas</span>
+                </button>
+
+                <button id="btnAction" class="btn btn-primary-light">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Template de ata</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+
+        <!-- Sidebar (Desktop) -->
+        <aside class="sidebar">
+
+            <!-- Anotações -->
+            <div class="sidebar-card">
+                <div class="sidebar-title">Anotações</div>
+
+                <div class="notes-field-group">
+                    <label for="notaCamposDinamicos" class="notes-label">Campos personalizados</label>
+                    <textarea id="notaCamposDinamicos" class="note-input" placeholder="Escreva aqui..."></textarea>
+                </div>
+
+                <div class="notes-field-group">
+                    <label for="notaRegimeTributario" class="notes-label">Coleta do regime tributário?</label>
+                    <select id="notaRegimeTributario" class="note-input" required>
+                        <option value="" disabled selected>Selecione...</option>
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                    </select>
+                </div>
+
+                <div class="notes-field-group">
+                    <label class="notes-label">Obrigatoriedades</label>
+                    <div class="notes-checkbox-group">
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Dados de Pagamento"> Dados de Pagamento
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Principais Referências"> Principais Referências
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Quadro Societário"> Quadro Societário
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Balanço Patrimonial"> Balanço Patrimonial
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Entidade de Classe"> Entidade de Classe
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Certificação Técnica"> Certificação Técnica
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Responsável Técnico"> Responsável Técnico
+                        </label>
+                    </div>
+                </div>
+
+                <div class="notes-field-group">
+                    <label for="notaBloquearLinhaFornecimento" class="notes-label">Bloquear linha de fornecimento?</label>
+                    <select id="notaBloquearLinhaFornecimento" class="note-input" required>
+                        <option value="" disabled selected>Selecione...</option>
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                    </select>
+                </div>
+
+                <div class="notes-field-group">
+                    <label for="notaRemoverEndereco" class="notes-label">Remover "Endereço" do colaborador?</label>
+                    <select id="notaRemoverEndereco" class="note-input" required>
+                        <option value="" disabled selected>Selecione...</option>
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                    </select>
+                </div>
+
+                <div class="notes-field-group">
+                    <label for="otaRemoverContato" class="notes-label">Remover "Contato" do colaborador?</label>
+                    <select id="otaRemoverContato" class="note-input" required>
+                        <option value="" disabled selected>Selecione...</option>
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                    </select>
+                </div>
+
+                <div class="notes-field-group">
+                    <label for="notaRfi" class="notes-label">Possuem formulário para fornecedor?</label>
+                    <select id="notaRfi" class="note-input" required>
+                        <option value="" disabled selected>Selecione...</option>
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                    </select>
+                </div>
+
+                <div class="notes-field-group">
+                    <label for="notaSetores" class="notes-label">Comunicação entre setores?</label>
+                    <textarea id="notaSetores" class="note-input" placeholder="Escreva aqui..."></textarea>
+                </div>
+
+                <div class="notes-field-group">
+                    <label for="notaOutros" class="notes-label">Outros</label>
+                    <textarea id="notaOutros" class="note-input" placeholder="Escreva aqui..."></textarea>
+                </div>
+
+                <button class="btn-copy-notes" onclick="copyNotes()">Copiar Anotações</button>
+            </div>
+
+            <!-- Navegação -->
+            <div class="sidebar-card" style="margin-bottom: 0;">
+                <a href="#checklists" class="sidebar-link active">
+                    <i class="fa-solid fa-square-check"></i> Tarefas
+                </a>
+                <a href="#template-email" class="sidebar-link">
+                    <i class="fa-solid fa-envelope"></i> Template da Ata
+                </a>
+                <a href="https://sites.google.com/efcaz.com.br/interno/onboarding/etapa-2" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="sidebar-link"
+                   onmouseenter="this.querySelector('i').className = 'fa-solid fa-circle-right'" 
+                   onmouseleave="this.querySelector('i').className = 'fa-regular fa-circle-right'">
+                    <i class="fa-regular fa-circle-right"></i> Próxima Etapa
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- HERO SECTION -->
+            <section id="hero" class="hero-section">
+                <div class="hero-content">
+                    <span class="badge-hero">Etapa 2</span>
+                    <h2 class="hero-title">Fluxo de Homologação e Análise de Cadastro</h2>
+                    <p class="hero-description">
+                        Esta etapa é dedicada a mostrar aos clientes como funciona o fluxo de homologação e análise dos fornecedores.
+                    </p>
+                </div>
+                <img src="https://github.com/EFCAZ/KBInterno/blob/main/assets/images/logomarca/efcaz-icone-branco.png?raw=true" class="hero-bg-icon">
+            </section>
+
+            <!-- 1. INTRODUÇÃO AO ONBOARDING -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="step-number">1</div>
+                    <div>
+                        <h3 class="card-title">Introdução ao Onboarding</h3>
+                        <p class="card-subtitle">Boas-vindas e alinhamento do encontro passado</p>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+
+                    <ul>
+                        <li>Dar boas-vindas aos participantes.</li>
+                        <li>Relembrar que no primeiro encontro foram apresentados:
+                            <ul>
+                                <li>Overview do sistema</li>
+                                <li>Entrada do fornecedor no sistema</li>
+                                <li>Como o fornecedor preenche os dados</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Roteiro -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><i class="fa-solid fa-comment-dots"></i> Roteiro de fala sugerido</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p>Olá <strong class="destaque2">Fulanos</strong> sejam bem vindos novamente, hoje é o nosso segundo encontro de treinamento.</p>
+                        <p>No encontro passado eu mostrei um apanhado geral do sistema pra vocês conhecerem, também falamos sobre os acessos de vocês e dos fornecedores. De prática, vocês criaram ramo de atividade, linha de fornecimento, documentos e criaram também um convite para um fornecedor fictício.</p>
+                        <p>Vocês têm alguma dúvida sobre os processos que vimos no encontro passado?</p>
+                        <p class="destaque">Provavelmente vão dizer que não</p>
+                        <p>Ok, então hoje a gente vai ver o que acontece depois disso, ou seja, como o fornecedor vai usar o sistema e como vocês vão fazer a análise desse cadastro que ele enviou.</p>
+                    </div>
+                </details>
+            </section>
+
+
+            <!-- 2. OBJETIVO DO ENCONTRO -->
+            <section id="objetivo" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h3 class="card-title">Objetivo do Encontro</h3>
+                        <p class="card-subtitle">Alinhamento conceitual e operacional inicial</p>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+                    <p>O objetivo é que todos compreendam:</p>
+                    <ul>
+                        <li>Como funciona o processo de homologação</li>
+                        <li>Como acontece a análise documental</li>
+                        <li>Quais conceitos serão utilizados durante toda a implantação</li>
+                    </ul>
+                </div>
+
+                <!-- Roteiro -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><i class="fa-solid fa-comment-dots"></i> Roteiro de fala sugerido</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p>O nosso sistema foi desenvolvido pensando em tirar de vocês o peso de organizar os documentos dos fornecedores, então o objetivo é que os próprios fornecedores sejam responsáveis manter os documentos atualizados no cadastro da empresa deles aqui dentro da plataforma, pra que chegue bem mastigadinho pra vocês, e fique apenas a responsabilidade de verificar se o fornecedor está ou não em conformidade.</p>
+                        <p>Então primeiramente eu vou resumir pra vocês como funciona o processo de homologação.</p>
+                        <p>Gente, vocês já ouviram falar nessa palavra? Homologação.<br><span class="destaque">Aguardar resposta</span></p>
+                        <p>Homologação é quando algo passa por uma análise e é aprovado.</p>
+                        <p>Então, o objetivo do seu fornecedor é ser homologado por vocês. É tudo o que ele quer.</p>
+                        <p>Então ele vai cadastrar a empresa e os documentos, e vai enviar pra vocês. Vocês vão fazer a análise e vão dar o resultado. É isso.</p>
+                        <p>Se o resultado for de aprovação, esse fornecedor está homologado e a partir daí ele só vai ter que manter os documentos atualizados, que passa sempre por uma nova análise.</p>
+                        <p>Esse fluxo faz sentido pra vocês?<br><span class="destaque">Aguardar resposta</span></p>
+                    </div>
+                </details>
+            </section>
+
+
+            <!-- 3. PRÉ-CADASTRO -->
+            <section id="modulos" class="content-card">
+                <div class="card-header space-between flex-wrap">
+                    <div class="flex-align-center">
+                        <div class="step-number">3</div>
+                        <div>
+                            <h3 class="card-title">Pré-cadastro</h3>
+                            <p class="card-subtitle">Somente se o cliente for utilizar essa função</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+
+                    <ul>
+                        <li>Pedir para alguém acessar a plataforma.</li>
+                        <li>Deve-se relembrar como realiza o pré-cadastro.</li>
+                        <li>Deixe que o próprio cliente faça, não dê a resposta de bandeja ou eles não aprendem.</li>
+                        <li>Se não souberem mesmo, instigue eles a procurar no sistema ou consultar a documentação para ajuda</li>
+                    </ul>
+                </div>
+
+                <!-- Roteiro -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><i class="fa-solid fa-comment-dots"></i> Roteiro de fala sugerido</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p>Vou precisar de um voluntário pra acessar a plataforma e compartilhar a tela.<br><span class="destaque">Aguardar resposta e instigá-los em caso de resistência ou silêncio</span></p>
+                        <p>Pessoal, então primeiro o fornecedor tem que ter acesso à plataforma né. Tem duas formas de fazer isso. Vocês lembram quais são?</p>
+                        <p class="destaque">Resposta: Se cadastrando sozinho na tela de login ou por convite via Pré-cadastro</p>
+                        <p>Certo, então, <span class="destque2">Fulano</span>, faz aí um Pré-cadastro de qualquer empresa, pode ser da Google por exemplo. Só pra gente simular.</p>
+                        <p><span class="text-indianred">Se a pessoa não souber:</span> Tá, olha aí a plataforma, onde vocês acham que pode ser? Tenta procurar. Pode clicar sem medo.</p>
+                        <p class="destaque">Eventualmente eles vão encontrar, e você deve instigá-los com frases como "E agora?"<br>O e-mail do representante pode ser <strong>fornecedor@teste.com.br</strong></p>
+                        <p><span class="destaque">Após a conclusão do Pré-cadastro</span><br>Blz, e o que acontece depois disso?</p>
+                        <p class="destaque">Resposta: Fornecedor recebeu um e-mail com o link, login e senha. O pré-cadastro se tornou uma solicitação que o fornecedor deve preencher e enviar para análise.<br>Se eles não souberem mesmmo, pode dar a resposta, mas faz eles irem no menu <strong>Solicitações</strong>.</p>
+                    </div>
+                </details>
+            </section>
+
+            <!-- 4. JORNADA DO FORNECEDOR -->
+            <section id="acessos" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">4</div>
+                    <h3 class="card-title">Jornada do Fornecedor</h3>
+                </div>
+
+                <div class="guide-card">
+
+                    <ul>
+                        <li>Compartilhar a tela.</li>
+                        <li>Entrar como o fornecedor do Pré-Cadastro do encontro passado ou desse.</li>
+                        <li>Passar por cada menu preenchendo-os ou mostrando o que acontece quando clica em <strong>Novo</strong>.</li>
+                        <li>Aproveita esse momento para averiguar quais menus serão obrigatórios ou não.</li>
+                        <li>Cita que além das informações que o sistema pede, eles podem criar campos personalizados. <em>Exemplo: Regime Tributário</em>.</li>
+                        <li>Mostrar brevemente como os documentos aparecerão para o fornecedor, seja os que estão dentro de categorias ou não.</li>
+                    </ul>
+
+                    <div class="alert-box alert-emerald" style="margin-top: 12px;">
+                        <div class="alert-text">
+                            <strong>Mostrar que o fornecedor pode:</strong>
+                            <ul style="padding-left: 15px; margin-top: 4px;">
+                                <li>Salvar o cadastro e continuar depois</li>
+                                <li>Possuir várias linhas de fornecimento</li>
+                                <li>Enviar documentos específicos para cada categoria</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 15px;" class="alert-box alert-amber">
+                        <div class="alert-header">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <span>Anotações</span>
+                        </div>
+                        <ul class="alert-text">
+                            <li>Campos personalizados?</li>
+                            <li>Coleta do regime tributário?</li>
+                            <li>Obrigatoriedades
+                                <ul>
+                                    <li>Dados de pagamento</li>
+                                    <li>Quadro Societário</li>
+                                    <li>Balanço Patrimonial</li>
+                                    <li>Entidade de Classe</li>
+                                    <li>Certificação Técnica</li>
+                                    <li>Responsável Técnico</li>
+                                </ul>
+                            </li>
+                            <li>Bloquear linha de fornecimento?</li>
+                            <li>Remover Endereço do colaborador</li>
+                            <li>Remover Contato do colaborador</li>
+                            <li>Possuem formulário para fornecedor?</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Roteiro -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><i class="fa-solid fa-comment-dots"></i> Roteiro de fala sugerido</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p>Então, agora é com o fornecedor e eu vou fazer o papel dele.<br><span class="destaque">Logar como o fornecedor do Pré-Cadastro do encontro passado ou desse</span></p>
+                        <p>se eu não tivesse recebido o convite, era só ir em <strong>Nova empresa</strong>, mas como eu recebi, já tem um pré-cadastro, então eu vou em <strong>Continuar preenchimento</strong>.</p>
+                        <p>Aqui do lado esquerdo tem o menu desse cadastro, por onde eu posso ir navegando, e do lado direito ficam os dados do menu que tiver selecionado.</p>
+                        <p class="destaque"><strong>GERAL</strong></p>
+
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+
+                            <div class="concept-card-dark">
+                                <div class="concept-title text-primary">Identificação</div>
+                                <span class="concept-text-dark">
+                                    A gente começa pela <strong>Identificação</strong> da empresa, então vai ter o nome dela, o CNPJ, porte, natureza jurídica e esses outros aqui que são opcionais.
+                                    <br>
+                                    Mas se esses dados não forem suficientes, ou se vocês quiserem coletar mais dados desse fornecedor, dá pra gente criar campos persoanlzados.
+                                    <br>
+                                    Nesse momento, com o fluxo atual de vocês, tem alguma informação da empresa que vocês querem coletar além dessas aqui?
+                                    <br>
+                                    <span class="destaque-anotacao">&nbsp;Anotar resposta&nbsp;</span>
+                                    <br><br>
+                                    Alguns clientes têm usado por exemplo, pra coletar o regime tributário do fornecedor, pra saber se é simples nacional, MEI, essas coisas. Vocês acham necessário tem esse registro, por exemplo?
+                                    <br>
+                                    <span class="destaque-anotacao">&nbsp;Anotar resposta&nbsp;</span>
+                                    <br><br>
+
+                                    Aí o fornecedor vai seguindo, ou pelo menu à esquerda ou clicando em <strong>Salvar e Avançar</strong>.
+                                    <br>
+                                    Inclusive, tá vendo aqui que alguns menus estão com asterisco vermelho? O que vocês acham que significa?
+                                    <br>
+                                    <span class="destaque">Resposta: Que eles são obrigatórios</span>
+                                    <br>
+                                    Inclusive, vocês podem escolher quais vão ser obrigatórios ou não. Então a gente vai passando por cada um deles e vocês já podem ir decidindo isso.
+                                </span>
+                            </div>
+
+                            <div class="concept-card-dark">
+                                <div class="concept-title text-primary">Endereço</div>
+                                <span class="concept-text-dark">O <strong>Endereço</strong> já vem automático da receita federal, então o fornecedor não precisa nem mexer aqui, a menos que vocês queiram criar algum campo personalizado.</span>
+                            </div>
+
+                            <div class="concept-card-dark">
+                                <div class="concept-title text-primary">Contato</div>
+                                <span class="concept-text-dark">Aqui no <strong>Contato</strong> dá pra colocar quantos quiserem, e todos que estiverem aqui vão receber as notificações da plataforma, mesmo que não sejam os responsáveis pelo cadastro.</span>
+                            </div>
+
+                            <div class="concept-card-dark">
+                                <div class="concept-title text-primary">Dados de Pagamento</div>
+                                <span class="concept-text-dark">
+                                    Aqui nos <strong>Dados de Pagamento</strong> dá pra colocar quantas contas bancárias quiser.
+                                    <br>
+                                    Vou colocar aqui uma conta fictícia.
+                                    <br>
+                                    E dá também pra colocar chave pix e os dados da pessoa responsável pela conta.
+                                    <br>
+                                    Dá pra anexar comprovante bancário, mas por padrão, isso é opcional, mas se quiser dá pra mudar.
+                                    <br>
+                                    E aí, querem tornar obrigatório os dados de pagamento?<br><span class="destaque-anotacao">&nbsp;Anotar resposta&nbsp;</span>
+                                    <br><br>
+                                    E o comprovante da conta, querem que seja obrigatório ou opcional?
+                                    <br>
+                                    <span class="destaque-anotacao">&nbsp;Anotar resposta&nbsp;</span>
+                                </span>
+                            </div>
+
+                            <div class="concept-card-dark">
+                                <div class="concept-title text-primary">CNAE</div>
+                                <span class="concept-text-dark">O <strong>CNAE</strong> também puxa automático, que são as atividades econômicas da empresa né. A gente pode passar direto.</span>
+                            </div>
+
+                            <div class="concept-card-dark">
+                                <div class="concept-title text-primary">Linha de Fornecimento</div>
+                                <span class="concept-text-dark">
+                                    <strong>Linha de Fornecimento</strong> é aquela categoria que vocês tinham selecionado lá no Pré-cadastro. Eu recomendo que mantenham essa aba obrigatória, porque a Linha de Fornecimento é gatilho pra muita configuração tá.
+                                    <br>
+                                    Eu consigo alterar as linhas, então consigo tirar essa, adicionar outra, e dá pra ter mais de uma. Inclusive, a gente pode bloquear essa alteração, aí o fornecedor não vai poder mudar nada aqui. Vocês acham interessante deixar assim, como tá hoje, ou bloquear?
+                                    <br>
+                                    <span class="destaque-anotacao">&nbsp;Anotar resposta&nbsp;</span>
+                                </span>
+                            </div>
+
+                            <div class="concept-card-dark">
+                                <div class="concept-title text-primary">Principais Referências</div>
+                                <span class="concept-text-dark">As <strong>Principais Referências</strong> são para que o fornecedor venda seu peixe né, pra ele colocar referências sobre o trabalho deles, como um portifólio. Querem deixar obrigatório, pessoal?<br><span class="destaque-anotacao">&nbsp;Anotar resposta&nbsp;</span></span>
+                            </div>
+
+                            <div class="concept-card-dark">
+                                <div class="concept-title text-primary">Responsáveis de cadastro</div>
+                                <span class="concept-text-dark">
+                                    E os <strong>Responsáveis de cadastro</strong> são aqueles que podem efetivamente atualizar o cadastro da empresa. Antes do fornecedor ser homologado, só pode ter um, mas depois que ele é aprovado, dá pra pôr mais.
+                                    <br>
+                                    Alguma dúvida pessoal?
+                                    <br>
+                                    <span class="destaque">Aguardar resposta</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <p class="destaque"><strong>JURÍDICO</strong></p>
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <div class="concept-card-dark">
+                                <div class="concept-title text-primary">Ato Constitutivo</div>
+                                <span class="concept-text-dark">Aqui tem o <strong>Ato Constitutivo</strong>, com algumas informações da empresa, mas ele vem automático também, então a gente pode pular.</span>
+                            </div>
+
+                            <div class="concept-card-dark">
+                                <div class="concept-title text-primary">Quadro Societário</div>
+                                <span class="concept-text-dark">O <strong>Quadro Societário</strong> é onde se colocam os dados do dono e sócios da empresa. Se vocês contrataram no pacote, ele vai vir automático também, mas se não, o fornecedor vai ter que colocar isso manualmente. Querem tornar obrigatório?<br><span class="destaque">Aguardar resposta</span></span>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <p class="destaque"><strong>FINANCEIRO</strong></p>
+
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <div class="concept-card-dark">
+                                <div class="concept-title text-primary">Balanço Patrimonial</div>
+                                <span class="concept-text-dark">
+                                    Aqui temos o <strong>Balanço Patrimonial</strong>, que normalmente é colocado pelo contador da empresa né.
+                                    <br>
+                                    <span class="destaque">Mostrar os dados que vem lá dentro</span>
+                                    <br>
+                                    Querem que esse menu seja obrigatório?
+                                    <br>
+                                    <span class="destaque-anotacao">&nbsp;Anotar resposta&nbsp;</span>
+                                    <br><br>
+                                    E o anexo, querem deixar obrigatório?
+                                    <br>
+                                    <span class="destaque-anotacao">&nbsp;Anotar resposta&nbsp;</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <p class="destaque"><strong>TÉCNICO</strong></p>
+                        <p>Aqui é onde o fornecedor vai informar a capacidade técnica e as responsabilidades legais da empresa.</p>
+
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <div class="concept-card-dark">
+                                <div class="concept-title text-primary">Entidade de Classe</div>
+                                <span class="concept-text-dark">
+                                    Na <strong>Entidade de Classe</strong>, eu vou comprovar que a empresa tá habilitada pra atuar em determinada área.
+                                    <br>
+                                    Então eu escolho o conselho de classe, coloco o nº de registro, data de vencimento é opcional e posso anexar um comprovante.
+                                </span>
+                            </div>
+
+                            <div class="concept-card-dark">
+                                <div class="concept-title text-primary">Certificação Técnica</div>
+                                <span class="concept-text-dark">
+                                    A <strong>Certificação Técnica</strong> é pra comprovar que a empresa tem gente qualificada pra executar o serviço que ela se propõe.
+                                    <br>
+                                    Então, minha empresa tem certificado ISO, vou colocar aqui.
+                                </span>
+                            </div>
+
+                            <div class="concept-card-dark">
+                                <div class="concept-title text-primary">Responsável Técnico</div>
+                                <span class="concept-text-dark">
+                                    O <strong>Responsável Técnico</strong> é a pessoa que se responsabiliza legalmente pelos serviços da empresa, então, um engenheiro de segurança do trabalho, um arquiteto, o médico coordenador e por aí vai.
+                                </span>
+                            </div>
+                        </div>
+
+                        <br>
+                        <p>Vocês vão querer deixar algum desses obrigatórios?<br><span class="destaque-anotacao">&nbsp;Anotar resposta&nbsp;</span></p>
+                        <p>E os anexos, devem ser obrigatórios?<br><span class="destaque-anotacao">&nbsp;Anotar resposta&nbsp;</span></p>
+                        
+                        <br>
+
+                        <p class="destaque"><strong>COLABORADORES</strong></p>
+                        <p>Aqui é onde vai ter a gestão de terceiros, a empresa vai colocar os colaboradores e terceiros associados a ela.</p>
+                        <p class="destaque">Mostrar os dados que vem lá dentro</p>
+                        <p>Inclusive, dá pra colocar campos personalizados aqui também.</p>
+                        <p>E se vocês quiserem a gente pode ocultar o menu de Endereço e de Contato, se vocês acharem que não precisa. E aí, vocês querem manter ou tirar?<br><span class="destaque-anotacao">&nbsp;Anotar resposta&nbsp;</span></p>
+
+                        <br>
+
+                        <p class="destaque"><strong>DOCUMENTOS</strong></p>
+                        <p>Os documentos é onde vão colocar obviamente os documentos da empresa.</p>
+                        <p>No encontro passado a gente cadastrou um né, e tinham várias configurações, que vão se converter nessa tela. Mas a obrigatoriedade de cada um vocês vão definir na planilha de documentos que eu disponibilizo em todas as atas de reunião.</p>
+                        <p>Mas vamos pro que importa. Gente, como o sistema sabe quais documentos pedir pra um fornecedor? Vocês lembram?<br><span class="destaque">Pelos ramos de atividade e linhas de fornecimento</span></p>
+                        <p>Então assim, na hora que vocês estiverem preenchendo a planilha, tenham isso em mente. Cada documento vai ter que ser vinculado às linhas de fornecimento ou ramos de atividade que fazem sentido.</p>
+                        <p>E só mostrando, dá pra separar os documentos por categorias ou deixar sem nenhuma.<br><span class="destaque">Mostrar como utilizar as categorias</span></p>
+
+                        <br>
+
+                        <p class="destaque"><strong>AVALIAÇÕES</strong></p>
+                        <p>E por fim, aqui nas <strong>Avaliações</strong> a gente pode pedir pro fornecedor responder um formulário.</p>
+                        <p>Hoje me dia vocês têm algum?<br><span class="destaque-anotacao">&nbsp;Anotar resposta&nbsp;</span></p>
+
+                        <br>
+
+                        <p class="destaque"><strong>ENVIAR PARA ANÁLISE</strong></p>
+                        <p>Agora é só enviar para análise e pronto. O fornecedor não pode mais mexer na solicitação dele. Agora é que vem a parte de vocês.</p>
+                    </div>
+                </details>
+            </section>
+
+
+            <!-- 5. ANÁLISE DE CADASTRO -->
+            <section id="criacao-acessos" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">5</div>
+                    <div>
+                        <h3 class="card-title">Análise de cadastro</h3>
+                        <p class="card-subtitle">Como localizar solicitações, analisá-las e dar um resultado</p>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+
+                    <a href="https://efcaz.movidesk.com/kb/pt-br/article/547502/kb90011-srm-como-criar-um-pre-cadastro?menuId=51758-142328-547502&ticketId=&q=" target="_blank" class="direcionar-artigo">
+                        <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
+
+                    <ul>
+                        <li>Pedir para um deles compartilhar a tela</li>
+                        <li>Mostrar como localizar a solicitação pendente de análise: Dashboard ou menu Solicitações</li>
+                        <li>Mostrar como começar uma análise</li>
+                        <li>Navegação pela solicitação</li>
+                        <li>Como solicitar parecer técnico a um setor</li>
+                        <li>Como cadastrar pendências</li>
+                        <li>Como enviar pendências</li>
+                        <li>Como incluir observações internas no resultado da solicitação</li>
+                        <li>Como fazer aprovação ou reprovação</li>
+                    </ul>
+
+                    <div style="margin-top: 15px;" class="alert-box alert-amber">
+                        <div class="alert-header">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <span>Anotações</span>
+                        </div>
+                        <ul class="alert-text">
+                            <li>Haverá comunicação entre setores?</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- 6. SOLICITAÇÕES × FORNECEDORES -->
+            <section id="conceitos" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">6</div>
+                    <h3 class="card-title">Solicitações × Fornecedores</h3>
+                </div>
+
+                <div class="guide-card">
+
+                    <p>Perguntar porque a empresa que eles aprovaram aparece no menu <strong>Fornecedores</strong>, mas a outra só em <strong>Solicitações</strong></p>
+
+                    <p>Reforçar alguns conceitos:</p>
+
+                    <ul>
+                        <li>O fornecedor não altera dados diretamente no cadastro vigente</li>
+                        <li>Toda alteração gera um a nova solicitação que passa por aprovação e só aí sobre pro cadastro vigente</li>
+                        <li>O histórico permanece armazenado</li>
+                    </ul>
+
+                </div>
+            </section>
+
+
+            <!-- 7. GESTÃO PÓS HOMOLOGAÇÃO -->
+            <section id="documentos" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">7</div>
+                    <div>
+                        <h3 class="card-title">Gestão pós homologação</h3>
+                        <p class="card-subtitle">Ações operacionais, auditoria e histórico completo</p>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+
+                    <ul>
+                        <li>Mostrar como acessar os cadastros vigentes dos fornecedores</li>
+                        <li>Mostrar opções adicionais que aparecem:</li>
+                    </ul>
+
+                    <div class="grid-2-cols">
+
+                        <div class="info-card">
+                            <div class="info-card-header">
+                                <i class="fa-solid fa-crown"></i> Premium
+                            </div>
+                            <ul class="info-card-text">
+                                <li>Contratos</li>
+                                <li>SIT/MTE - Infrações Trabalhistas</li>
+                                <li>Listas Restritivas</li>
+                                <li>Mídia Negativa</li>
+                                <li>Avaliações</li>
+                                <li>Ocorrências</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-card-header">
+                                <i class="fa-solid fa-gift"></i> Nativos
+                            </div>
+                            <div class="info-card-text">
+                                <p><strong>Ações</strong></p>
+                                <ul>
+                                    <li>Emitir, renovar ou cancelar certificados cadastrais (necessário para buscas automáticas)</li>
+                                    <li>Inativar o fornecedor</li>
+                                    <li>Emitir Dossiê (resumo do cadastro)</li>
+                                    <li>Registrar Penalidades</li>
+                                </ul>
+
+                                <p><strong>Históricos</strong></p>
+                                <ul>
+                                    <li>Certificado Cadastral</li>
+                                    <li>Observações (Notas que se colocam para a solicitação toda)</li>
+                                    <li>Solicitações (Atualmente não funciona)</li>
+                                    <li>Pareceres (Registro de comunicação entre os setores)</li>
+                                    <li>Termos e Condições</li>
+                                    <li>Inativações</li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- 8. FINALIZAÇÃO E PRÓXIMOS PASSOS -->
+            <section id="finalizacao" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">8</div>
+                    <div>
+                        <h3 class="card-title">Finalização e Próximos Passos</h3>
+                        <p class="card-subtitle">Atividades a serem concluídas antes do 3º Encontro</p>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+
+                    <div class="grid-2-cols">
+                        <div class="access-box">
+                            <div class="access-header">
+                                <div class="access-icon"><i class="fa-solid fa-rotate-left"></i></div>
+                                <span class="access-title">Realizar a recapitulação dos tópicos trabalhados no encontro</span>
+                            </div>
+                            <ul class="access-list">
+                                <li>Fluxo de homologação completo</li>
+                                <li>A visão do fornecedor</li>
+                                <li>Definição dos módulos obrigatórios</li>
+                                <li>Como realizar análise de uma solicitação</li>
+                                <li>Diferenças entre solicitações e fornecedores homologados</li>
+                            </ul>
+                        </div>
+
+                        <div class="access-box">
+                            <div class="access-header">
+                                <div class="access-icon"><i class="fa-solid fa-tasks"></i></div>
+                                <span class="access-title">Listar as tarefas pendentes para o cliente antes do próximo encontro</span>
+                            </div>
+                            <ul class="access-list">
+                                <li>Revisar e preencher a planilha de usuários internos (caso pendente)</li>
+                                <li>Preenchimento da planilha de documentos</li>
+                                <li>Avaliar a inclusão do ramo de atividade como classificação extra para os fornecedores, além da linha de fornecimento já usada</li>
+                                <li>Definir a necessidade de criar campos personalizados no cadastro de fornecedores para coletar informações extras além das nativas da plataforma</li>
+                                <li>Anotar dúvidas para serem tratadas na reunião seguinte</li>
+                            </ul>
+                        </div>
+
+                        <div class="access-box">
+                            <div class="access-header">
+                                <div class="access-icon"><i class="fa-regular fa-paper-plane"></i></div>
+                                <span class="access-title">Informar que vai enviar a ata da reunião com:</span>
+                            </div>
+                            <ul class="access-list">
+                                <li>Tópicos que vimos hoje</li>
+                                <li>Materiais de apoio</li>
+                                <li>Links das planilhas</li>
+                            </ul>
+                        </div>
+
+                        <div class="access-box">
+                            <div class="access-header">
+                                <div class="access-icon"><i class="fa-regular fa-comment"></i></div>
+                                <span class="access-title">Demais definições</span>
+                            </div>
+                            <ul class="access-list">
+                                <li>Colocar o canal do WhatsApp à disposição para dúvidas pontuais.</li>
+                                <li>Agendar/confirmar a data e horário do próximo encontro.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- 9. CHECKLIST INTERATIVO -->
+            <section id="checklists" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">9</div>
+                    <div>
+                        <h3 class="card-title">Tarefas</h3>
+                        <p class="card-subtitle">Atividades internas a serem concluídas antes do próximo encontro</p>
+                    </div>
+                </div>
+
+                <div class="checklist-container" id="checklistContainer">
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Copiar Anotações</span>
+                            <span class="task-subtitle">Copie as anotações feitas ao lado e adicione como comentário na task "Etapa 2" da jornada Onboarding (CustomerX).</span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Enviar ata de reunião</span>
+                            <span class="task-subtitle">Utilize o template da CustomerX (<i>ONBOARDING | Etapa 2 - Fluxo de Homologação e Análise de Cadastro</i>) ou o daqui para enviar a ata de reunião por e-mail. Incluir <strong>renato.pedroso@efcaz.com.br</strong> como CCO.</span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Baixar o e-mail em PDF e anexar na tarefa da CX</span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Adicionar campos dinâmicos definidos</span>
+                            <span class="task-subtitle">
+                                <a href="https://efcaz.movidesk.com/kb/pt-br/article/574125/kb90043-srm-como-criar-campos-dinamicos?menuId=51758-142332-574125&ticketId=&q=" target="_blank" class="direcionar-artigo" style="text-decoration: none;">
+                                    <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Configurar obrigatoriedades definidas</span>
+                            <span class="task-subtitle">
+                                <a href="https://efcaz.movidesk.com/kb/pt-br/article/581356/kb90077-srm-como-configurar-modulos-exibidos-na-tela-de-cadastro?ticketId=&q=" target="_blank" class="direcionar-artigo" style="text-decoration: none;">
+                                    <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Bloquear alteração de linha de fornecimento se considerado</span>
+                            <span class="task-subtitle">
+                                <a href="https://efcaz.movidesk.com/kb/pt-br/article/562688/kb90035-srm-configuracoes-gerais-disponiveis?ticketId=&q=#opcao_3" target="_blank" class="direcionar-artigo" style="text-decoration: none;">
+                                    <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Remover menus "Endereço" e "Contato" de Terceiros se solicitado</span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Obter formulário RFI e configurar na plataforma</span>
+                            <span class="task-subtitle">
+                                <a href="https://efcaz.movidesk.com/kb/pt-br/article/562694/kb90056-srm-o-que-sao-avaliacoes-e-quais-os-tipos-disponiveis?menuId=51758-142333-562694&ticketId=&q=" target="_blank" class="direcionar-artigo" style="text-decoration: none;">
+                                    <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Configurar setores definidos</span>
+                            <span class="task-subtitle">
+                                <a href="https://efcaz.movidesk.com/kb/pt-br/article/581398/kb90042-srm-como-configurar-setores?ticketId=&q=#opcao_2" target="_blank" class="direcionar-artigo" style="text-decoration: none;">
+                                    <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Resolver todas as dúvidas ou solicitações pendentes</span>
+                            <span class="task-subtitle">Retornar ao cliente sobre essas pendências</span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Planilhas</span>
+                            <span class="task-subtitle">Verificar andamento das planilhas durante a semana</span>
+                        </div>
+                    </label>
+                </div>
+            </section>
+
+
+            <!-- 10. TEMPLATE DE E-MAIL -->
+            <section id="template-email" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">10</div>
+                    <div>
+                        <h3 class="card-title">Template para ata de reunião</h3>
+                        <p class="card-subtitle">Código HTML para ser usado na formatação do e-mail</p>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+                    <ul>
+                        <li>Utilize o template de e-mail disponível na CustomerX; ou</li>
+                        <li>A extensão <strong>HTMaiL</strong> permite formatar e-mails com HTML</li>
+                    </ul>
+
+                    <div>
+                        <button class="btn btn-primary" onclick="copyGithubFile('https://raw.githubusercontent.com/EFCAZ/KBInterno/refs/heads/main/paginas/Onboarding/Etapa%202/etapa_2_ata_reuniao.html', this)">
+                            <i class="fa-regular fa-copy"></i>
+                            <span>Copiar template HTML</span>
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Botão Flutuante Subir ao Topo (Centralizado) -->
+    <button id="btnBackToTop" class="btn-back-to-top" onclick="scrollToTop()" title="Voltar ao topo">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            &copy; 2026 Plataforma SRM Efcaz - Guia do CS Onboarding
+        </div>
+    </footer>
+
+    <!-- Script JS Externo -->
+    <script src="https://cdn.jsdelivr.net/gh/EFCAZ/KBInterno@main/assets/js/scripts.js"></script>
+
+    <script>
+
+        // Função para criar elemento temporário e executar a cópia
+        function fallbackCopy(textToCopy, buttonElement, originalLabel) {
+            const textArea = document.createElement('textarea');
+            textArea.value = textToCopy;
+
+            // Configurações visuais para não afetar o layout
+            textArea.style.position = 'fixed';
+            textArea.style.top = '0';
+            textArea.style.left = '0';
+            textArea.style.opacity = '0';
+            
+            document.body.appendChild(textArea);
+            
+            // Força o foco e a seleção do texto no iFrame
+            textArea.focus();
+            textArea.select();
+
+            let successful = false;
+            try {
+                successful = document.execCommand('copy');
+            } catch (err) {
+                console.error('Erro ao executar copy via execCommand:', err);
+            }
+
+            document.body.removeChild(textArea);
+
+            if (successful) {
+                showSuccess(buttonElement, originalLabel);
+            } else {
+                alert('Não foi possível copiar o texto automaticamente.');
+            }
+        }
+
+        // Função universal de cópia
+        function executeCopy(textToCopy, buttonElement, originalLabel) {
+            if (!textToCopy || !textToCopy.trim()) {
+                alert('Não há texto para copiar!');
+                return;
+            }
+
+            // No Google Sites, o fallback por textarea é mais confiável que a Clipboard API devido às restrições do iFrame
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(textToCopy)
+                    .then(() => {
+                        showSuccess(buttonElement, originalLabel);
+                    })
+                    .catch(() => {
+                        // Se falhar (bloqueio do iFrame), usa o método de fallback
+                        fallbackCopy(textToCopy, buttonElement, originalLabel);
+                    });
+            } else {
+                fallbackCopy(textToCopy, buttonElement, originalLabel);
+            }
+        }
+
+        function showSuccess(btn, originalHTML) {
+            btn.innerHTML = '<i class="fa-solid fa-check"></i> Copiado!';
+            btn.style.backgroundColor = '#10b981';
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+                btn.style.backgroundColor = '';
+            }, 2000);
+        }
+
+        // Copiar Anotações
+        function copyNotes() {
+            // Mapeamento dos checkboxes de obrigatoriedade
+            const checkedMandatory = Array.from(document.querySelectorAll('input[name="mandatory"]:checked'))
+                .map(cb => `- ${cb.value}`)
+                .join('\n');
+
+            const mandatoryContent = checkedMandatory.length > 0 ? checkedMandatory : 'Nenhum selecionado';
+
+            const fields = [
+                { label: 'CAMPOS PERSONALIZADOS', id: 'notaCamposDinamicos', type: 'text' },
+                { label: 'COLETA DO REGIME TRIBUTÁRIO?', id: 'notaRegimeTributario', type: 'text' },
+                { label: 'OBRIGATORIEDADES', customContent: mandatoryContent },
+                { label: 'BLOQUEAR LINHA DE FORNECIMENTO?', id: 'notaBloquearLinhaFornecimento', type: 'text' },
+                { label: 'REMOVER MENU "ENDEREÇO" DO COLABORADOR?', id: 'notaRemoverEndereco', type: 'text' },
+                { label: 'REMOVER MENU "CONTATO" DO COLABORADOR?', id: 'otaRemoverContato', type: 'text' },
+                { label: 'POSSUEM FORMULÁRIO RFI PARA FORNECEDOR?', id: 'notaRfi', type: 'text' },
+                { label: 'TERÁ COMUNICAÇÃO ENTRE SETORES?', id: 'notaSetores', type: 'text' },
+                { label: 'OUTROS', id: 'notaOutros', type: 'text' }
+            ];
+
+            const formattedNotes = fields.map(field => {
+                if (field.customContent !== undefined) {
+                    return `${field.label}\n${field.customContent}`;
+                }
+                const el = document.getElementById(field.id);
+                const value = el ? el.value.trim() : '';
+                const content = value.length > 0 ? value : 'Nenhuma anotação';
+                return `${field.label}\n${content}`;
+            }).join('\n\n');
+
+            const btn = document.querySelector('.btn-copy-notes');
+            executeCopy(formattedNotes, btn, 'Copiar Anotações');
+        }
+
+        // Copiar Template de arquivo HTML hospedado no GitHub
+        function copyGithubFile(rawUrl, btn) {
+            const originalLabel = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Carregando...';
+
+            // Trata URLs do raw.githubusercontent eliminando refs/heads e apontando para a CDN jsDelivr
+            let fetchUrl = rawUrl
+                .replace('https://raw.githubusercontent.com/', 'https://cdn.jsdelivr.net/gh/')
+                .replace('/refs/heads/main/', '@main/')
+                .replace('/main/', '@main/');
+
+            fetch(fetchUrl)
+                .then(response => {
+                    if (!response.ok) throw new Error('Erro ao buscar arquivo: ' + response.statusText);
+                    return response.text();
+                })
+                .then(content => {
+                    executeCopy(content, btn, originalLabel);
+                })
+                .catch(err => {
+                    console.error(err);
+                    alert('Erro ao carregar o arquivo do GitHub.');
+                    btn.innerHTML = originalLabel;
+                });
+        }
+    </script>
+
+</body>
+</html>
