@@ -1,1195 +1,1208 @@
-<!-- Google Fonts Inter -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etapa 3: Configurações do Sistema e Relatórios</title>
+    
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Ícones FontAwesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Ícones FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- Ícones Bootstrap -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Ícones Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-<!-- Estilos CSS Externo -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EFCAZ/KBInterno@latest/assets/css/estilos.css">
-<link rel="stylesheet" href="../../../assets/css/estilos.css">
+    <!-- Estilos CSS Externo -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EFCAZ/KBInterno@latest/assets/css/estilos.css">
+    <link rel="stylesheet" href="../../../assets/css/estilos.css">
 
+</head>
 
-<!-- Header Navigation -->
-<header class="header" style="display: none;">
-    <div class="header-container">
-        <div class="brand">
-            <a href="https://sites.google.com/efcaz.com.br/interno/onboarding" target="_blank" class="brand-logo">
-                <i id="meuIcone" class="bi bi-stack" 
-                    onmouseenter="this.className='bi bi-layers-fill'" 
-                    onmouseleave="this.className='bi bi-stack'">
-                </i>
-            </a>
+<body>
 
-            <div class="brand-info">
-                <a href="https://sites.google.com/efcaz.com.br/interno/onboarding">
-                    <h1 class="brand-title">Onboarding</h1>
+    <!-- Header Navigation -->
+    <header class="header" style="display: none;">
+        <div class="header-container">
+            <div class="brand">
+                <a href="https://sites.google.com/efcaz.com.br/interno/onboarding" target="_blank" class="brand-logo">
+                    <i id="meuIcone" class="bi bi-stack" 
+                        onmouseenter="this.className='bi bi-layers-fill'" 
+                        onmouseleave="this.className='bi bi-stack'">
+                    </i>
                 </a>
 
-                <p class="brand-subtitle">Etapa 1: Overview & Governança</p>
+                <div class="brand-info">
+                    <a href="https://sites.google.com/efcaz.com.br/interno/onboarding">
+                        <h1 class="brand-title">Onboarding</h1>
+                    </a>
+
+                    <p class="brand-subtitle">Etapa 1: Overview & Governança</p>
+                </div>
+            </div>
+
+            <!-- Global Actions -->
+            <div class="header-actions">
+                <button id="btnAction" class="btn btn-primary-light">
+                    <i class="fa-solid fa-square-check"></i>
+                    <span>Tarefas</span>
+                </button>
+
+                <button id="btnAction" class="btn btn-primary-light">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Template de ata</span>
+                </button>
             </div>
         </div>
+    </header>
 
-        <!-- Global Actions -->
-        <div class="header-actions">
-            <button id="btnAction" class="btn btn-primary-light">
-                <i class="fa-solid fa-square-check"></i>
-                <span>Tarefas</span>
-            </button>
+    <div class="layout-container">
 
-            <button id="btnAction" class="btn btn-primary-light">
-                <i class="fa-solid fa-envelope"></i>
-                <span>Template de ata</span>
-            </button>
-        </div>
-    </div>
-</header>
+        <!-- Sidebar (Desktop) -->
+        <aside class="sidebar">
 
-<div class="layout-container">
+            <!-- Anotações -->
+            <div class="sidebar-card">
+                <div class="sidebar-title">Anotações</div>
 
-    <!-- Sidebar (Desktop) -->
-    <aside class="sidebar">
-
-        <!-- Anotações -->
-        <div class="sidebar-card">
-            <div class="sidebar-title">Anotações</div>
-
-            <div class="notes-field-group">
-                <label class="notes-label">Repassado</label>
-                <div class="notes-checkbox-group">
-                    <label class="notes-checkbox-item">
-                        <input type="checkbox" name="mandatory" value="Bancos"> Bancos
-                    </label>
-                    <label class="notes-checkbox-item">
-                        <input type="checkbox" name="mandatory" value="Campos Dinâmicos"> Campos Dinâmicos
-                    </label>
-                    <label class="notes-checkbox-item">
-                        <input type="checkbox" name="mandatory" value="Categorias"> Categorias
-                    </label>
-                    <label class="notes-checkbox-item">
-                        <input type="checkbox" name="mandatory" value="Certificados Cadastrais"> Certificados Cadastrais
-                    </label>
-                    <label class="notes-checkbox-item">
-                        <input type="checkbox" name="mandatory" value="CNAE"> CNAE
-                    </label>
-                    <label class="notes-checkbox-item">
-                        <input type="checkbox" name="mandatory" value="Competências"> Competências
-                    </label>
-                    <label class="notes-checkbox-item">
-                        <input type="checkbox" name="mandatory" value="Configuração de Integrações"> Configuração de Integrações
-                    </label>
-                    <label class="notes-checkbox-item">
-                        <input type="checkbox" name="mandatory" value="Configuração de Notificações"> Configuração de Notificações
-                    </label>
-                    <label class="notes-checkbox-item">
-                        <input type="checkbox" name="mandatory" value="Configurações Gerais"> Configurações Gerais
-                    </label>
-                    <label class="notes-checkbox-item">
-                        <input type="checkbox" name="mandatory" value="Conf. Obrigatoriedades"> Conf. Obrigatoriedades
-                    </label>
-                    <label class="notes-checkbox-item">
-                        <input type="checkbox" name="mandatory" value="Conf. Outros Documentos"> Conf. Outros Documentos
-                    </label>
-                    <label class="notes-checkbox-item">
-                        <input type="checkbox" name="mandatory" value="Conselho"> Conselho
-                    </label>
-                    <label class="notes-checkbox-item">
-                        <input type="checkbox" name="mandatory" value="Documentos"> Documentos
-                    </label>
-                    <label class="notes-checkbox-item">
-                        <input type="checkbox" name="mandatory" value="Linha de Fornecimento"> Linha de Fornecimento
-                    </label>
-                    <label class="notes-checkbox-item">
-                        <input type="checkbox" name="mandatory" value="Marcas e Representações"> Marcas e Representações
-                    </label>
-                    <label class="notes-checkbox-item">
-                        <input type="checkbox" name="mandatory" value="Modelos de Pendências"> Modelos de Pendências
-                    </label>
-                    <label class="notes-checkbox-item">
-                        <input type="checkbox" name="mandatory" value="Natureza Jurídica"> Natureza Jurídica
-                    </label>
-                    <label class="notes-checkbox-item">
-                        <input type="checkbox" name="mandatory" value="Penalidades"> Penalidades
-                    </label>
-                    <label class="notes-checkbox-item">
-                        <input type="checkbox" name="mandatory" value="Porte Empresarial"> Porte Empresarial
-                    </label>
-                    <label class="notes-checkbox-item">
-                        <input type="checkbox" name="mandatory" value="Quadro Societário"> Quadro Societário
-                    </label>
-                    <label class="notes-checkbox-item">
-                        <input type="checkbox" name="mandatory" value="Ramo de Atividade"> Ramo de Atividade
-                    </label>
-                    <label class="notes-checkbox-item">
-                        <input type="checkbox" name="mandatory" value="Setores"> Setores
-                    </label>
-                    <label class="notes-checkbox-item">
-                        <input type="checkbox" name="mandatory" value="Score"> Score
-                    </label>
-                    <label class="notes-checkbox-item">
-                        <input type="checkbox" name="mandatory" value="Webhook"> Webhook
-                    </label>
+                <div class="notes-field-group">
+                    <label class="notes-label">Repassado</label>
+                    <div class="notes-checkbox-group">
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Bancos"> Bancos
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Campos Dinâmicos"> Campos Dinâmicos
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Categorias"> Categorias
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Certificados Cadastrais"> Certificados Cadastrais
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="CNAE"> CNAE
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Competências"> Competências
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Configuração de Integrações"> Configuração de Integrações
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Configuração de Notificações"> Configuração de Notificações
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Configurações Gerais"> Configurações Gerais
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Conf. Obrigatoriedades"> Conf. Obrigatoriedades
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Conf. Outros Documentos"> Conf. Outros Documentos
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Conselho"> Conselho
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Documentos"> Documentos
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Linha de Fornecimento"> Linha de Fornecimento
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Marcas e Representações"> Marcas e Representações
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Modelos de Pendências"> Modelos de Pendências
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Natureza Jurídica"> Natureza Jurídica
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Penalidades"> Penalidades
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Porte Empresarial"> Porte Empresarial
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Quadro Societário"> Quadro Societário
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Ramo de Atividade"> Ramo de Atividade
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Setores"> Setores
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Score"> Score
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="mandatory" value="Webhook"> Webhook
+                        </label>
+                    </div>
                 </div>
-            </div>
 
-            <div class="notes-field-group">
-                <label for="notaOutros" class="notes-label">Outros</label>
-                <textarea id="notaOutros" class="note-input" placeholder="Escreva aqui..."></textarea>
-            </div>
-
-            <button class="btn-copy-notes" onclick="copyNotes()">Copiar Anotações</button>
-        </div>
-
-        <!-- Navegação -->
-        <div class="sidebar-card" style="margin-bottom: 0;">
-            <a href="#checklists" class="sidebar-link active">
-                <i class="fa-solid fa-square-check"></i> Tarefas
-            </a>
-            <a href="#template-email" class="sidebar-link">
-                <i class="fa-solid fa-envelope"></i> Template da Ata
-            </a>
-            <a href="https://sites.google.com/efcaz.com.br/interno/onboarding/etapa-4" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="sidebar-link"
-               onmouseenter="this.querySelector('i').className = 'fa-solid fa-circle-right'" 
-               onmouseleave="this.querySelector('i').className = 'fa-regular fa-circle-right'">
-                <i class="fa-regular fa-circle-right"></i> Próxima Etapa
-            </a>
-        </div>
-    </aside>
-
-    <!-- Main Content Area -->
-    <main class="main-content">
-
-        <!-- HERO SECTION -->
-        <section id="hero" class="hero-section">
-            <div class="hero-content">
-                <span class="badge-hero">Etapa 3</span>
-                <h2 class="hero-title">Configurações do Sistema e Relatórios</h2>
-                <p class="hero-description">
-                    Esse encontro serve para parametrizar o que for possível ao vivo e listar os alinhamentos internos pendentes, além de demonstrar a extração de relatórios e dashboards.
-                </p>
-            </div>
-            <img src="https://github.com/EFCAZ/KBInterno/blob/main/assets/images/logomarca/efcaz-icone-branco.png?raw=true" class="hero-bg-icon">
-        </section>
-
-        <!-- 1. INTRODUÇÃO AO ONBOARDING -->
-        <section class="content-card">
-            <div class="card-header">
-                <div class="step-number">1</div>
-                <div>
-                    <h3 class="card-title">Introdução ao Onboarding</h3>
-                    <p class="card-subtitle">Apresentar o objetivo do encontro</p>
+                <div class="notes-field-group">
+                    <label for="notaOutros" class="notes-label">Outros</label>
+                    <textarea id="notaOutros" class="note-input" placeholder="Escreva aqui..."></textarea>
                 </div>
+
+                <button class="btn-copy-notes" onclick="copyNotes()">Copiar Anotações</button>
             </div>
 
-            <div class="guide-card">
-
-                <ul>
-                    <li>Dar boas-vindas aos participantes.</li>
-                    <li>Apresentar a proposta do encontro: <strong>Repassar todas as opções no menu de Configurações</strong>.</li>
-                    <li>Configurar ao vivo os itens que for possível definir agora.</li>
-                    <li>Identificar as regras de negócio mais complexas e deixá-las parametrizadas para definição posterior interna do cliente.</li>
-                </ul>
+            <!-- Navegação -->
+            <div class="sidebar-card" style="margin-bottom: 0;">
+                <a href="#checklists" class="sidebar-link active">
+                    <i class="fa-solid fa-square-check"></i> Tarefas
+                </a>
+                <a href="#template-email" class="sidebar-link">
+                    <i class="fa-solid fa-envelope"></i> Template da Ata
+                </a>
+                <a href="https://sites.google.com/efcaz.com.br/interno/onboarding/etapa-4" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="sidebar-link"
+                   onmouseenter="this.querySelector('i').className = 'fa-solid fa-circle-right'" 
+                   onmouseleave="this.querySelector('i').className = 'fa-regular fa-circle-right'">
+                    <i class="fa-regular fa-circle-right"></i> Próxima Etapa
+                </a>
             </div>
+        </aside>
 
-            <!-- Roteiro -->
-            <details class="script-box">
-                <summary>
-                    <span class="summary-text"><i class="fa-solid fa-comment-dots"></i> Roteiro de fala sugerido</span>
-                    <i class="fa-solid fa-chevron-down icon-arrow"></i>
-                </summary>
-                
-                <div class="script-content">
-                    <p>Olá pessoal, sejam bem-vindos novamente. E hoje a gente vai explorar o menu <strong>Configurações</strong>. O nosso objetivo configurar tudo o que for possível juntos, mas tem coisa que inevitavelmente vocês vão precisar definir internamente pra configurar depois.</p>
-                    <p>E se der tempo eu vou mostrar como gerar <strong>Relatórios</strong> e algumas opções de dashboard extras.</p>
-                    <p>Hoje, sou eu que vou compartilhar a tela, eu vou mostrando as configurações e vocês que vão decidir cada uma.</p>
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- HERO SECTION -->
+            <section id="hero" class="hero-section">
+                <div class="hero-content">
+                    <span class="badge-hero">Etapa 3</span>
+                    <h2 class="hero-title">Configurações do Sistema e Relatórios</h2>
+                    <p class="hero-description">
+                        Esse encontro serve para parametrizar o que for possível ao vivo e listar os alinhamentos internos pendentes, além de demonstrar a extração de relatórios e dashboards.
+                    </p>
                 </div>
-            </details>
-        </section>
+                <img src="https://github.com/EFCAZ/KBInterno/blob/main/assets/images/logomarca/efcaz-icone-branco.png?raw=true" class="hero-bg-icon">
+            </section>
 
-
-        <!-- 2. OBJETIVO DO ENCONTRO -->
-        <section id="objetivo" class="content-card">
-            <div class="card-header">
-                <div class="step-number">2</div>
-                <div>
-                    <h3 class="card-title">Parametrização Prática no Sistema</h3>
-                    <p class="card-subtitle">Configurações de dados, regras, obrigatoriedades e fluxos</p>
+            <!-- 1. INTRODUÇÃO AO ONBOARDING -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="step-number">1</div>
+                    <div>
+                        <h3 class="card-title">Introdução ao Onboarding</h3>
+                        <p class="card-subtitle">Apresentar o objetivo do encontro</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="guide-card">
-                <p>Apresentar e exercitar na prática cada um dos menus de configuração abaixo:</p>
-            </div>
+                <div class="guide-card">
 
-            <!-- Bancos -->
-            <details class="script-box">
-                <summary>
-                    <span class="summary-text"><input type="checkbox" name="mandatory" value="Bancos"> Bancos</span>
-                    <i class="fa-solid fa-chevron-down icon-arrow"></i>
-                </summary>
-                
-                <div class="script-content">
-                    Quando o fornecedor cadastra os dados de pagamento, é necessário inserir a conta bancária. A plataforma já vem mais de 300 bancos cadastrados, então hoje me dia não tem ninguém que precisa usar esse menu.
+                    <ul>
+                        <li>Dar boas-vindas aos participantes.</li>
+                        <li>Apresentar a proposta do encontro: <strong>Repassar todas as opções no menu de Configurações</strong>.</li>
+                        <li>Configurar ao vivo os itens que for possível definir agora.</li>
+                        <li>Identificar as regras de negócio mais complexas e deixá-las parametrizadas para definição posterior interna do cliente.</li>
+                    </ul>
                 </div>
-            </details>
 
-            <!-- Campos Dinâmicos -->
-            <details class="script-box">
-                <summary>
-                    <span class="summary-text"><input type="checkbox" name="mandatory" value="Campos Dinâmicos"> Campos Dinâmicos</span>
-                    <i class="fa-solid fa-chevron-down icon-arrow"></i>
-                </summary>
-                
-                <div class="script-content">
-                    <p>A plataforma já pede várias informações aos fornecedores, mas se vocês acharem que falta alguma coisa, dá pra criar campos ou formulários customizados para coletar informações adicionais. Incluisve, se vocês quiserem, dá pra criar campos que só vocês vêm, pra adicionar informações pra equipe.</p>
-                    <p>Eu vou fazer um com vocês que vai ficar mais fácil de entender.</p>
-                    <p class="destaque" style="margin-bottom: 3px;">Demonstrar a criação de um:<br>
-                        <a href="https://efcaz.movidesk.com/kb/pt-br/article/574125/kb90043-srm-como-criar-campos-dinamicos?ticketId=&q=" target="_blank" class="direcionar-artigo">
+                <!-- Roteiro -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><i class="fa-solid fa-comment-dots"></i> Roteiro de fala sugerido</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p>Olá pessoal, sejam bem-vindos novamente. E hoje a gente vai explorar o menu <strong>Configurações</strong>. O nosso objetivo configurar tudo o que for possível juntos, mas tem coisa que inevitavelmente vocês vão precisar definir internamente pra configurar depois.</p>
+                        <p>E se der tempo eu vou mostrar como gerar <strong>Relatórios</strong> e algumas opções de dashboard extras.</p>
+                        <p>Hoje, sou eu que vou compartilhar a tela, eu vou mostrando as configurações e vocês que vão decidir cada uma.</p>
+                    </div>
+                </details>
+            </section>
+
+
+            <!-- 2. OBJETIVO DO ENCONTRO -->
+            <section id="objetivo" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h3 class="card-title">Parametrização Prática no Sistema</h3>
+                        <p class="card-subtitle">Configurações de dados, regras, obrigatoriedades e fluxos</p>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+                    <p>Apresentar e exercitar na prática cada um dos menus de configuração abaixo:</p>
+                </div>
+
+                <!-- Bancos -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><input type="checkbox" name="mandatory" value="Bancos"> Bancos</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        Quando o fornecedor cadastra os dados de pagamento, é necessário inserir a conta bancária. A plataforma já vem mais de 300 bancos cadastrados, então hoje me dia não tem ninguém que precisa usar esse menu.
+                    </div>
+                </details>
+
+                <!-- Campos Dinâmicos -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><input type="checkbox" name="mandatory" value="Campos Dinâmicos"> Campos Dinâmicos</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p>A plataforma já pede várias informações aos fornecedores, mas se vocês acharem que falta alguma coisa, dá pra criar campos ou formulários customizados para coletar informações adicionais. Incluisve, se vocês quiserem, dá pra criar campos que só vocês vêm, pra adicionar informações pra equipe.</p>
+                        <p>Eu vou fazer um com vocês que vai ficar mais fácil de entender.</p>
+                        <p class="destaque" style="margin-bottom: 3px;">Demonstrar a criação de um:<br>
+                            <a href="https://efcaz.movidesk.com/kb/pt-br/article/574125/kb90043-srm-como-criar-campos-dinamicos?ticketId=&q=" target="_blank" class="direcionar-artigo">
+                                <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
+                                <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        </p>
+                        <ul class="destaque">
+                            <li><strong style="text-transform: uppercase;">Título:</strong> Condições de Pagamento</li>
+                            <li><strong style="text-transform: uppercase;">Informativo:</strong> (ex: boleto para 30 dias, Pix à vista, cartão parcelado)</li>
+                            <li><strong style="text-transform: uppercase;">Módulo:</strong> Fornecedores</li>
+                            <li><strong style="text-transform: uppercase;">Categoria:</strong> Dados de Pagamento</li>
+                            <li><strong style="text-transform: uppercase;">Tipo:</strong> Texto Extenso</li>
+                        </ul>
+                        <br>
+                        <p class="destaque">Mostrar como fica no cadastro do fornecedor.</p>
+                        <p class="destaque">Inativar esse campo dinâmico.</p>
+                    </div>
+                </details>
+
+                <!-- Categorias -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><input type="checkbox" name="mandatory" value="Categorias"> Categorias</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        É aqui que a gente cria as categorias pra separar os documentos. Eu já tinha criado alguns pra mostrar pra vocês no encontro passado.
+                    </div>
+                </details>
+
+                <!-- Certificados Cadastrais -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><input type="checkbox" name="mandatory" value="Certificados Cadastrais"> Certificados Cadastrais</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p>Pessoal, vocês lembram o que é certificado cadastral e pra que ele serve?<br><span class="destaque">Resposta: É como um selo de confiabilidade e é necessário para rodar as buscas automáticas</span></p>
+                        <p>Por padrão já vem o de 1 ano, mas você pode criar outros.<br><span class="destaque">Demonstrar</span></p>
+                        <p>Você define um nome e prazo de expiração do certificado, por exemplo: Criticidade Alta, 3 meses.</p>
+                        <p class="destaque">Mostrar como fica no cadastro do fornecedor.</p>
+                        <p class="destaque">Inativar esse certificado.</p>
+                    </div>
+                </details>
+
+                <!-- CNAE -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><input type="checkbox" name="mandatory" value="CNAE"> CNAE</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        CNAE já puxa automático, e já vem com tudo configurado nativamente. Nunca vi alguém precisando mexer aqui, então vamos pular.
+                    </div>
+                </details>
+
+                <!-- Competências -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><input type="checkbox" name="mandatory" value="Competências"> Competências</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p>As Competências servem pra separar os documentos que têm algum tipo de recorrência. Geralmente os clientes usam para os que têm recorrência mensal e que o fornecedor sabe que vai ter que colocar toda vez.</p>
+                        <p>Inclusive, lá na planilha de documentos, tem uma coluna chamada Recorrência por conta disso.</p>
+                        <p class="destaque" style="margin-bottom: 3px;">Demonstrar uso com documento:</p>
+                        <ul class="destaque">
+                            <li>"EPI" no menu Gestão de Terceiros</li>
+                            <li>"Nota Fiscal de Serviços (NFS-e)" no menu Documentos</li>
+                        </ul>
+                        <a href="https://efcaz.movidesk.com/kb/pt-br/article/600956/kb90084-srm-como-cadastrar-competencias?menuId=51758-142332-600956&ticketId=&q=" target="_blank" class="direcionar-artigo">
+                            <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </a> 
+                    </div>
+                </details>
+
+                <!-- Configuração de Integrações -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><input type="checkbox" name="mandatory" value="Configuração de Integrações"> Configuração de Integrações</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p>Aqui é pra que vocês receberem notificações específicas no e-mail.</p>
+                        <p>Sempre que um analista concluir uma solicitação, o e-mail configurado aqui fica sabendo se o cadastro do fornecedor foi aprovado ou não.</p>
+                        <p>E sempre que o pré-cadastro for reprovado, o e-mail configurado recebe essa informação.</p>
+                        <p>Por alto, vocês acham que vão precisar receber essas notificações?<br><span class="destaque">Agir vom base na resposta</span></p>
+                    </div>
+                </details>
+
+                <!-- Configuração de Notificações -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><input type="checkbox" name="mandatory" value="Configuração de Notificações"> Configuração de Notificações</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <table class="custom-table">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Descrição</th>
+                                    <th>Observação</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>Notificações semanais de Documentos</td>
+                                    <td>Fornecedor recebe toda semana um e-mail com um resumo do que ele tem pra atualizar</td>
+                                    <td rowspan="2" style="border-left: 1px solid var(--slate-100);">Escolher apenas um</td>
+                                </tr>
+                                <tr>
+                                    <td>Notificações de Documentos para Fornecedores</td>
+                                    <td>Fornecedor recebe um e-mail para cada documento estiver vencido ou que vai vencer</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-crown text-primary"></i> Notificações de Documentos Terceiros</td>
+                                    <td>Fornecedor recebe um e-mail para cada documento de terceiros que estiver vencido ou que vai vencer.</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-crown text-primary"></i> Notificações de Documentos dos Contratos - Interno</td>
+                                    <td>Vocês recebem um e-mail para cada documento do módulo Contratos que estiver vencido ou que vai vencer.</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-crown text-primary"></i> Notificações de Documentos dos Contratos - Fornecedor</td>
+                                    <td>Fornecedor recebe um e-mail para cada documento do módulo Contratos que estiver vencido ou que vai vencer.</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Notificações de Certificado Cadastral</td>
+                                    <td>Fornecedor recebe um e-mail quando o Certificado Cadastral que estiver vencido ou que vai vencer, assim ele pode deixar o cadastro atualizado.</td>
+                                    <td class="text-indianred">Não mexer</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-crown text-primary"></i> Notificações de Ocorrências</td>
+                                    <td>Fornecedor é notificado quando vocês enviarem uma ocorrência pra ele.</td>
+                                    <td class="text-indianred">Não mexer</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-crown text-primary"></i> Ocorrências pendentes para análise</td>
+                                    <td>Vocês são notificados quando o fornecedor responder a ocorrência.</td>
+                                    <td class="text-indianred">Não mexer</td>
+                                </tr>
+                                <tr>
+                                    <td>Notificações de Cadastro Incompleto</td>
+                                    <td>Notifica o fornecedor sempre que ele deixar uma solicitação em aberto.</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-crown text-primary"></i> Notificações de RFI Individual</td>
+                                    <td>Notifica o fornecedor sempre que vocês adicionarem um formulário novo pra ele responder.</td>
+                                    <td class="text-indianred">Não mexer</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-crown text-primary"></i> Notificações de resposta ao Administrador</td>
+                                    <td>Vocês são notificado quando o fornecedor responder o formulário ou avaliação.</td>
+                                    <td class="text-indianred">Não mexer</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-crown text-primary"></i> Notificações de publicação de avaliação ao fornecedor</td>
+                                    <td>Permite que o avaliador decida se vai ou não publicar uma avaliação interna para o fornecedor.</td>
+                                    <td>Se deixar desmarcado, o fornecedor nunca vai saber do resultado da avaliação que foi feita.</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-crown text-primary"></i> Notificações de Avaliadores</td>
+                                    <td>Notifica o avaliador todo dia até que ele realize a avaliação vinculada ao nome dele</td>
+                                    <td class="text-indianred">Não mexer</td>
+                                </tr>
+                                <tr>
+                                    <td>Notificações de Penalidades</td>
+                                    <td>Notifica o fornecedor quando ele receber uma penalidade</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Notificações Técnicas</td>
+                                    <td>Fornecedor recebe um e-mail para cada documento da aba Técnico que estiver vencido ou que vai vencer.</td>
+                                    <td>Se trata da Entidade de Classe e Certificações Técnicas</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-crown text-primary"></i> Notificação de inclusão na lista suja de trabalho escravo</td>
+                                    <td>Notifica vocês quando um fornecedor estiver envovido com trabalho análogo à escravidão.</td>
+                                    <td class="text-indianred">Não mexer</td>
+                                </tr>
+                                <tr>
+                                    <td>Pedido Homologação</td>
+                                    <td>Notifica os admins quando um pré-cadastro for enviado para análise de aprovação</td>
+                                    <td>Se ele não vão precisar que os pré-cadastro passem por aprovação, deixar desmarcado</td>
+                                </tr>
+                                <tr>
+                                    <td>Solicitação de Parecer</td>
+                                    <td>Notifica os usuários pertencentes ao setor quando um novo parecer for solicitado</td>
+                                    <td class="text-indianred">Não mexer</td>
+                                </tr>
+                                <tr>
+                                    <td>Solicitação em Análise</td>
+                                    <td>Notifica vocês sempre que um fornecedor enviar uma solicitação para análise</td>
+                                    <td class="text-indianred">Não mexer</td>
+                                </tr>
+                                <tr>
+                                    <td>Notificações de Seguros</td>
+                                    <td>Fornecedor recebe um e-mail para cada documento do menu Seguros que estiver vencido ou que vai vencer.</td>
+                                    <td class="text-indianred">Nem todo tenant possui</td>
+                                </tr>
+                                <tr>
+                                    <td>Cnae</td>
+                                    <td>CNAE é automático, então não precisa mexer nisso</td>
+                                    <td class="text-indianred">Não mexer</td>
+                                </tr>
+                                <tr>
+                                    <td>Enviar cópia de e-mails do sistema</td>
+                                    <td>Envia uma cópia de absolutamente todo e-mail que o sistema envia.</td>
+                                    <td class="text-indianred">Alto volume de e-mails</td>
+                                </tr>
+                                <tr>
+                                    <td>Notificações de cancelamento</td>
+                                    <td>Notifica vocês quando um fornecedor não quiser mais receber as notificações do sistema</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </details>
+
+                <!-- Configurações Gerais -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><input type="checkbox" name="mandatory" value="Configurações Gerais"> Configurações Gerais</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <table class="custom-table">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Descrição</th>
+                                    <th>Observação</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td><i class="fa-solid fa-crown text-primary"></i> Avaliações de Fornecedores</td>
+                                    <td>Configura as regras para o módulo Avaliações</td>
+                                    <td>Preferencialmente mexer somente em:
+                                        <ul>
+                                            <li>Permitir publicar Avaliação ao Fornecedor</li>
+                                            <li>Responder avaliações sem avaliadores</li>
+                                            <li>RFI: Obrigar o preenchimento em solicitações de alteração de fornecedor</li>
+                                            <li>Dias para liberar a avaliação agendada</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Bloqueio de alteração</td>
+                                    <td>Marcando "Sim" o fornecedor não poderá alterar a linha de fornecimento que já foi definida no pré-cadastro</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Permitir que o fluxo de solicitação seja automático</td>
+                                    <td>Marcando "Não" o analista terá que mais duas etapas após finalizar a análise:
+                                        <ol>
+                                            <li>Enviar notificação para o fornecedor manualmente</li>
+                                            <li>Encerrar a solicitação</li>
+                                        </ol>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Impedir alterações consultas automáticas</td>
+                                    <td>Não permite que fornecedores ou analistas alterem dados das buscas automáticas</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Bloquear alteração da data de análise</td>
+                                    <td>Marcando "Sim" os analistas não poderão mudar a data de finalização da análise, e vai pegar a data atual</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Habilitar selecão de homologadores</td>
+                                    <td>Marcando "Sim" poderá escolher quem pode aprovar ou rejeitar um pedido de Pré-cadastro</td>
+                                    <td class="text-indianred">Não faz sentido se o cliente não tiver aprovadores de Pré-cadastro</td>
+                                </tr>
+                                <tr>
+                                    <td>Competências em Fornecedores</td>
+                                    <td>Marcar "Sim" se for utilizar separação de documentos recorrentes</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-crown text-primary"></i> Validar conta bancária e/ou pix</td>
+                                    <td>Verifica se a conta bancária e/ou pix está vinculada ao CNPJ/CPF do fornecedor e mostra o resultado</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Impedir envio da solicitação caso a titularidade seja divergente?</td>
+                                    <td>Se a validação der resultado negativo, o fornecedor não vai poder enviar a solicitação para análise até informar ua conta ou pix válida</td>
+                                    <td class="text-indianred">Pra funcionar, o menu Dados de Pagamento deve estar como obrigatório</td>
+                                </tr>
+                                <tr>
+                                    <td>Gerar reprovação automática quando terceiro possuir documentação vencida</td>
+                                    <td>Se um documento do colaborador vencer, o cadastro dele fica como reprovado</td>
+                                    <td class="text-indianred">Isso não muda o status do fornecedor, somente do colaborador</td>
+                                </tr>
+                                <tr>
+                                    <td>Habilitar competências na solicitação de terceiros</td>
+                                    <td>Marcar "Sim" se for utilizar separação de documentos recorrentes</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Listar apenas linhas de fornecimento do tipo serviço para terceiros</td>
+                                    <td>Marcando "Sim" os colaboradores das empresas não poderão estar vinculados à linhas de fornecimento do tipo "Material", somente "Serviços"</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Cancelar certificado cadastral</td>
+                                    <td>Se o fornecedor deixar documento vencer, o certificado cadastral dele é cancelado na hora</td>
+                                    <td class="text-indianred">Pode gerar trabalho extra para o cliente já que ele terá que renovar manualmente depois</td>
+                                </tr>
+                                <tr>
+                                    <td>Penalidades</td>
+                                    <td>Se o fornecedor deixar documento vencer, o sistema registra uma penalidade automaticamente</td>
+                                    <td class="text-indianred">Pode gerar trabalho extra para o cliente já que ele terá que retirar manualmente depois</td>
+                                </tr>
+                                <tr>
+                                    <td>Termos e Condições</td>
+                                    <td>Adiciona arquivos que o fornecedor terá que marcar como "Li e Concordo"</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </details>
+
+                <!-- Conf. Obrigatoriedades -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><input type="checkbox" name="mandatory" value="Conf. Obrigatoriedades"> Conf. Obrigatoriedades</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p>Determina quais menus o fornecedor será obrigado a preencher.</p>
+
+                        <div style="margin-top: 15px;" class="alert-box alert-red">
+                        <div class="alert-header">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <span>Atenção</span>
+                        </div>
+                        <ul class="alert-text">
+                            <li>É repassado a todos os fornecedores</li>
+                        </ul>
+                    </div>
+                    </div>
+                </details>
+
+                <!-- Conf. Outros Documentos -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><input type="checkbox" name="mandatory" value="Conf. Outros Documentos"> Conf. Outros Documentos</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p>Determina quais menus o fornecedor será obrigado a preencher.</p>
+
+                        <div style="margin-top: 15px;" class="alert-box alert-red">
+                        <div class="alert-header">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <span>Atenção</span>
+                        </div>
+                        <ul class="alert-text">
+                            <li>Cada obrigatoriedade é repassada apenas às linhas de fornecimento selecionadas.</li>
+                            <li>Aqui é onde se configuram as obrigatoriedades dos anexos desses menus.</li>
+                        </ul>
+                    </div>
+                    </div>
+                </details>
+
+                <!-- Conselho -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><input type="checkbox" name="mandatory" value="Conselho"> Conselho</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        Os Conselhos já são puxados automático, e já vem com tudo configurado nativamente. Nunca vi alguém precisando mexer aqui, então vamos pular.
+                    </div>
+                </details>
+
+                <!-- Documentos -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><input type="checkbox" name="mandatory" value="Documentos"> Documentos</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p>Aqui é onde se cria ou atualiza as configurações dos documentos. Os dados que vocês vão colocar nas planilhas vão ser repassados pra cá.</p>
+                        <p class="destaque">Mostra um pouco de como se cria</p>
+                        <a href="https://efcaz.movidesk.com/kb/pt-br/article/560808/kb90038-srm-como-configurar-os-documentos-exigidos?ticketId=&q=" target="_blank" class="direcionar-artigo">
                             <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
                             <i class="fa-solid fa-angle-right"></i>
                         </a>
-                    </p>
-                    <ul class="destaque">
-                        <li><strong style="text-transform: uppercase;">Título:</strong> Condições de Pagamento</li>
-                        <li><strong style="text-transform: uppercase;">Informativo:</strong> (ex: boleto para 30 dias, Pix à vista, cartão parcelado)</li>
-                        <li><strong style="text-transform: uppercase;">Módulo:</strong> Fornecedores</li>
-                        <li><strong style="text-transform: uppercase;">Categoria:</strong> Dados de Pagamento</li>
-                        <li><strong style="text-transform: uppercase;">Tipo:</strong> Texto Extenso</li>
+                    </div>
+                </details>
+
+                <!-- Linha de Fornecimento -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><input type="checkbox" name="mandatory" value="Linha de Fornecimento"> Linha de Fornecimento</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p>Aqui é onde se criam ou atualizam as linhas de fornecimento. Os dados que vocês vão colocar nas planilhas vão ser repassados pra cá também.</p>
+                        <p class="destaque">Pergunta se eles lembram o que é linha de fornecimento</p>
+                    </div>
+                </details>
+
+                <!-- Marcas e Representações -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><input type="checkbox" name="mandatory" value="Marcas e Representações"> Marcas e Representações</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p>Esse aqui é um que é mais fácil mostrar. Mas basicamente quando um fornecedor estiver preenchendo um documento, ele pode selecionar um item de uma lista naquele documento.</p>
+                        <p class="destaque">Fazer uma demonstração</p>
+                        <a href="https://efcaz.movidesk.com/kb/pt-br/article/591281/kb90080-srm-como-adicionar-marcas-e-representacoes?ticketId=&q=" target="_blank" class="direcionar-artigo">
+                            <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </a>
+
+                        <p class="destaque">Desvincular e inativar as marcas e representações criadas</p>
+                    </div>
+                </details>
+
+                <!-- Modelos de Pendências -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><input type="checkbox" name="mandatory" value="Modelos de Pendências"> Modelos de Pendências</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p>Lembra quando vocês fazem análise, e dá pra ir colocando pendências pro fornecedor responder. Aqui é onde você pode cadastrar textos de pendências pra só marcar durante a análise.</p>
+                        <p>Realizar uma demonstração com o texto "Inserir o balanço patrimonial dos últimos 3 anos"</p>
+
+                        <a href="https://efcaz.movidesk.com/kb/pt-br/article/581421/kb90045-srm-cadastrar-modelos-de-pendencias?ticketId=&q=" target="_blank" class="direcionar-artigo">
+                            <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </a>
+
+                        <p class="destaque">Inativar o que foi criado</p>
+                    </div>
+                </details>
+
+                <!-- Natureza Jurídica -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><input type="checkbox" name="mandatory" value="Natureza Jurídica"> Natureza Jurídica</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        Natureza Jurídica já é puxada automáticamente, e já vem com tudo configurado nativamente. Nunca vi alguém precisando mexer aqui, então vamos pular.
+                    </div>
+                </details>
+
+                <!-- Penalidades -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><input type="checkbox" name="mandatory" value="Penalidades"> Penalidades</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        A plataforma já vem com algumas penalidades prontas, mas se quiserem, dá pra cadastrar mais. Mas nosso time reuniu as que os clientes mais costumam usar, então é algo que provavelmente já vai atender muito bem vocês.
+                    </div>
+                </details>
+
+                <!-- Porte Empresarial -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><input type="checkbox" name="mandatory" value="Porte Empresarial"> Porte Empresarial</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        Porte Empresarial também é puxado automáticamente, então vamos pular.
+                    </div>
+                </details>
+
+                <!-- Quadro Societário -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><input type="checkbox" name="mandatory" value="Quadro Societário"> Quadro Societário</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p>Esse é pra você configurar os cargos dos sócios da empresa. Então por exemplo, vamos supôr que vocês querem configurar que todo fornecedor tem que ter no quadro societário quem é o CEO daquela empresa.</p>
+                        <p class="destaque">Fazer demonstração</p>
+
+                        <a href="https://efcaz.movidesk.com/kb/pt-br/article/581448/kb90049-srm-como-alterar-cargos-permitidos-no-quadro-societario?ticketId=&q=" target="_blank" class="direcionar-artigo">
+                            <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </a>
+                    </div>
+                </details>
+
+                <!-- Ramo de Atividade -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><input type="checkbox" name="mandatory" value="Ramo de Atividade"> Ramo de Atividade</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p>Aqui é onde se criam ou atualizam os ramos de atividade. Os dados que vocês vão colocar nas planilhas vão ser repassados pra cá também.</p>
+                        <p class="destaque">Pergunta se eles lembram o que é ramo de atividade</p>
+                    </div>
+                </details>
+
+                <!-- Setores -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><input type="checkbox" name="mandatory" value="Setores"> Setores</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        Aqui é onde os setores são criados.
+                        <p class="destaque">Abre um e mostra os usuários vinculados</p>
+                        <p class="destaque">Se os setores ainda não foram definidos, pede pra eles fazerem isso até a próxima reunião</p>
+
+                        <a href="https://efcaz.movidesk.com/kb/pt-br/article/581398/kb90042-srm-como-configurar-setores?ticketId=&q=" target="_blank" class="direcionar-artigo">
+                            <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </a>
+                    </div>
+                </details>
+
+                <!-- Score -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><input type="checkbox" name="mandatory" value="Score"> Score</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        <p>O Score serve pra vocês pontuarem o fornecedor com base nas buscas automáticas.</p>
+                        <p>Eu já deixei um configurado um de exemplo, mas depois vocês podem mudar se quiser.</p>
+                        <p class="destaque">Vincular a uma linha de fornecimento e mostrar como fica</p>
+                    </div>
+                </details>
+
+                <!-- Webhook -->
+                <details class="script-box">
+                    <summary>
+                        <span class="summary-text"><input type="checkbox" name="mandatory" value="Webhook"> Webhook</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </summary>
+                    
+                    <div class="script-content">
+                        E isso aqui é pra conectar nosso sistema num outro, no caso, a EFCAZ envia pra outro sistema as solicitações aprovadas. Mas isso aqui já é algo que o time de TI de vocês tem que configurar.
+                    </div>
+                </details>
+
+            </section>
+
+
+            <!-- 3. RELATÓRIOS -->
+            <section id="modulos" class="content-card">
+                <div class="card-header space-between flex-wrap">
+                    <div class="flex-align-center">
+                        <div class="step-number">3</div>
+                        <h3 class="card-title">Relatórios</h3>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+
+                    <ul>
+                        <li>A demonstração deve ser feita no tenant de treinamento, já que o ambiente do cliente ainda não tem dados.</li>
+                        <li>Apresenta os relatórios nativos do sistema.</li>
+                        <li>Mostra aplicação dos filtros.</li>
+                        <li>Mostra a área de dashboard e relatórios personalizados, e como extrair os dados.</li>
                     </ul>
-                    <br>
-                    <p class="destaque">Mostrar como fica no cadastro do fornecedor.</p>
-                    <p class="destaque">Inativar esse campo dinâmico.</p>
-                </div>
-            </details>
 
-            <!-- Categorias -->
-            <details class="script-box">
-                <summary>
-                    <span class="summary-text"><input type="checkbox" name="mandatory" value="Categorias"> Categorias</span>
-                    <i class="fa-solid fa-chevron-down icon-arrow"></i>
-                </summary>
-                
-                <div class="script-content">
-                    É aqui que a gente cria as categorias pra separar os documentos. Eu já tinha criado alguns pra mostrar pra vocês no encontro passado.
-                </div>
-            </details>
+                    <a href="https://efcaz.movidesk.com/kb/pt-br/article/581457/kb90085-srm-relatorios-padroes-disponiveis?ticketId=&q=" target="_blank" class="direcionar-artigo">
+                        <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Relatórios Padrões</span>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
 
-            <!-- Certificados Cadastrais -->
-            <details class="script-box">
-                <summary>
-                    <span class="summary-text"><input type="checkbox" name="mandatory" value="Certificados Cadastrais"> Certificados Cadastrais</span>
-                    <i class="fa-solid fa-chevron-down icon-arrow"></i>
-                </summary>
-                
-                <div class="script-content">
-                    <p>Pessoal, vocês lembram o que é certificado cadastral e pra que ele serve?<br><span class="destaque">Resposta: É como um selo de confiabilidade e é necessário para rodar as buscas automáticas</span></p>
-                    <p>Por padrão já vem o de 1 ano, mas você pode criar outros.<br><span class="destaque">Demonstrar</span></p>
-                    <p>Você define um nome e prazo de expiração do certificado, por exemplo: Criticidade Alta, 3 meses.</p>
-                    <p class="destaque">Mostrar como fica no cadastro do fornecedor.</p>
-                    <p class="destaque">Inativar esse certificado.</p>
+                    <a href="https://efcaz.movidesk.com/kb/pt-br/article/581491/kb90064-srm-solicitacao-de-relatorios-personalizados?ticketId=&q=" target="_blank" class="direcionar-artigo">
+                            <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Relatórios Personalizados</span>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </a>
                 </div>
-            </details>
+            </section>
 
-            <!-- CNAE -->
-            <details class="script-box">
-                <summary>
-                    <span class="summary-text"><input type="checkbox" name="mandatory" value="CNAE"> CNAE</span>
-                    <i class="fa-solid fa-chevron-down icon-arrow"></i>
-                </summary>
-                
-                <div class="script-content">
-                    CNAE já puxa automático, e já vem com tudo configurado nativamente. Nunca vi alguém precisando mexer aqui, então vamos pular.
+
+            <!-- 4. FINALIZAÇÃO E PRÓXIMOS PASSOS -->
+            <section id="finalizacao" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">4</div>
+                    <div>
+                        <h3 class="card-title">Finalização e Próximos Passos</h3>
+                        <p class="card-subtitle">Atividades a serem concluídas antes do próximo Encontro</p>
+                    </div>
                 </div>
-            </details>
 
-            <!-- Competências -->
-            <details class="script-box">
-                <summary>
-                    <span class="summary-text"><input type="checkbox" name="mandatory" value="Competências"> Competências</span>
-                    <i class="fa-solid fa-chevron-down icon-arrow"></i>
-                </summary>
-                
-                <div class="script-content">
-                    <p>As Competências servem pra separar os documentos que têm algum tipo de recorrência. Geralmente os clientes usam para os que têm recorrência mensal e que o fornecedor sabe que vai ter que colocar toda vez.</p>
-                    <p>Inclusive, lá na planilha de documentos, tem uma coluna chamada Recorrência por conta disso.</p>
-                    <p class="destaque" style="margin-bottom: 3px;">Demonstrar uso com documento:</p>
-                    <ul class="destaque">
-                        <li>"EPI" no menu Gestão de Terceiros</li>
-                        <li>"Nota Fiscal de Serviços (NFS-e)" no menu Documentos</li>
+                <div class="guide-card">
+
+                    <div class="grid-2-cols">
+                        <div class="access-box">
+                            <div class="access-header">
+                                <div class="access-icon"><i class="fa-solid fa-rotate-left"></i></div>
+                                <span class="access-title">Realizar a recapitulação dos tópicos trabalhados no encontro</span>
+                            </div>
+                            <ul class="access-list">
+                                <li>Configuramos bastante coisa juntos</li>
+                                <li>Alguma ficarão pendentes de uma defiição posterior</li>
+                            </ul>
+                        </div>
+
+                        <div class="access-box">
+                            <div class="access-header">
+                                <div class="access-icon"><i class="fa-solid fa-tasks"></i></div>
+                                <span class="access-title">Listar as tarefas pendentes para o cliente antes do próximo encontro</span>
+                            </div>
+                            <ul class="access-list">
+                                <li>Preenchimento da planilha de documentos</li>
+                                <li>Definir a necessidade de criar campos personalizados</li>
+                                <li>Verificar se vai ter que adicionar documentos de Termos e Condições</li>
+                                <li><span class="text-indianred">(Se não tiver feito ainda)</span> Mapear os setores que precisam existir no sistema e definir quais usuários ficarão em cada um.</li>
+                                <li>Anotar dúvidas para serem tratadas na reunião seguinte</li>
+                            </ul>
+                        </div>
+
+                        <div class="access-box">
+                            <div class="access-header">
+                                <div class="access-icon"><i class="fa-regular fa-paper-plane"></i></div>
+                                <span class="access-title">Informar que vai enviar a ata da reunião com:</span>
+                            </div>
+                            <ul class="access-list">
+                                <li>Tópicos que vimos hoje e os que ficaram pendentes</li>
+                                <li>Materiais de apoio</li>
+                                <li>Links das planilhas</li>
+                            </ul>
+                        </div>
+
+                        <div class="access-box">
+                            <div class="access-header">
+                                <div class="access-icon"><i class="fa-regular fa-comment"></i></div>
+                                <span class="access-title">Demais definições</span>
+                            </div>
+                            <ul class="access-list">
+                                <li>Colocar o canal do WhatsApp à disposição para dúvidas pontuais.</li>
+                                <li>Agendar/confirmar a data e horário do próximo encontro.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- 5. CHECKLIST INTERATIVO -->
+            <section id="checklists" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">5</div>
+                    <div>
+                        <h3 class="card-title">Tarefas</h3>
+                        <p class="card-subtitle">Atividades internas a serem concluídas antes do próximo encontro</p>
+                    </div>
+                </div>
+
+                <div class="checklist-container" id="checklistContainer">
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Copiar Anotações</span>
+                            <span class="task-subtitle">Copie as anotações feitas ao lado e adicione como comentário na task "Etapa 3" da jornada Onboarding (CustomerX).</span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Enviar ata de reunião</span>
+                            <span class="task-subtitle">Utilize o template da CustomerX (<i>ONBOARDING | Etapa 3 - Configurações e Relatórios</i>) ou o daqui para enviar a ata de reunião por e-mail. Incluir <strong>renato.pedroso@efcaz.com.br</strong> como CCO.</span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Baixar o e-mail em PDF e anexar na tarefa da CX</span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Resolver todas as dúvidas ou solicitações pendentes</span>
+                            <span class="task-subtitle">Retornar ao cliente sobre essas pendências</span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Planilhas</span>
+                            <span class="task-subtitle">Verificar andamento das planilhas durante a semana</span>
+                        </div>
+                    </label>
+                </div>
+            </section>
+
+
+            <!-- 10. TEMPLATE DE E-MAIL -->
+            <section id="template-email" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">10</div>
+                    <div>
+                        <h3 class="card-title">Template para ata de reunião</h3>
+                        <p class="card-subtitle">Código HTML para ser usado na formatação do e-mail</p>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+                    <ul>
+                        <li>Utilize o template de e-mail disponível na CustomerX; ou</li>
+                        <li>A extensão <strong>HTMaiL</strong> permite formatar e-mails com HTML</li>
                     </ul>
-                    <a href="https://efcaz.movidesk.com/kb/pt-br/article/600956/kb90084-srm-como-cadastrar-competencias?menuId=51758-142332-600956&ticketId=&q=" target="_blank" class="direcionar-artigo">
-                        <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
-                        <i class="fa-solid fa-angle-right"></i>
-                    </a> 
-                </div>
-            </details>
 
-            <!-- Configuração de Integrações -->
-            <details class="script-box">
-                <summary>
-                    <span class="summary-text"><input type="checkbox" name="mandatory" value="Configuração de Integrações"> Configuração de Integrações</span>
-                    <i class="fa-solid fa-chevron-down icon-arrow"></i>
-                </summary>
-                
-                <div class="script-content">
-                    <p>Aqui é pra que vocês receberem notificações específicas no e-mail.</p>
-                    <p>Sempre que um analista concluir uma solicitação, o e-mail configurado aqui fica sabendo se o cadastro do fornecedor foi aprovado ou não.</p>
-                    <p>E sempre que o pré-cadastro for reprovado, o e-mail configurado recebe essa informação.</p>
-                    <p>Por alto, vocês acham que vão precisar receber essas notificações?<br><span class="destaque">Agir vom base na resposta</span></p>
-                </div>
-            </details>
-
-            <!-- Configuração de Notificações -->
-            <details class="script-box">
-                <summary>
-                    <span class="summary-text"><input type="checkbox" name="mandatory" value="Configuração de Notificações"> Configuração de Notificações</span>
-                    <i class="fa-solid fa-chevron-down icon-arrow"></i>
-                </summary>
-                
-                <div class="script-content">
-                    <table class="custom-table">
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Descrição</th>
-                                <th>Observação</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-
-                            <tr>
-                                <td>Notificações semanais de Documentos</td>
-                                <td>Fornecedor recebe toda semana um e-mail com um resumo do que ele tem pra atualizar</td>
-                                <td rowspan="2" style="border-left: 1px solid var(--slate-100);">Escolher apenas um</td>
-                            </tr>
-                            <tr>
-                                <td>Notificações de Documentos para Fornecedores</td>
-                                <td>Fornecedor recebe um e-mail para cada documento estiver vencido ou que vai vencer</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fa-solid fa-crown text-primary"></i> Notificações de Documentos Terceiros</td>
-                                <td>Fornecedor recebe um e-mail para cada documento de terceiros que estiver vencido ou que vai vencer.</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><i class="fa-solid fa-crown text-primary"></i> Notificações de Documentos dos Contratos - Interno</td>
-                                <td>Vocês recebem um e-mail para cada documento do módulo Contratos que estiver vencido ou que vai vencer.</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><i class="fa-solid fa-crown text-primary"></i> Notificações de Documentos dos Contratos - Fornecedor</td>
-                                <td>Fornecedor recebe um e-mail para cada documento do módulo Contratos que estiver vencido ou que vai vencer.</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Notificações de Certificado Cadastral</td>
-                                <td>Fornecedor recebe um e-mail quando o Certificado Cadastral que estiver vencido ou que vai vencer, assim ele pode deixar o cadastro atualizado.</td>
-                                <td class="text-indianred">Não mexer</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fa-solid fa-crown text-primary"></i> Notificações de Ocorrências</td>
-                                <td>Fornecedor é notificado quando vocês enviarem uma ocorrência pra ele.</td>
-                                <td class="text-indianred">Não mexer</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fa-solid fa-crown text-primary"></i> Ocorrências pendentes para análise</td>
-                                <td>Vocês são notificados quando o fornecedor responder a ocorrência.</td>
-                                <td class="text-indianred">Não mexer</td>
-                            </tr>
-                            <tr>
-                                <td>Notificações de Cadastro Incompleto</td>
-                                <td>Notifica o fornecedor sempre que ele deixar uma solicitação em aberto.</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><i class="fa-solid fa-crown text-primary"></i> Notificações de RFI Individual</td>
-                                <td>Notifica o fornecedor sempre que vocês adicionarem um formulário novo pra ele responder.</td>
-                                <td class="text-indianred">Não mexer</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fa-solid fa-crown text-primary"></i> Notificações de resposta ao Administrador</td>
-                                <td>Vocês são notificado quando o fornecedor responder o formulário ou avaliação.</td>
-                                <td class="text-indianred">Não mexer</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fa-solid fa-crown text-primary"></i> Notificações de publicação de avaliação ao fornecedor</td>
-                                <td>Permite que o avaliador decida se vai ou não publicar uma avaliação interna para o fornecedor.</td>
-                                <td>Se deixar desmarcado, o fornecedor nunca vai saber do resultado da avaliação que foi feita.</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fa-solid fa-crown text-primary"></i> Notificações de Avaliadores</td>
-                                <td>Notifica o avaliador todo dia até que ele realize a avaliação vinculada ao nome dele</td>
-                                <td class="text-indianred">Não mexer</td>
-                            </tr>
-                            <tr>
-                                <td>Notificações de Penalidades</td>
-                                <td>Notifica o fornecedor quando ele receber uma penalidade</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Notificações Técnicas</td>
-                                <td>Fornecedor recebe um e-mail para cada documento da aba Técnico que estiver vencido ou que vai vencer.</td>
-                                <td>Se trata da Entidade de Classe e Certificações Técnicas</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fa-solid fa-crown text-primary"></i> Notificação de inclusão na lista suja de trabalho escravo</td>
-                                <td>Notifica vocês quando um fornecedor estiver envovido com trabalho análogo à escravidão.</td>
-                                <td class="text-indianred">Não mexer</td>
-                            </tr>
-                            <tr>
-                                <td>Pedido Homologação</td>
-                                <td>Notifica os admins quando um pré-cadastro for enviado para análise de aprovação</td>
-                                <td>Se ele não vão precisar que os pré-cadastro passem por aprovação, deixar desmarcado</td>
-                            </tr>
-                            <tr>
-                                <td>Solicitação de Parecer</td>
-                                <td>Notifica os usuários pertencentes ao setor quando um novo parecer for solicitado</td>
-                                <td class="text-indianred">Não mexer</td>
-                            </tr>
-                            <tr>
-                                <td>Solicitação em Análise</td>
-                                <td>Notifica vocês sempre que um fornecedor enviar uma solicitação para análise</td>
-                                <td class="text-indianred">Não mexer</td>
-                            </tr>
-                            <tr>
-                                <td>Notificações de Seguros</td>
-                                <td>Fornecedor recebe um e-mail para cada documento do menu Seguros que estiver vencido ou que vai vencer.</td>
-                                <td class="text-indianred">Nem todo tenant possui</td>
-                            </tr>
-                            <tr>
-                                <td>Cnae</td>
-                                <td>CNAE é automático, então não precisa mexer nisso</td>
-                                <td class="text-indianred">Não mexer</td>
-                            </tr>
-                            <tr>
-                                <td>Enviar cópia de e-mails do sistema</td>
-                                <td>Envia uma cópia de absolutamente todo e-mail que o sistema envia.</td>
-                                <td class="text-indianred">Alto volume de e-mails</td>
-                            </tr>
-                            <tr>
-                                <td>Notificações de cancelamento</td>
-                                <td>Notifica vocês quando um fornecedor não quiser mais receber as notificações do sistema</td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </details>
-
-            <!-- Configurações Gerais -->
-            <details class="script-box">
-                <summary>
-                    <span class="summary-text"><input type="checkbox" name="mandatory" value="Configurações Gerais"> Configurações Gerais</span>
-                    <i class="fa-solid fa-chevron-down icon-arrow"></i>
-                </summary>
-                
-                <div class="script-content">
-                    <table class="custom-table">
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Descrição</th>
-                                <th>Observação</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                                <td><i class="fa-solid fa-crown text-primary"></i> Avaliações de Fornecedores</td>
-                                <td>Configura as regras para o módulo Avaliações</td>
-                                <td>Preferencialmente mexer somente em:
-                                    <ul>
-                                        <li>Permitir publicar Avaliação ao Fornecedor</li>
-                                        <li>Responder avaliações sem avaliadores</li>
-                                        <li>RFI: Obrigar o preenchimento em solicitações de alteração de fornecedor</li>
-                                        <li>Dias para liberar a avaliação agendada</li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Bloqueio de alteração</td>
-                                <td>Marcando "Sim" o fornecedor não poderá alterar a linha de fornecimento que já foi definida no pré-cadastro</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Permitir que o fluxo de solicitação seja automático</td>
-                                <td>Marcando "Não" o analista terá que mais duas etapas após finalizar a análise:
-                                    <ol>
-                                        <li>Enviar notificação para o fornecedor manualmente</li>
-                                        <li>Encerrar a solicitação</li>
-                                    </ol>
-                                </td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Impedir alterações consultas automáticas</td>
-                                <td>Não permite que fornecedores ou analistas alterem dados das buscas automáticas</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Bloquear alteração da data de análise</td>
-                                <td>Marcando "Sim" os analistas não poderão mudar a data de finalização da análise, e vai pegar a data atual</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Habilitar selecão de homologadores</td>
-                                <td>Marcando "Sim" poderá escolher quem pode aprovar ou rejeitar um pedido de Pré-cadastro</td>
-                                <td class="text-indianred">Não faz sentido se o cliente não tiver aprovadores de Pré-cadastro</td>
-                            </tr>
-                            <tr>
-                                <td>Competências em Fornecedores</td>
-                                <td>Marcar "Sim" se for utilizar separação de documentos recorrentes</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><i class="fa-solid fa-crown text-primary"></i> Validar conta bancária e/ou pix</td>
-                                <td>Verifica se a conta bancária e/ou pix está vinculada ao CNPJ/CPF do fornecedor e mostra o resultado</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Impedir envio da solicitação caso a titularidade seja divergente?</td>
-                                <td>Se a validação der resultado negativo, o fornecedor não vai poder enviar a solicitação para análise até informar ua conta ou pix válida</td>
-                                <td class="text-indianred">Pra funcionar, o menu Dados de Pagamento deve estar como obrigatório</td>
-                            </tr>
-                            <tr>
-                                <td>Gerar reprovação automática quando terceiro possuir documentação vencida</td>
-                                <td>Se um documento do colaborador vencer, o cadastro dele fica como reprovado</td>
-                                <td class="text-indianred">Isso não muda o status do fornecedor, somente do colaborador</td>
-                            </tr>
-                            <tr>
-                                <td>Habilitar competências na solicitação de terceiros</td>
-                                <td>Marcar "Sim" se for utilizar separação de documentos recorrentes</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Listar apenas linhas de fornecimento do tipo serviço para terceiros</td>
-                                <td>Marcando "Sim" os colaboradores das empresas não poderão estar vinculados à linhas de fornecimento do tipo "Material", somente "Serviços"</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Cancelar certificado cadastral</td>
-                                <td>Se o fornecedor deixar documento vencer, o certificado cadastral dele é cancelado na hora</td>
-                                <td class="text-indianred">Pode gerar trabalho extra para o cliente já que ele terá que renovar manualmente depois</td>
-                            </tr>
-                            <tr>
-                                <td>Penalidades</td>
-                                <td>Se o fornecedor deixar documento vencer, o sistema registra uma penalidade automaticamente</td>
-                                <td class="text-indianred">Pode gerar trabalho extra para o cliente já que ele terá que retirar manualmente depois</td>
-                            </tr>
-                            <tr>
-                                <td>Termos e Condições</td>
-                                <td>Adiciona arquivos que o fornecedor terá que marcar como "Li e Concordo"</td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </details>
-
-            <!-- Conf. Obrigatoriedades -->
-            <details class="script-box">
-                <summary>
-                    <span class="summary-text"><input type="checkbox" name="mandatory" value="Conf. Obrigatoriedades"> Conf. Obrigatoriedades</span>
-                    <i class="fa-solid fa-chevron-down icon-arrow"></i>
-                </summary>
-                
-                <div class="script-content">
-                    <p>Determina quais menus o fornecedor será obrigado a preencher.</p>
-
-                    <div style="margin-top: 15px;" class="alert-box alert-red">
-                    <div class="alert-header">
-                        <i class="fa-solid fa-triangle-exclamation"></i>
-                        <span>Atenção</span>
-                    </div>
-                    <ul class="alert-text">
-                        <li>É repassado a todos os fornecedores</li>
-                    </ul>
-                </div>
-                </div>
-            </details>
-
-            <!-- Conf. Outros Documentos -->
-            <details class="script-box">
-                <summary>
-                    <span class="summary-text"><input type="checkbox" name="mandatory" value="Conf. Outros Documentos"> Conf. Outros Documentos</span>
-                    <i class="fa-solid fa-chevron-down icon-arrow"></i>
-                </summary>
-                
-                <div class="script-content">
-                    <p>Determina quais menus o fornecedor será obrigado a preencher.</p>
-
-                    <div style="margin-top: 15px;" class="alert-box alert-red">
-                    <div class="alert-header">
-                        <i class="fa-solid fa-triangle-exclamation"></i>
-                        <span>Atenção</span>
-                    </div>
-                    <ul class="alert-text">
-                        <li>Cada obrigatoriedade é repassada apenas às linhas de fornecimento selecionadas.</li>
-                        <li>Aqui é onde se configuram as obrigatoriedades dos anexos desses menus.</li>
-                    </ul>
-                </div>
-                </div>
-            </details>
-
-            <!-- Conselho -->
-            <details class="script-box">
-                <summary>
-                    <span class="summary-text"><input type="checkbox" name="mandatory" value="Conselho"> Conselho</span>
-                    <i class="fa-solid fa-chevron-down icon-arrow"></i>
-                </summary>
-                
-                <div class="script-content">
-                    Os Conselhos já são puxados automático, e já vem com tudo configurado nativamente. Nunca vi alguém precisando mexer aqui, então vamos pular.
-                </div>
-            </details>
-
-            <!-- Documentos -->
-            <details class="script-box">
-                <summary>
-                    <span class="summary-text"><input type="checkbox" name="mandatory" value="Documentos"> Documentos</span>
-                    <i class="fa-solid fa-chevron-down icon-arrow"></i>
-                </summary>
-                
-                <div class="script-content">
-                    <p>Aqui é onde se cria ou atualiza as configurações dos documentos. Os dados que vocês vão colocar nas planilhas vão ser repassados pra cá.</p>
-                    <p class="destaque">Mostra um pouco de como se cria</p>
-                    <a href="https://efcaz.movidesk.com/kb/pt-br/article/560808/kb90038-srm-como-configurar-os-documentos-exigidos?ticketId=&q=" target="_blank" class="direcionar-artigo">
-                        <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
-                        <i class="fa-solid fa-angle-right"></i>
-                    </a>
-                </div>
-            </details>
-
-            <!-- Linha de Fornecimento -->
-            <details class="script-box">
-                <summary>
-                    <span class="summary-text"><input type="checkbox" name="mandatory" value="Linha de Fornecimento"> Linha de Fornecimento</span>
-                    <i class="fa-solid fa-chevron-down icon-arrow"></i>
-                </summary>
-                
-                <div class="script-content">
-                    <p>Aqui é onde se criam ou atualizam as linhas de fornecimento. Os dados que vocês vão colocar nas planilhas vão ser repassados pra cá também.</p>
-                    <p class="destaque">Pergunta se eles lembram o que é linha de fornecimento</p>
-                </div>
-            </details>
-
-            <!-- Marcas e Representações -->
-            <details class="script-box">
-                <summary>
-                    <span class="summary-text"><input type="checkbox" name="mandatory" value="Marcas e Representações"> Marcas e Representações</span>
-                    <i class="fa-solid fa-chevron-down icon-arrow"></i>
-                </summary>
-                
-                <div class="script-content">
-                    <p>Esse aqui é um que é mais fácil mostrar. Mas basicamente quando um fornecedor estiver preenchendo um documento, ele pode selecionar um item de uma lista naquele documento.</p>
-                    <p class="destaque">Fazer uma demonstração</p>
-                    <a href="https://efcaz.movidesk.com/kb/pt-br/article/591281/kb90080-srm-como-adicionar-marcas-e-representacoes?ticketId=&q=" target="_blank" class="direcionar-artigo">
-                        <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
-                        <i class="fa-solid fa-angle-right"></i>
-                    </a>
-
-                    <p class="destaque">Desvincular e inativar as marcas e representações criadas</p>
-                </div>
-            </details>
-
-            <!-- Modelos de Pendências -->
-            <details class="script-box">
-                <summary>
-                    <span class="summary-text"><input type="checkbox" name="mandatory" value="Modelos de Pendências"> Modelos de Pendências</span>
-                    <i class="fa-solid fa-chevron-down icon-arrow"></i>
-                </summary>
-                
-                <div class="script-content">
-                    <p>Lembra quando vocês fazem análise, e dá pra ir colocando pendências pro fornecedor responder. Aqui é onde você pode cadastrar textos de pendências pra só marcar durante a análise.</p>
-                    <p>Realizar uma demonstração com o texto "Inserir o balanço patrimonial dos últimos 3 anos"</p>
-
-                    <a href="https://efcaz.movidesk.com/kb/pt-br/article/581421/kb90045-srm-cadastrar-modelos-de-pendencias?ticketId=&q=" target="_blank" class="direcionar-artigo">
-                        <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
-                        <i class="fa-solid fa-angle-right"></i>
-                    </a>
-
-                    <p class="destaque">Inativar o que foi criado</p>
-                </div>
-            </details>
-
-            <!-- Natureza Jurídica -->
-            <details class="script-box">
-                <summary>
-                    <span class="summary-text"><input type="checkbox" name="mandatory" value="Natureza Jurídica"> Natureza Jurídica</span>
-                    <i class="fa-solid fa-chevron-down icon-arrow"></i>
-                </summary>
-                
-                <div class="script-content">
-                    Natureza Jurídica já é puxada automáticamente, e já vem com tudo configurado nativamente. Nunca vi alguém precisando mexer aqui, então vamos pular.
-                </div>
-            </details>
-
-            <!-- Penalidades -->
-            <details class="script-box">
-                <summary>
-                    <span class="summary-text"><input type="checkbox" name="mandatory" value="Penalidades"> Penalidades</span>
-                    <i class="fa-solid fa-chevron-down icon-arrow"></i>
-                </summary>
-                
-                <div class="script-content">
-                    A plataforma já vem com algumas penalidades prontas, mas se quiserem, dá pra cadastrar mais. Mas nosso time reuniu as que os clientes mais costumam usar, então é algo que provavelmente já vai atender muito bem vocês.
-                </div>
-            </details>
-
-            <!-- Porte Empresarial -->
-            <details class="script-box">
-                <summary>
-                    <span class="summary-text"><input type="checkbox" name="mandatory" value="Porte Empresarial"> Porte Empresarial</span>
-                    <i class="fa-solid fa-chevron-down icon-arrow"></i>
-                </summary>
-                
-                <div class="script-content">
-                    Porte Empresarial também é puxado automáticamente, então vamos pular.
-                </div>
-            </details>
-
-            <!-- Quadro Societário -->
-            <details class="script-box">
-                <summary>
-                    <span class="summary-text"><input type="checkbox" name="mandatory" value="Quadro Societário"> Quadro Societário</span>
-                    <i class="fa-solid fa-chevron-down icon-arrow"></i>
-                </summary>
-                
-                <div class="script-content">
-                    <p>Esse é pra você configurar os cargos dos sócios da empresa. Então por exemplo, vamos supôr que vocês querem configurar que todo fornecedor tem que ter no quadro societário quem é o CEO daquela empresa.</p>
-                    <p class="destaque">Fazer demonstração</p>
-
-                    <a href="https://efcaz.movidesk.com/kb/pt-br/article/581448/kb90049-srm-como-alterar-cargos-permitidos-no-quadro-societario?ticketId=&q=" target="_blank" class="direcionar-artigo">
-                        <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
-                        <i class="fa-solid fa-angle-right"></i>
-                    </a>
-                </div>
-            </details>
-
-            <!-- Ramo de Atividade -->
-            <details class="script-box">
-                <summary>
-                    <span class="summary-text"><input type="checkbox" name="mandatory" value="Ramo de Atividade"> Ramo de Atividade</span>
-                    <i class="fa-solid fa-chevron-down icon-arrow"></i>
-                </summary>
-                
-                <div class="script-content">
-                    <p>Aqui é onde se criam ou atualizam os ramos de atividade. Os dados que vocês vão colocar nas planilhas vão ser repassados pra cá também.</p>
-                    <p class="destaque">Pergunta se eles lembram o que é ramo de atividade</p>
-                </div>
-            </details>
-
-            <!-- Setores -->
-            <details class="script-box">
-                <summary>
-                    <span class="summary-text"><input type="checkbox" name="mandatory" value="Setores"> Setores</span>
-                    <i class="fa-solid fa-chevron-down icon-arrow"></i>
-                </summary>
-                
-                <div class="script-content">
-                    Aqui é onde os setores são criados.
-                    <p class="destaque">Abre um e mostra os usuários vinculados</p>
-                    <p class="destaque">Se os setores ainda não foram definidos, pede pra eles fazerem isso até a próxima reunião</p>
-
-                    <a href="https://efcaz.movidesk.com/kb/pt-br/article/581398/kb90042-srm-como-configurar-setores?ticketId=&q=" target="_blank" class="direcionar-artigo">
-                        <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
-                        <i class="fa-solid fa-angle-right"></i>
-                    </a>
-                </div>
-            </details>
-
-            <!-- Score -->
-            <details class="script-box">
-                <summary>
-                    <span class="summary-text"><input type="checkbox" name="mandatory" value="Score"> Score</span>
-                    <i class="fa-solid fa-chevron-down icon-arrow"></i>
-                </summary>
-                
-                <div class="script-content">
-                    <p>O Score serve pra vocês pontuarem o fornecedor com base nas buscas automáticas.</p>
-                    <p>Eu já deixei um configurado um de exemplo, mas depois vocês podem mudar se quiser.</p>
-                    <p class="destaque">Vincular a uma linha de fornecimento e mostrar como fica</p>
-                </div>
-            </details>
-
-            <!-- Webhook -->
-            <details class="script-box">
-                <summary>
-                    <span class="summary-text"><input type="checkbox" name="mandatory" value="Webhook"> Webhook</span>
-                    <i class="fa-solid fa-chevron-down icon-arrow"></i>
-                </summary>
-                
-                <div class="script-content">
-                    E isso aqui é pra conectar nosso sistema num outro, no caso, a EFCAZ envia pra outro sistema as solicitações aprovadas. Mas isso aqui já é algo que o time de TI de vocês tem que configurar.
-                </div>
-            </details>
-
-        </section>
-
-
-        <!-- 3. RELATÓRIOS -->
-        <section id="modulos" class="content-card">
-            <div class="card-header space-between flex-wrap">
-                <div class="flex-align-center">
-                    <div class="step-number">3</div>
-                    <h3 class="card-title">Relatórios</h3>
-                </div>
-            </div>
-
-            <div class="guide-card">
-
-                <ul>
-                    <li>A demonstração deve ser feita no tenant de treinamento, já que o ambiente do cliente ainda não tem dados.</li>
-                    <li>Apresenta os relatórios nativos do sistema.</li>
-                    <li>Mostra aplicação dos filtros.</li>
-                    <li>Mostra a área de dashboard e relatórios personalizados, e como extrair os dados.</li>
-                </ul>
-
-                <a href="https://efcaz.movidesk.com/kb/pt-br/article/581457/kb90085-srm-relatorios-padroes-disponiveis?ticketId=&q=" target="_blank" class="direcionar-artigo">
-                    <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Relatórios Padrões</span>
-                    <i class="fa-solid fa-angle-right"></i>
-                </a>
-
-                <a href="https://efcaz.movidesk.com/kb/pt-br/article/581491/kb90064-srm-solicitacao-de-relatorios-personalizados?ticketId=&q=" target="_blank" class="direcionar-artigo">
-                        <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Relatórios Personalizados</span>
-                        <i class="fa-solid fa-angle-right"></i>
-                    </a>
-            </div>
-        </section>
-
-
-        <!-- 4. FINALIZAÇÃO E PRÓXIMOS PASSOS -->
-        <section id="finalizacao" class="content-card">
-            <div class="card-header">
-                <div class="step-number">4</div>
-                <div>
-                    <h3 class="card-title">Finalização e Próximos Passos</h3>
-                    <p class="card-subtitle">Atividades a serem concluídas antes do próximo Encontro</p>
-                </div>
-            </div>
-
-            <div class="guide-card">
-
-                <div class="grid-2-cols">
-                    <div class="access-box">
-                        <div class="access-header">
-                            <div class="access-icon"><i class="fa-solid fa-rotate-left"></i></div>
-                            <span class="access-title">Realizar a recapitulação dos tópicos trabalhados no encontro</span>
-                        </div>
-                        <ul class="access-list">
-                            <li>Configuramos bastante coisa juntos</li>
-                            <li>Alguma ficarão pendentes de uma defiição posterior</li>
-                        </ul>
+                    <div>
+                        <button class="btn btn-primary" onclick="copyGithubFile('https://raw.githubusercontent.com/EFCAZ/KBInterno/refs/heads/main/paginas/Onboarding/Etapa%203/etapa_3_ata_reuniao.html', this)">
+                            <i class="fa-regular fa-copy"></i>
+                            <span>Copiar template HTML</span>
+                        </button>
                     </div>
 
-                    <div class="access-box">
-                        <div class="access-header">
-                            <div class="access-icon"><i class="fa-solid fa-tasks"></i></div>
-                            <span class="access-title">Listar as tarefas pendentes para o cliente antes do próximo encontro</span>
-                        </div>
-                        <ul class="access-list">
-                            <li>Preenchimento da planilha de documentos</li>
-                            <li>Definir a necessidade de criar campos personalizados</li>
-                            <li>Verificar se vai ter que adicionar documentos de Termos e Condições</li>
-                            <li><span class="text-indianred">(Se não tiver feito ainda)</span> Mapear os setores que precisam existir no sistema e definir quais usuários ficarão em cada um.</li>
-                            <li>Anotar dúvidas para serem tratadas na reunião seguinte</li>
-                        </ul>
-                    </div>
-
-                    <div class="access-box">
-                        <div class="access-header">
-                            <div class="access-icon"><i class="fa-regular fa-paper-plane"></i></div>
-                            <span class="access-title">Informar que vai enviar a ata da reunião com:</span>
-                        </div>
-                        <ul class="access-list">
-                            <li>Tópicos que vimos hoje e os que ficaram pendentes</li>
-                            <li>Materiais de apoio</li>
-                            <li>Links das planilhas</li>
-                        </ul>
-                    </div>
-
-                    <div class="access-box">
-                        <div class="access-header">
-                            <div class="access-icon"><i class="fa-regular fa-comment"></i></div>
-                            <span class="access-title">Demais definições</span>
-                        </div>
-                        <ul class="access-list">
-                            <li>Colocar o canal do WhatsApp à disposição para dúvidas pontuais.</li>
-                            <li>Agendar/confirmar a data e horário do próximo encontro.</li>
-                        </ul>
-                    </div>
                 </div>
+            </section>
 
-            </div>
-
-        </section>
-
-
-        <!-- 5. CHECKLIST INTERATIVO -->
-        <section id="checklists" class="content-card">
-            <div class="card-header">
-                <div class="step-number">5</div>
-                <div>
-                    <h3 class="card-title">Tarefas</h3>
-                    <p class="card-subtitle">Atividades internas a serem concluídas antes do próximo encontro</p>
-                </div>
-            </div>
-
-            <div class="checklist-container" id="checklistContainer">
-                <label class="task-item">
-                    <input type="checkbox" class="task-checkbox">
-                    <div class="task-content">
-                        <span class="task-title">Copiar Anotações</span>
-                        <span class="task-subtitle">Copie as anotações feitas ao lado e adicione como comentário na task "Etapa 3" da jornada Onboarding (CustomerX).</span>
-                    </div>
-                </label>
-
-                <label class="task-item">
-                    <input type="checkbox" class="task-checkbox">
-                    <div class="task-content">
-                        <span class="task-title">Enviar ata de reunião</span>
-                        <span class="task-subtitle">Utilize o template da CustomerX (<i>ONBOARDING | Etapa 3 - Configurações e Relatórios</i>) ou o daqui para enviar a ata de reunião por e-mail. Incluir <strong>renato.pedroso@efcaz.com.br</strong> como CCO.</span>
-                    </div>
-                </label>
-
-                <label class="task-item">
-                    <input type="checkbox" class="task-checkbox">
-                    <div class="task-content">
-                        <span class="task-title">Baixar o e-mail em PDF e anexar na tarefa da CX</span>
-                    </div>
-                </label>
-
-                <label class="task-item">
-                    <input type="checkbox" class="task-checkbox">
-                    <div class="task-content">
-                        <span class="task-title">Resolver todas as dúvidas ou solicitações pendentes</span>
-                        <span class="task-subtitle">Retornar ao cliente sobre essas pendências</span>
-                    </div>
-                </label>
-
-                <label class="task-item">
-                    <input type="checkbox" class="task-checkbox">
-                    <div class="task-content">
-                        <span class="task-title">Planilhas</span>
-                        <span class="task-subtitle">Verificar andamento das planilhas durante a semana</span>
-                    </div>
-                </label>
-            </div>
-        </section>
-
-
-        <!-- 10. TEMPLATE DE E-MAIL -->
-        <section id="template-email" class="content-card">
-            <div class="card-header">
-                <div class="step-number">10</div>
-                <div>
-                    <h3 class="card-title">Template para ata de reunião</h3>
-                    <p class="card-subtitle">Código HTML para ser usado na formatação do e-mail</p>
-                </div>
-            </div>
-
-            <div class="guide-card">
-                <ul>
-                    <li>Utilize o template de e-mail disponível na CustomerX; ou</li>
-                    <li>A extensão <strong>HTMaiL</strong> permite formatar e-mails com HTML</li>
-                </ul>
-
-                <div>
-                    <button class="btn btn-primary" onclick="copyGithubFile('https://raw.githubusercontent.com/EFCAZ/KBInterno/refs/heads/main/paginas/Onboarding/Etapa%203/etapa_3_ata_reuniao.html', this)">
-                        <i class="fa-regular fa-copy"></i>
-                        <span>Copiar template HTML</span>
-                    </button>
-                </div>
-
-            </div>
-        </section>
-
-    </main>
-</div>
-
-<!-- Botão Flutuante Subir ao Topo (Centralizado) -->
-<button id="btnBackToTop" class="btn-back-to-top" onclick="scrollToTop()" title="Voltar ao topo">
-    <i class="fa-solid fa-arrow-up"></i>
-</button>
-
-
-<!-- Footer -->
-<footer class="footer">
-    <div class="footer-container">
-        &copy; 2026 Plataforma SRM Efcaz - Guia do CS Onboarding
+        </main>
     </div>
-</footer>
 
-<!-- Script JS Externo -->
-<script src="https://cdn.jsdelivr.net/gh/EFCAZ/KBInterno@main/assets/js/scripts.js"></script>
+    <!-- Botão Flutuante Subir ao Topo (Centralizado) -->
+    <button id="btnBackToTop" class="btn-back-to-top" onclick="scrollToTop()" title="Voltar ao topo">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const mandatoryCheckboxes = document.querySelectorAll('input[name="mandatory"]');
 
-        const updateScriptBoxClass = (cb) => {
-            const scriptBox = cb.closest('details');
-            if (scriptBox) {
-                const scriptContent = scriptBox.querySelector('.script-content, .accordion-light-content');
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            &copy; 2026 Plataforma SRM Efcaz - Guia do CS Onboarding
+        </div>
+    </footer>
 
-                if (cb.checked) {
-                    scriptBox.classList.remove('script-box');
-                    scriptBox.classList.add('accordion-light');
+    <!-- Script JS Externo -->
+    <script src="https://cdn.jsdelivr.net/gh/EFCAZ/KBInterno@main/assets/js/scripts.js"></script>
 
-                    if (scriptContent) {
-                        scriptContent.classList.remove('script-content');
-                        scriptContent.classList.add('accordion-light-content');
-                    }
-                } else {
-                    scriptBox.classList.remove('accordion-light');
-                    scriptBox.classList.add('script-box');
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mandatoryCheckboxes = document.querySelectorAll('input[name="mandatory"]');
 
-                    if (scriptContent) {
-                        scriptContent.classList.remove('accordion-light-content');
-                        scriptContent.classList.add('script-content');
+            const updateScriptBoxClass = (cb) => {
+                const scriptBox = cb.closest('details');
+                if (scriptBox) {
+                    const scriptContent = scriptBox.querySelector('.script-content, .accordion-light-content');
+
+                    if (cb.checked) {
+                        scriptBox.classList.remove('script-box');
+                        scriptBox.classList.add('accordion-light');
+
+                        if (scriptContent) {
+                            scriptContent.classList.remove('script-content');
+                            scriptContent.classList.add('accordion-light-content');
+                        }
+                    } else {
+                        scriptBox.classList.remove('accordion-light');
+                        scriptBox.classList.add('script-box');
+
+                        if (scriptContent) {
+                            scriptContent.classList.remove('accordion-light-content');
+                            scriptContent.classList.add('script-content');
+                        }
                     }
                 }
-            }
-        };
+            };
 
-        mandatoryCheckboxes.forEach(checkbox => {
-            updateScriptBoxClass(checkbox);
+            mandatoryCheckboxes.forEach(checkbox => {
+                updateScriptBoxClass(checkbox);
 
-            checkbox.addEventListener('change', (event) => {
-                const value = event.target.value;
-                const isChecked = event.target.checked;
+                checkbox.addEventListener('change', (event) => {
+                    const value = event.target.value;
+                    const isChecked = event.target.checked;
 
-                document.querySelectorAll(`input[name="mandatory"][value="${CSS.escape(value)}"]`)
-                    .forEach(matchingCheckbox => {
-                        matchingCheckbox.checked = isChecked;
-                        updateScriptBoxClass(matchingCheckbox);
-                    });
-            });
-        });
-    });
-
-    // Função para criar elemento temporário e executar a cópia
-    function fallbackCopy(textToCopy, buttonElement, originalLabel) {
-        const textArea = document.createElement('textarea');
-        textArea.value = textToCopy;
-
-        textArea.style.position = 'fixed';
-        textArea.style.top = '0';
-        textArea.style.left = '0';
-        textArea.style.opacity = '0';
-        
-        document.body.appendChild(textArea);
-        
-        textArea.focus();
-        textArea.select();
-
-        let successful = false;
-        try {
-            successful = document.execCommand('copy');
-        } catch (err) {
-            console.error('Erro ao executar copy via execCommand:', err);
-        }
-
-        document.body.removeChild(textArea);
-
-        if (successful) {
-            showSuccess(buttonElement, originalLabel);
-        } else {
-            alert('Não foi possível copiar o texto automaticamente.');
-        }
-    }
-
-    // Função universal de cópia
-    function executeCopy(textToCopy, buttonElement, originalLabel) {
-        if (!textToCopy || !textToCopy.trim()) {
-            alert('Não há texto para copiar!');
-            return;
-        }
-
-        if (navigator.clipboard && window.isSecureContext) {
-            navigator.clipboard.writeText(textToCopy)
-                .then(() => {
-                    showSuccess(buttonElement, originalLabel);
-                })
-                .catch(() => {
-                    fallbackCopy(textToCopy, buttonElement, originalLabel);
+                    document.querySelectorAll(`input[name="mandatory"][value="${CSS.escape(value)}"]`)
+                        .forEach(matchingCheckbox => {
+                            matchingCheckbox.checked = isChecked;
+                            updateScriptBoxClass(matchingCheckbox);
+                        });
                 });
-        } else {
-            fallbackCopy(textToCopy, buttonElement, originalLabel);
-        }
-    }
-
-    function showSuccess(btn, originalHTML) {
-        btn.innerHTML = '<i class="fa-solid fa-check"></i> Copiado!';
-        btn.style.backgroundColor = '#10b981';
-        setTimeout(() => {
-            btn.innerHTML = originalHTML;
-            btn.style.backgroundColor = '';
-        }, 2000);
-    }
-
-    // Copiar Anotações organizando em "O QUE VIMOS" e "O QUE FALTOU"
-    function copyNotes() {
-        const checkboxes = document.querySelectorAll('aside.sidebar input[name="mandatory"]');
-        
-        const vistos = [];
-        const faltaram = [];
-
-        checkboxes.forEach(cb => {
-            if (cb.checked) {
-                vistos.push(`- ${cb.value}`);
-            } else {
-                faltaram.push(`- ${cb.value}`);
-            }
+            });
         });
 
-        const textoVistos = vistos.length > 0 ? vistos.join('\n') : '- Nenhum item repassado';
-        const textoFaltaram = faltaram.length > 0 ? faltaram.join('\n') : '- Nenhum item pendente';
+        // Função para criar elemento temporário e executar a cópia
+        function fallbackCopy(textToCopy, buttonElement, originalLabel) {
+            const textArea = document.createElement('textarea');
+            textArea.value = textToCopy;
 
-        const elOutros = document.getElementById('notaOutros');
-        const valorOutros = elOutros ? elOutros.value.trim() : '';
-        const textoOutros = valorOutros.length > 0 ? valorOutros : 'Nenhuma anotação';
+            textArea.style.position = 'fixed';
+            textArea.style.top = '0';
+            textArea.style.left = '0';
+            textArea.style.opacity = '0';
+            
+            document.body.appendChild(textArea);
+            
+            textArea.focus();
+            textArea.select();
 
-        const formattedNotes = [
-            `O QUE VIMOS:\n${textoVistos}`,
-            `O QUE FALTOU:\n${textoFaltaram}`,
-            `OUTROS:\n${textoOutros}`
-        ].join('\n\n');
+            let successful = false;
+            try {
+                successful = document.execCommand('copy');
+            } catch (err) {
+                console.error('Erro ao executar copy via execCommand:', err);
+            }
 
-        const btn = document.querySelector('.btn-copy-notes');
-        executeCopy(formattedNotes, btn, 'Copiar Anotações');
-    }
+            document.body.removeChild(textArea);
 
-    // Copiar Template de arquivo HTML hospedado no GitHub
-    function copyGithubFile(rawUrl, btn) {
-        const originalLabel = btn.innerHTML;
-        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Carregando...';
+            if (successful) {
+                showSuccess(buttonElement, originalLabel);
+            } else {
+                alert('Não foi possível copiar o texto automaticamente.');
+            }
+        }
 
-        let fetchUrl = rawUrl
-            .replace('https://raw.githubusercontent.com/', 'https://cdn.jsdelivr.net/gh/')
-            .replace('/refs/heads/main/', '@main/')
-            .replace('/main/', '@main/');
+        // Função universal de cópia
+        function executeCopy(textToCopy, buttonElement, originalLabel) {
+            if (!textToCopy || !textToCopy.trim()) {
+                alert('Não há texto para copiar!');
+                return;
+            }
 
-        fetch(fetchUrl)
-            .then(response => {
-                if (!response.ok) throw new Error('Erro ao buscar arquivo: ' + response.statusText);
-                return response.text();
-            })
-            .then(content => {
-                executeCopy(content, btn, originalLabel);
-            })
-            .catch(err => {
-                console.error(err);
-                alert('Erro ao carregar o arquivo do GitHub.');
-                btn.innerHTML = originalLabel;
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(textToCopy)
+                    .then(() => {
+                        showSuccess(buttonElement, originalLabel);
+                    })
+                    .catch(() => {
+                        fallbackCopy(textToCopy, buttonElement, originalLabel);
+                    });
+            } else {
+                fallbackCopy(textToCopy, buttonElement, originalLabel);
+            }
+        }
+
+        function showSuccess(btn, originalHTML) {
+            btn.innerHTML = '<i class="fa-solid fa-check"></i> Copiado!';
+            btn.style.backgroundColor = '#10b981';
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+                btn.style.backgroundColor = '';
+            }, 2000);
+        }
+
+        // Copiar Anotações organizando em "O QUE VIMOS" e "O QUE FALTOU"
+        function copyNotes() {
+            const checkboxes = document.querySelectorAll('aside.sidebar input[name="mandatory"]');
+            
+            const vistos = [];
+            const faltaram = [];
+
+            checkboxes.forEach(cb => {
+                if (cb.checked) {
+                    vistos.push(`- ${cb.value}`);
+                } else {
+                    faltaram.push(`- ${cb.value}`);
+                }
             });
-    }
-</script>
+
+            const textoVistos = vistos.length > 0 ? vistos.join('\n') : '- Nenhum item repassado';
+            const textoFaltaram = faltaram.length > 0 ? faltaram.join('\n') : '- Nenhum item pendente';
+
+            const elOutros = document.getElementById('notaOutros');
+            const valorOutros = elOutros ? elOutros.value.trim() : '';
+            const textoOutros = valorOutros.length > 0 ? valorOutros : 'Nenhuma anotação';
+
+            const formattedNotes = [
+                `O QUE VIMOS:\n${textoVistos}`,
+                `O QUE FALTOU:\n${textoFaltaram}`,
+                `OUTROS:\n${textoOutros}`
+            ].join('\n\n');
+
+            const btn = document.querySelector('.btn-copy-notes');
+            executeCopy(formattedNotes, btn, 'Copiar Anotações');
+        }
+
+        // Copiar Template de arquivo HTML hospedado no GitHub
+        function copyGithubFile(rawUrl, btn) {
+            const originalLabel = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Carregando...';
+
+            let fetchUrl = rawUrl
+                .replace('https://raw.githubusercontent.com/', 'https://cdn.jsdelivr.net/gh/')
+                .replace('/refs/heads/main/', '@main/')
+                .replace('/main/', '@main/');
+
+            fetch(fetchUrl)
+                .then(response => {
+                    if (!response.ok) throw new Error('Erro ao buscar arquivo: ' + response.statusText);
+                    return response.text();
+                })
+                .then(content => {
+                    executeCopy(content, btn, originalLabel);
+                })
+                .catch(err => {
+                    console.error(err);
+                    alert('Erro ao carregar o arquivo do GitHub.');
+                    btn.innerHTML = originalLabel;
+                });
+        }
+    </script>
+
+</body>
+</html>
