@@ -669,12 +669,85 @@
                     </summary>
                     
                     <div class="script-content">
-                        <p>Aqui é onde se cria ou atualiza as configurações dos documentos. Os dados que vocês vão colocar nas planilhas vão ser repassados pra cá.</p>
-                        <p class="destaque">Mostra um pouco de como se cria</p>
-                        <a href="https://efcaz.movidesk.com/kb/pt-br/article/560808/kb90038-srm-como-configurar-os-documentos-exigidos?ticketId=&q=" target="_blank" class="direcionar-artigo">
-                            <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
-                            <i class="fa-solid fa-angle-right"></i>
-                        </a>
+                        
+                        <ul><li>Diferenciar os dois tipos de documentos suportados na plataforma:</li></ul>
+
+                        <div class="grid-2-cols" id="modulesGrid">
+                            <div class="module-card">
+                                <div class="module-icon"><i class="fa-solid fa-robot"></i></div>
+                                <div class="module-info">
+                                    <h4 class="module-title">Documentos Automáticos (Background Check)</h4>
+                                    <p class="module-text">Obtidos automaticamente pelo sistema via integrações públicas. Ex: Certidões Negativas, Consultas na Receita.</p>
+                                </div>
+                            </div>
+
+                            <div class="module-card">
+                                <div class="module-icon"><i class="fa-solid fa-upload"></i></div>
+                                <div class="module-info">
+                                    <h4 class="module-title">Documentos Manuais (Upload Fornecedor)</h4>
+                                    <p class="module-text">Enviados ativamente pelo fornecedor. Ex: Contrato Social, Licenças Ambientais, ASO, Comprovantes.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 20px">
+                            <h4 class="text-primary" style="text-transform: uppercase; padding-bottom: 10px;">Configurações dos Documentos</h4>
+                            <ul>
+                                <li>Orientar como cadastrar documentos, destacando que o nome do documento, o subtítulo e o informativo devem ser muito claros para evitar que o fornecedor fique confuso.
+                                    <a href="https://efcaz.movidesk.com/kb/pt-br/article/560808/kb90038-srm-como-configurar-os-documentos-exigidos?ticketId=&amp;q=" target="_blank" class="direcionar-artigo">
+                                        <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </a></li>
+                                <li>Explicar a vantagem de cadastrar critérios padronizados de análise em cada documento para guiar o analista no momento da verificação.</li>
+                                <li>Demonstrar a criação de critérios a partir de arquivo de apoio enviado no chat.</li>
+                                <li>Realizar as configurações gerais do documento com o cliente.</li>
+                                <li>Configurar restrições de visibilidade por perfil de usuário, se aplicável.</li>
+                                <li>Vincular a exigência dos documentos aos Ramos de Atividade e Linhas de Fornecimento correspondentes, definindo a obrigatoriedade.</li>
+                                <li>Orientar que o participante cadastre o segundo documento de forma autônoma para fixação do aprendizado.</li>
+                            </ul>
+                        </div>
+
+                        <div class="table-wrapper" style="margin-top: 20px">
+                            <div class="grid-2-cols">
+                                <h4 class="text-primary">Exemplos de Critérios de Análise</h4>
+                                <div style="justify-self: end;">
+                                    <a href="https://raw.githubusercontent.com/EFCAZ/KBInterno/main/assets/docs/Exemplos%20de%20documentos.pdf" download="Exemplos de documentos.pdf" target="_blank" class="btn btn-primary" style="padding: 5px 7px; font-size: 0.8rem;">
+                                        <i class="fa-solid fa-download"></i>
+                                        <span>Baixar documentos de exemplo</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="table-container">
+                                <table class="custom-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Documento</th>
+                                            <th>Critério de Verificação</th>
+                                            <th>Texto de Pendência para Reprovação</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="font-medium">Contrato Social</td>
+                                            <td>Assinaturas válidas dos sócios</td>
+                                            <td class="text-muted">Documento sem assinatura legível do representante legal.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-medium">ASO</td>
+                                            <td>Data de emissão dentro da validade (1 ano)</td>
+                                            <td class="text-muted">ASO com data de validade expirada. Por favor, envie o ASO atualizado/periódico do colaborador.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-medium">Alvará de funcionamento</td>
+                                            <td>A Razão Social e o CNPJ impressos no alvará correspondem aos dados cadastrais da empresa no sistema?</td>
+                                            <td class="text-muted">A Razão Social e/ou o CNPJ constantes no Alvará de Funcionamento divergem dos dados cadastrados em nosso sistema. Por favor, anexe o alvará correto correspondente ao CNPJ cadastrado ou solicite a atualização de seus dados cadastrais conosco.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
                     </div>
                 </details>
 
