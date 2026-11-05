@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etapa 4: Módulos Adicionais</title>
+    
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Ícones FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Ícones Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Estilos CSS Externo -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EFCAZ/KBInterno@latest/assets/css/estilos.css">
+    <link rel="stylesheet" href="../../../assets/css/estilos.css">
+
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header" style="display: none;">
+        <div class="header-container">
+            <div class="brand">
+                <a href="https://sites.google.com/efcaz.com.br/interno/onboarding" target="_blank" class="brand-logo">
+                    <i id="meuIcone" class="bi bi-stack" 
+                        onmouseenter="this.className='bi bi-layers-fill'" 
+                        onmouseleave="this.className='bi bi-stack'">
+                    </i>
+                </a>
+
+                <div class="brand-info">
+                    <a href="https://sites.google.com/efcaz.com.br/interno/onboarding">
+                        <h1 class="brand-title">Onboarding</h1>
+                    </a>
+
+                    <p class="brand-subtitle">Etapa 1: Overview & Governança</p>
+                </div>
+            </div>
+
+            <!-- Global Actions -->
+            <div class="header-actions">
+                <button id="btnAction" class="btn btn-primary-light">
+                    <i class="fa-solid fa-square-check"></i>
+                    <span>Tarefas</span>
+                </button>
+
+                <button id="btnAction" class="btn btn-primary-light">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Template de ata</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+
+        <!-- Sidebar (Desktop) -->
+        <aside class="sidebar">
+
+            <!-- Anotações -->
+            <div class="sidebar-card bg-primary-light">
+                <div class="sidebar-title">Preparação</div>
+
+                <div class="notes-field-group">
+                    <div class="notes-checkbox-group" style="gap: 10px;">
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="preparacao" value="Add Avaliadores"> Adicionar 2 usuários como avaliadores
+                        </label>
+                        <label class="notes-checkbox-item">
+                            <input type="checkbox" name="preparacao" value="Criar RFI"> Criar modelo RFI antes da reunião
+                        </label>
+                        <a href="https://raw.githubusercontent.com/EFCAZ/KBInterno/main/assets/docs/avaliacoes/Modelo%20RFI.pdf" download="Modelo RFI.pdf" target="_blank" class="btn btn-primary-light" style="padding: 5px 7px; font-size: 0.8rem; border: none;">
+                            <i class="fa-solid fa-download"></i>
+                            <span>Modelo RFI.pdf</span>
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Anotações -->
+            <div class="sidebar-card">
+                <div class="sidebar-title">Anotações</div>
+
+                <div class="notes-field-group">
+                    <label for="notaEquipeTerceiros" class="notes-label">Equipe separada para gestão de terceiros?</label>
+                    <select id="notaEquipeTerceiros" class="note-input" required="">
+                        <option value="" disabled="" selected="">Selecione...</option>
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                    </select>
+                </div>
+
+                <div class="notes-field-group">
+                    <label for="notaModelosAvaliacoes" class="notes-label">Há modelos de formulários ou avaliações?</label>
+                    <select id="notaModelosAvaliacoes" class="note-input" required="">
+                        <option value="" disabled="" selected="">Selecione...</option>
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                    </select>
+                </div>
+
+                <div class="notes-field-group">
+                    <label for="notaOutros" class="notes-label">Outros</label>
+                    <textarea id="notaOutros" class="note-input" placeholder="Escreva aqui..."></textarea>
+                </div>
+
+                <button class="btn-copy-notes" onclick="copyNotes()">Copiar Anotações</button>
+            </div>
+
+            <!-- Navegação -->
+            <div class="sidebar-card" style="margin-bottom: 0;">
+                <a href="#secao_terceiros" class="sidebar-link active">
+                    <i class="fa-solid fa-user-gear"></i> Gestão de Terceiros
+                </a>
+                <a href="#secao_ocorrencias" class="sidebar-link active">
+                    <i class="fa-solid fa-file-circle-exclamation"></i> Ocorrências
+                </a>
+                <a href="#secao_avaliacoes" class="sidebar-link active">
+                    <i class="fa-solid fa-clipboard-list"></i> Avaliações
+                </a>
+
+                <a href="#checklists" class="sidebar-link active">
+                    <i class="fa-solid fa-square-check"></i> Tarefas
+                </a>
+                <a href="#template-email" class="sidebar-link">
+                    <i class="fa-solid fa-envelope"></i> Template da Ata
+                </a>
+                <a href="https://sites.google.com/efcaz.com.br/interno/onboarding/etapa-5" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="sidebar-link"
+                   onmouseenter="this.querySelector('i').className = 'fa-solid fa-circle-right'" 
+                   onmouseleave="this.querySelector('i').className = 'fa-regular fa-circle-right'">
+                    <i class="fa-regular fa-circle-right"></i> Próxima Etapa
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- HERO SECTION -->
+            <section id="hero" class="hero-section">
+                <div class="hero-content">
+                    <span class="badge-hero">Etapa 4</span>
+                    <h2 class="hero-title">Módulos Adicionais</h2>
+                    <p class="hero-description">Selecione o módulo à esquerda para exibir o conteúdo</p>
+                </div>
+                <img src="https://github.com/EFCAZ/KBInterno/blob/main/assets/images/logomarca/efcaz-icone-branco.png?raw=true" class="hero-bg-icon">
+            </section>
+
+            <section id="secao_terceiros" class="bg-primary content-card" style="padding: 15px;">
+                <h3 class="text-primary-light">Gestão de Terceiros</h3>
+            </section>
+
+            <!-- 1. LOCALIZAR TERCEIROS -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="step-number">1</div>
+                    <div>
+                        <h3 class="card-title">Como localizar terceiros</h3>
+                        <p class="card-subtitle">
+                            <a href="https://efcaz.movidesk.com/kb/pt-br/article/594684/kb90081-srm-gerenciamento-de-terceiros?menuId=51758-142330-594684&ticketId=&q=#comoLocalizar" target="_blank" class="direcionar-artigo" style="font-size: 0.8rem;">
+                                <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
+                                <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+
+                    <p>Há 3 formas de procurar por um terceiro dentro da plataforma:</p>
+
+                    <div class="grid-3-cols">
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                            <div class="feature-title">Pelo Dashboard Inicial</div>
+                            <div class="feature-text">
+                                <p>Clicar em qualquer card redireciona para a listagem com o filtro pré-aplicado</p>
+
+                                <ul>
+                                    <li>Terceiros homologados</li>
+                                    <li>Terceiros com Doc. Vencidos</li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fa-solid fa-list-check"></i></div>
+                            <div class="feature-title">Pelo Menu Terceiros</div>
+                            <div class="feature-text">
+                                <ul>
+                                    <li>Acesse <strong>Terceiros</strong> no menu lateral</li>
+                                    <li>Use a busca por nome/CPF ou filtros</li>
+                                    <li>Cada registro oferece atalhos para o cadastro do Fornecedor ou o perfil detalhado do Terceiro</li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fa-solid fa-building"></i></div>
+                            <div class="feature-title">Pelo Cadastro do Fornecedor</div>
+                            <div class="feature-text">
+                                <ul>
+                                    <li>Acesse <strong>Fornecedores</strong> ou <strong>Solicitações</strong> no menu lateral</li>
+                                    <li>Acesse o cadastro empresa</li>
+                                    <li>Na aba <strong>Gestão de Terceiros</strong> pesquise pela pessoa requerida</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+
+
+            <!-- 2. ATUALIZAR TERCEIRO -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h3 class="card-title">Como atualizar dados de um Terceiro</h3>
+                        <p class="card-subtitle">
+                            <a href="https://efcaz.movidesk.com/kb/pt-br/article/594684/kb90081-srm-gerenciamento-de-terceiros?menuId=51758-142330-594684&ticketId=&q=#comoAlterar" target="_blank" class="direcionar-artigo" style="font-size: 0.8rem;">
+                                <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
+                                <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+
+                    <ul>
+                        <li>Normalmente a atualização é feita pelo fornecedor, mas o sistema permite que o cliente a faça.</li>
+                        <li>A edição só ocorre dentro de uma solicitação aberta.</li>
+                        <li>Acesse o cadastro da empresa desse terceiro.</li>
+                        <li>Clique no botão verde localizado na parte inferior da tela:
+                            <ul>
+                                <li><strong>Alterar Cadastro:</strong> cria uma nova solicitação de alteração</li>
+                                <li><strong>Visualizar Alteração de Cadastro:</strong> indica que já existe uma solicitação em andamento</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="alert-box alert-emerald">
+                    <div class="alert-header">
+                        <i class="fa-solid fa-triangle-exclamation"></i> Regra de Permissão de Edição
+                    </div>
+                    <div class="alert-text">
+                        <p>Se existir uma solicitação em aberto, somente será possível alterar os dados se for a "sua vez".</p>
+                        <p>Por exemplo: se o fornecedor iniciou uma atualização e ainda não enviou para aprovação, os analistas não conseguirão alterar os dados até o envio. Da mesma forma, se um analista iniciou a solicitação, o fornecedor não poderá mexer enquanto o analista não finalizar ou pendenciar a solicitação.</p>
+                    </div>
+                </div>
+
+                </div>
+            </section>
+
+
+            <!-- 3. ANALISAR TERCEIROS -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="step-number">3</div>
+                    <div>
+                        <h3 class="card-title">Como analisar o cadastro de um terceiro</h3>
+                        <p class="card-subtitle">
+                            <a href="https://efcaz.movidesk.com/kb/pt-br/article/594684/kb90081-srm-gerenciamento-de-terceiros?menuId=51758-142330-594684&ticketId=&q=#comoAnalisar" target="_blank" class="direcionar-artigo" style="font-size: 0.8rem;">
+                                <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
+                                <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+                    <ol>
+                        <li>No menu lateral, acesse a aba <strong>Solicitações</strong> (Status: <em>"Aguardando Análise"</em>).</li>
+                        <li>Localize a empresa e clique em <strong>Receber</strong>.</li>
+                        <li>Dentro da solicitação, acesse <strong>Gestão de Terceiros</strong> e localize o terceiro desejado.</li>
+                        <li>Clique no ícone de lápis para abrir a janela com a ficha completa e efetuar a análise ou edição dos dados.</li>
+                        <li>A conclusão da solicitação segue conforme já visto na etapa 2.</li>
+                    </ol>
+
+                    <br>
+
+                    <div class="table-container">
+                        <table class="custom-table">
+                            <thead>
+                                <tr>
+                                    <th>Aba</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-medium">
+                                        <p>Identificação</p>
+                                        <p>Endereço</p>
+                                        <p>Contato</p>
+                                    </td>
+                                    <td class="text-muted">
+                                        <ul>
+                                            <li>Editar informações pessoais e profissionais</li>
+                                            <li>Necessário usar botão <strong>Salvar e Avançar</strong> para efetivar as alterações</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="font-medium">Documentos</td>
+                                    <td class="text-muted">
+                                        <ul>
+                                            <li>Revisar documentos anexados</li>
+                                            <li>Aprovar ou reprovar esses documentos</li>
+                                            <li>Substituir documentos</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="font-medium">Contratações</td>
+                                    <td class="text-muted">
+                                        <ul>
+                                            <li>Consultar contratos vigentes</li>
+                                            <li>Alterar dados e datas</li>
+                                            <li>Cadastrar novos contratos associados</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="font-medium">Aprovações</td>
+                                    <td class="text-muted">
+                                        <ul>
+                                            <li>Aprovar ou reprovar o cadastro do terceiro como um todo</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="font-medium">Outras ações</td>
+                                    <td class="text-muted">
+                                        <ul>
+                                            <li>Inativar / Reativar</li>
+                                            <li>Excluir <span class="text-red"><strong>(permanente e irreversível)</strong></span></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                
+                                
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- 4. CONFIGURAÇÕES -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="step-number">4</div>
+                    <div>
+                        <h3 class="card-title">Configurações disponíveis</h3>
+                        <p class="card-subtitle">
+                            <a href="https://efcaz.movidesk.com/kb/pt-br/article/594684/kb90081-srm-gerenciamento-de-terceiros?menuId=51758-142330-594684&ticketId=&q=#configuracoesTerceiros" target="_blank" class="direcionar-artigo" style="font-size: 0.8rem;">
+                                <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
+                                <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+                    <p>Essas configurações foram definidas na etapa anterior, mas todas as configurações relacionadas aos terceiros são:</p>
+                    <ul>
+                        <li>Reprovação automática por documento vencido</li>
+                        <li>Vincular terceiros apenas para linhas de fornecimento do tipo Serviço</li>
+                        <li>Obrigatoriedade de terceiros por linha de fornecimento</li>
+                        <li>Habilitar competências na solicitação de terceiros</li>
+                    </ul>
+                </div>
+            </section>
+
+
+            <!-- 5. RELATÓRIOS -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="step-number">5</div>
+                    <div>
+                        <h3 class="card-title">Relatórios</h3>
+                        <p class="card-subtitle">
+                            <a href="https://efcaz.movidesk.com/kb/pt-br/article/594684/kb90081-srm-gerenciamento-de-terceiros?menuId=51758-142330-594684&ticketId=&q=#relatorios" target="_blank" class="direcionar-artigo" style="font-size: 0.8rem;">
+                                <span><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Acessar passo a passo</span>
+                                <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+                    <div class="grid-2-cols">
+
+                        <div class="info-card">
+                            <div class="info-card-header">
+                                <i class="fa-solid fa-table"></i> Relatório Padrão: Vencimento de Documentos
+                            </div>
+                            <div class="info-card-text">
+                                <p>Permite acompanhar documentos vencidos ou próximos do vencimento de colaboradores e terceiros</p>
+                                <p>Possui várias opções de filtros</p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-card-header">
+                                <i class="fa-solid fa-brush"></i> Personalizados
+                            </div>
+                            <div class="info-card-text">
+                                <p>Quando o relatório padrão não atende às necessidades específicas, o cliente pode solicitar ao Suporte um modelo customizado.</p>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+
+
+            <section id="secao_ocorrencias" class="bg-primary content-card" style="padding: 15px;">
+                <h3 class="text-primary-light">Ocorrências</h3>
+            </section>
+
+            <!-- 1. O QUE SÃO OCORRÊNCIAS -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="step-number">1</div>
+                    <h3 class="card-title">O que são Ocorrências</h3>
+                </div>
+
+                <div class="guide-card">
+                    <ul>
+                        <li>As ocorrências servem para enviar apontamentos, solicitações ou não conformidades aos fornecedores.</li>
+                        <li>O fornecedor devolve uma resposta descrevendo planos de ação ou comentários sobre a ocorrência.</li>
+                    </ul>
+
+                    <div class="alert-box alert-emerald">
+                        <div class="alert-header">
+                            <i class="fa-solid fa-flask"></i> Ambiente de Prática
+                        </div>
+                        <div class="alert-text">
+                            Para a realização dos exercícios práticos de Ocorrências e Avaliações, utilize o <strong>tenant de treinamento ou onboarding</strong>.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. COMO GERAR OCORRÊNCIAS -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="step-number">2</div>
+                    <h3 class="card-title">Como gerar Ocorrências</h3>
+                </div>
+
+                <div class="guide-card">
+
+                    <div class="grid-3-cols">
+
+                        <div class="feature-card">
+                            <div class="info-card-header">
+                                <i class="bi bi-1-circle-fill"></i> Nova ocorrência
+                            </div>
+                            <div class="info-card-text">
+                                <ul>
+                                    <li>No menu lateral, clique em <strong>Ocorrências</strong> e depois em <strong>Novo</strong>.</li>
+                                    <li>Preencha os seguintes campos:
+                                        <ul>
+                                            <li><strong>Fornecedor</strong></li>
+                                            <li><strong>Título:</strong> Escreva um nome claro e objetivo que identifique o assunto da ocorrência</li>
+                                            <li><strong>Prazo de resposta:</strong> É opcional</li>
+                                            <li><strong>Descrição:</strong> Também opcional</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="info-card-header">
+                                <i class="bi bi-2-circle-fill"></i> Novo item
+                            </div>
+                            <div class="info-card-text">
+                                <ul>
+                                    <li>Cada ocorrência deve ter pelo menos um item. Esses itens representam os pontos específicos que o fornecedor deverá responder.
+                                    <li>Clique no botão <strong>Adicionar Item</strong>.</li>
+                                    <li>Coloque um título específico do item e, se necessário, adicione a descrição detalhada e anexos.</li>
+                                    <li>Pode adicionar ou remover quantos itens quiser.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="info-card-header">
+                                <i class="bi bi-3-circle-fill"></i> Finalizando
+                            </div>
+                            <div class="info-card-text">
+                                <ul>
+                                    <li>Clicando em <strong>Salvar</strong>, tudo que foi colocado fica registrado e você pode adicionar mais coisas depois</li>
+                                    <li>Mas para realmente encaminhar para o fornecedor, clique em <strong>Enviar ocorrência</strong>.</li>
+                                    <li>O fornecedor será notificado imediatamente.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+  
+                </div>
+
+
+                <details class="accordion-light">
+                    <summary>
+                        <div class="summary-text">
+                            <i class="fa-solid fa-clipboard-list"></i> Simulação de Ocorrência
+                        </div>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </summary>
+                    <div class="accordion-light-content">
+
+                        <h3>Atraso na Entrega e Falha de Qualidade — Pedido #45890</h3>
+                        <br>
+
+                        <div class="table-container">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Descrição</th>
+                                        <th>Anexo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Atraso na Entrega Contratual</td>
+                                        <td>A data limite pactuada era 15/08/2026, porém o material deu entrada na fábrica em 22/08/2026 sem aviso prévio.</td>
+                                        <td>
+                                            <a href="https://raw.githubusercontent.com/EFCAZ/KBInterno/main/assets/docs/ocorrencias/Comprovante_Recebimento_NF1042.pdf" download="Comprovante_Recebimento_NF1042.pdf" target="_blank" class="btn btn-primary-light" style="padding: 5px 7px; font-size: 0.8rem;">
+                                                <i class="fa-solid fa-download"></i>
+                                                <span>Comprovante_Recebimento_NF1042.pdf</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Avarias no Lote</td>
+                                        <td>Na inspeção, 15 unidades do modelo Protec-X apresentaram trincas na estrutura de fixação.</td>
+                                        <td>
+                                            <a href="https://raw.githubusercontent.com/EFCAZ/KBInterno/main/assets/docs/ocorrencias/Relatorio_Inspecao_Qualidade_Lote45890.pdf" download="Relatorio_Inspecao_Qualidade_Lote45890.pdf" target="_blank" class="btn btn-primary-light" style="padding: 5px 7px; font-size: 0.8rem;">
+                                                <i class="fa-solid fa-download"></i>
+                                                <span>Relatorio_Inspecao_Qualidade_Lote45890.pdf</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <br><br>
+
+                        <p class="text-primary-dark" style="border-top: 1px solid var(--primary-dark); padding-top: 5px;">RESPOSTA ENVIADA PELO FORNECEDOR</p>
+
+                        <div class="table-container">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Resposta</th>
+                                        <th>Plano de ação</th>
+                                        <th>Anexo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Retenção não prevista da frota na transportadora.</td>
+                                        <td>Migração para nova transportadora com SLA homologado e notificações automáticas.</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Desregulagem na prensa de moldagem no lote #B-2026.</td>
+                                        <td>Envio emergencial (48h) de 15 novas unidades testadas e recalibragem do maquinário.</td>
+                                        <td>
+                                            <a href="https://raw.githubusercontent.com/EFCAZ/KBInterno/main/assets/docs/ocorrencias/Ordem_de_Envio_Substituicao.pdf" download="Ordem_de_Envio_Substituicao.pdf" target="_blank" class="btn btn-primary-light" style="padding: 5px 7px; font-size: 0.8rem; margin-bottom: 5px;">
+                                                <i class="fa-solid fa-download"></i>
+                                                <span>Ordem_de_Envio_Substituicao.pdf</span>
+                                            </a>
+                                            <br>
+
+                                            <a href="https://raw.githubusercontent.com/EFCAZ/KBInterno/main/assets/docs/ocorrencias/Laudo_Tecnico_Calibragem.pdf" download="Laudo_Tecnico_Calibragem.pdf" target="_blank" class="btn btn-primary-light" style="padding: 5px 7px; font-size: 0.8rem;">
+                                                <i class="fa-solid fa-download"></i>
+                                                <span>Laudo_Tecnico_Calibragem.pdf</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </details>
+            </section>
+
+            <!-- 3. COMO TRATAR OCORRÊNCIAS -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="step-number">3</div>
+                    <div>
+                        <h3 class="card-title">Como tratar Ocorrências respondidas</h3>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+                    <ul>
+                        <li>Acessar a ocorrência pela plataforma ou pelo link recebido no e-mail.</li>
+                        <li>Dentro da ocorrência, analise a resposta preenchida pelo fornecedor.</li>
+                        <li>Escolha uma das opções:</li>
+                    </ul>
+
+                    <div class="grid-2-cols" style="margin-top: 8px;">
+                        <div class="feature-card">
+                            <div class="feature-title text-emerald"><i class="fa-solid fa-circle-check"></i> Encerrar</div>
+                            <div class="feature-text">Finaliza a ocorrência quando o plano de ação proposto pelo fornecedor for aprovado.</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-title text-primary"><i class="fa-solid fa-rotate-left"></i> Continuar Ocorrência</div>
+                            <div class="feature-text">Adicione um comentário, clique em <strong>Salvar</strong> e em <strong>Enviar ocorrência</strong> para solicitar ajustes ao fornecedor.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section id="secao_avaliacoes" class="bg-primary content-card" style="padding: 15px;">
+                <h3 class="text-primary-light">Avaliações</h3>
+            </section>
+
+            <!-- 1. TIPOS DE AVALIAÇÕES -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="step-number">1</div>
+                    <h3 class="card-title">Tipos de avaliações</h3>
+                </div>
+
+                <div class="guide-card">
+                    <div class="grid-2-cols">
+                        <div class="access-box">
+                            <div class="access-header">
+                                <div class="access-icon"><i class="fa-solid fa-user-check"></i></div>
+                                <span>Avaliações Internas</span>
+                            </div>
+                            <div class="access-list">
+                                Respondidas por avaliadores internos da empresa contratante. Permitem incluir observações, atribuir notas e gerar ocorrências diretamente a partir das respostas.
+                            </div>
+                        </div>
+
+                        <div class="access-box">
+                            <div class="access-header">
+                                <div class="access-icon"><i class="fa-solid fa-paper-plane"></i></div>
+                                <span>Avaliações RFI (Request for Information)</span>
+                            </div>
+                            <div class="access-list">
+                                Respondidas diretamente pelo fornecedor. O parceiro recebe um e-mail com o link de acesso para preencher as informações solicitadas.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- 2. FLUXO BÁSICO -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="step-number">2</div>
+                    <h3 class="card-title">Fluxo básico</h3>
+                </div>
+
+                <div class="guide-card">
+                    <ol>
+                        <li><strong>Construção das Perguntas:</strong> Criação das questões a serem utilizadas.</li>
+                        <li><strong>Criação do Modelo de Avaliação:</strong> Montagem do modelo que agrupa as perguntas e define regras.</li>
+                        <li><strong>Geração da Avaliação:</strong> Vinculação do modelo a um ou mais fornecedores, definição de prazos, avaliadores e demais configurações.</li>
+                        <li><strong>Execução:</strong> O avaliador (ou fornecedor) responde.</li>
+                        <li><strong>Resultado:</strong> O resultado é registrado no histórico do fornecedor.</li>
+                    </ol>
+                </div>
+            </section>
+
+
+            <!-- 3. CRIAR PERGUNTAS -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="step-number">3</div>
+                    <h3 class="card-title">Criar perguntas</h3>
+                </div>
+
+                <div class="guide-card">
+
+                    <div class="alert-box alert-emerald">
+                        <div class="alert-header">
+                            <i class="fa-solid fa-file-pen"></i> Prática Guiada
+                        </div>
+                        <div class="alert-text">
+                            <p>Orientar o cliente a criar as perguntas 3 e 4 do modelo abaixo.</p>
+                            <a href="https://raw.githubusercontent.com/EFCAZ/KBInterno/main/assets/docs/avaliacoes/Modelo%20Avaliação%20Interna.pdf" download="Modelo Avaliação Interna.pdf" target="_blank" class="btn btn-primary" style="padding: 5px 7px; font-size: 0.8rem;">
+                                <i class="fa-solid fa-download"></i>
+                                <span>Modelo Avaliação Interna.pdf</span>
+                            </a>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="grid-3-cols">
+
+                        <div class="feature-card">
+                            <div class="info-card-header">
+                                <i class="bi bi-1-circle-fill"></i> Nova pergunta
+                            </div>
+                            <div class="info-card-text">
+                                <ul>
+                                    <li>Acesse o menu <strong>Avaliações &gt; Perguntas</strong></li>
+                                    <li>
+                                        Clique em <strong>Novo</strong> e preencha:
+                                        <ul>
+                                            <li><strong>Descrição: </strong>Texto que será exibido como pergunta.</li>
+                                            <li><strong>Peso padrão:</strong> Grau de relevância da pergunta na nota final. Quanto maior o valor, mais relevante ela é.</li>
+                                            <li><strong>Tipo:</strong> Numeral ou Múltipla Escolha.</li>
+                                            <li><strong>Eliminatória: </strong>Sim ou Não.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="info-card-header">
+                                <i class="bi bi-2-circle-fill"></i> Tipos de resposta
+                            </div>
+                            <div class="info-card-text">
+                                <ul>
+                                    <li>Se o tipo de pergunta for <strong>Numeral</strong>, as opções de resposta serão em valor numérico ou porcentagem.</li>
+                                    <li>Se o tipo de pergunta for <strong>Múltipla Escolha</strong>, as opções de resposta serão personalizadas.</li>
+                                    <li>Para cada alternativa deve-se definir:
+                                        <ul>
+                                            <li><strong>Texto da resposta: </strong>A descrição clara da alternativa</li>
+                                            <li><strong>Peso específico: </strong>Grau de relevância da alternativa em relação às outras</li>
+                                        </ul>
+                                    </li>
+                                    <li>Você pode incluir quantas respostas quiser na mesma pergunta.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="info-card-header">
+                                <i class="bi bi-3-circle-fill"></i> Opções complementares
+                            </div>
+                            <div class="info-card-text">
+                                É possível habilitar parâmetros complementares:
+                                <ul>
+                                    <li><strong>Opção "Não se aplica":</strong> Permite que o participante isente a pergunta quando o cenário não for aplicável, neutralizando o impacto no cálculo global.</li>
+                                    <li><strong>Campo para Justificativa:</strong> Habilita uma caixa de texto obrigatória.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- 4. CRIAR MODELOS -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="step-number">4</div>
+                    <h3 class="card-title">Criar modelos de avaliações</h3>
+                </div>
+
+                <div class="guide-card">
+                    <div class="grid-1-cols">
+
+                        <div class="feature-card">
+                            <div class="info-card-header">
+                                <i class="bi bi-1-circle-fill"></i> Novo modelo
+                            </div>
+                            <div class="info-card-text">
+                                <ul>
+                                    <li>Vá em <strong>Avaliações > Modelos de Avaliações > Novo</strong></li>
+                                    <li>
+                                        Clique em <strong>Novo</strong> e preencha:
+                                        <ul>
+                                            <li><strong>Respondido por:</strong> Define se a avaliação será respondida por avaliadores ou fornecedores (RFI)</li>
+                                            <li><strong>Descrição da avaliação:</strong> Nome do modelo</li>
+                                            <li><strong>Peso padrão:</strong> Define o peso da avaliação na média final do fornecedor (valor padrão: 1)</li>
+                                            <li><strong>Pontuação mínima/máxima:</strong> Nota para aprovação da avaliação caso sejam usados os resultados padrão (Aprovado / Reprovado)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="info-card-header">
+                                <i class="bi bi-2-circle-fill"></i> Personalização de Resultados
+                            </div>
+                            <div class="info-card-text">
+                                <ul>
+                                    <li>Deixe marcada a opção <strong>Não</strong> se quiser usar os resultados padrões (Aprovado / Reprovado).</li>
+                                    <li>Mas caso queira personalizar os resultados, marque a opção <strong>Sim</strong>.</li>
+                                    <li>Você pode adicionar quantas opções de resultados quiser, desde que não se sobreponham e cubram a faixa de 0 a 10.</li>
+                                    <li>Se for uma avaliação respondida por <strong>Avaliador</strong>, você pode escolher se o resultado será ou não publicado ao fornecedor.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="info-card-header">
+                                <i class="bi bi-3-circle-fill"></i> Áreas
+                            </div>
+                            <div class="info-card-text">
+                                <ul>
+                                    <li>Deixe marcada a opção <strong>Não</strong> se quiser apenas adicionar uma única lista de perguntas.</li>
+                                    <li>Mas caso queira dividir as perguntas por áreas, selecione <strong>Sim</strong>.</li>
+                                    <li>O resultado final será único, independentemente se tiver áreas ou não.</li>
+                                    <li>Clicando em <strong>Adicionar Área</strong>, você vai definir o nome e as perguntas vinculadas a ela.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="info-card-header">
+                                <i class="bi bi-4-circle-fill"></i> Regras das perguntas
+                            </div>
+                            <div class="info-card-text">
+                                <ul>
+                                    <li><strong>Diferenciador:</strong> Apenas a resposta que atende ao critério definido é a correta. Qualquer resposta diferente disso zera a nota dessa pergunta.
+
+                                        <div class="grid-2-cols" style="padding: 10px 0;">
+                                            <div class="info-card">
+                                                <div class="info-card-text">
+                                                    <p><strong>Perguntas Numéricas</strong><br>Considera apenas respostas dentro da regra (Maior que, menor que, igual, diferente). Qualquer opção fora gera nota zero.</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="info-card">
+                                                <div class="info-card-text">
+                                                    <p><strong>Múltipla Escolha</strong><br>Apenas a opção de referência é considerada correta (100%), as demais valem zero.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </li>
+                                    <li><strong>Classificador:</strong> A resposta que atende ao critério definido gera uma nota máxima na pergunta. Outras respostas geram notas parciais (ex.: 75%, 50%, 25%, 0%).
+
+                                        <div class="grid-2-cols" style="padding: 10px 0;">
+                                            <div class="info-card">
+                                                <div class="info-card-text">
+                                                    <p><strong>Perguntas Numéricas</strong><br>Respostas fora do intervalo recebem notas proporcionais em vez de zero.</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="info-card">
+                                                <div class="info-card-text">
+                                                    <p><strong>Múltipla Escolha</strong><br>A opção de referência dá nota 100%, enquanto as demais recebem pontuações proporcionais conforme o peso cadastrado.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="info-card-header">
+                                <i class="bi bi-5-circle-fill"></i> Finalização
+                            </div>
+                            <div class="info-card-text">
+                                <ul>
+                                    <li>Você pode escolher um avaliador específico para ser responsável por essa avaliação ou deixar todos desmarcados para que qualquer avaliador consiga pegar para si.</li>
+                                    <li>Clique em <strong>Salvar Modelo</strong> para concluir a criação do modelo de avaliação.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- 5. VINCULAR RFI -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="step-number">5</div>
+                    <h3 class="card-title">Vomo vincular uma RFI</h3>
+                </div>
+
+                <div class="guide-card">
+                    <div class="grid-2-cols">
+
+                        <div class="feature-card">
+                            <div class="info-card-header">
+                                <i class="bi bi-1-circle-fill"></i> Método manual
+                            </div>
+                            <div class="info-card-text">
+                                <ul>
+                                    <li>Acesse o cadastro do fornecedor desejado</li>
+                                    <li>Clique em <strong>Avaliações > RFI (Request for Information) > Adicionar RFI</strong></li>
+                                    <li>Selecione o modelo de RFI cadastrado previamente e clique em <strong>Gerar RFI</strong></li>
+                                    <li>O fornecedor receberá um e-mail automático com o link para responder</li>
+                                    <li>Você pode reenviar o e-mail ou excluir a RFI</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="info-card-header">
+                                <i class="bi bi-2-circle-fill"></i> Método automático
+                            </div>
+                            <div class="info-card-text">
+                                <ul>
+                                    <li>Vá em <strong>Configurações > Linhas de Fornecimento</strong> e clique em editar</li>
+                                    <li>Você pode excluir as RFIs já vinculadas ou adicionar uma nova clicando no espaço em branco</li>
+                                    <li>Clique em <strong>Salvar</strong> quando terminar</li>
+                                    <li>Quando um fornecedor escolher essa linha de fornecimento, o sistema exigirá o preenchimento da RFI antes de concluir o cadastro</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- 6. VINCULAR AVALIAÇÕES INTERNAS -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="step-number">6</div>
+                    <h3 class="card-title">Como vincular avaliações internas</h3>
+                </div>
+
+                <div class="guide-card">
+                    <div class="grid-1-cols">
+
+                        <div class="feature-card">
+                            <div class="info-card-header">
+                                <i class="bi bi-1-circle-fill"></i> Nova avaliação
+                            </div>
+                            <div class="info-card-text">
+                                <ul>
+                                    <li>Vá dentro do cadastro do fornecedor ou no menu <strong>Avaliações > Gerar Avaliações</strong> e clique em <strong>Novo</strong>.</li>
+                                    <li>Você pode utilizar um modelo criado anteriormente, mas se nenhum for selecionado, é possível preencher os campos manualmente.</li>
+                                    <li>O formulário de criação de avaliação é semelhante ao do modelo, com algumas diferenças importantes:
+                                        <ul>
+                                            <li><strong>Prazo de resposta:</strong> Campo opcional para definir o tempo limite em que a avaliação deve ser respondida antes de expirar.</li>
+                                            <li><strong>Agendamento:</strong> Ao marcar como <strong>Sim</strong> será permitido programar avaliações recorrentes aos fornecedores escolhidos.</li>
+                                            <li><strong>Determinar avaliadores por área:</strong> Você também pode escolher responsáveis por cada área. Nesse caso, a avaliação só poderá ser finalizada quando todos concluírem suas respectivas áreas.</li>
+                                        </ul>
+                                    </li>
+                                    <li>Após preencher o formulário, clique em <strong>Avançar</strong>.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="info-card-header">
+                                <i class="bi bi-2-circle-fill"></i> Selecionar avaliadores
+                            </div>
+                            <div class="info-card-text">
+                                <ul>
+                                    <li>Para escolher os fornecedores que receberão essa avaliação, clique em <strong>Adicionar Fornecedor</strong>.</li>
+                                    <li>Você pode selecionar fornecedores específicos ou clicar em <strong>Adicionar</strong>, localizado no canto inferior direito, para selecionar todos que aparecem na página.</li>
+                                    <li>Você pode filtrar por nome, CNPJ ou linha de fornecimento.</li>
+                                    <li>Feche a listagem para verificar as ações disponíveis.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="info-card-header">
+                                <i class="bi bi-3-circle-fill"></i> Ações disponíveis
+                            </div>
+                            <div class="info-card-text">
+                                <ul>
+                                    <li><strong>Agendamento:</strong> permite indicar a frequência com que essa avaliação será solicitada, a cada tantos dias, meses ou anos.</li>
+                                    <li><strong>Avaliadores:</strong> permite selecionar responsáveis específicos para realizar a avaliação. Deixe em branco para que qualquer avaliador pegue para si.</li>
+                                    <li><strong>Prazo</strong></li>
+                                    <li><strong>Excluir:</strong> o fornecedor é removido da lista de fornecedores selecionados.</li>
+                                    <li>Para concluir, clique em <strong>Gerar Avaliações</strong>.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- 7. COMO RESPONDER -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="step-number">7</div>
+                    <h3 class="card-title">Como responder uma avaliação</h3>
+                </div>
+
+                <div class="guide-card">
+                    
+                    <ul>
+                        <li>Acesse o menu <strong>Avaliações > Avaliações de Fornecedores</strong> e localize a avaliação desejada</li>
+                        <li>O sistema também envia e-mails automáticos aos avaliadores indicados, convidando-os a responder as avaliações pendentes</li>
+                        <li>Dentro da avaliação, o avaliador pode:
+                            <ul>
+                                <li>Responder as perguntas</li>
+                                <li>Visualizar a nota que o fornecedor receberá (atualizada em tempo real conforme as respostas)</li>
+                                <li>Alterar o status da avaliação, se necessário</li>
+                                <li>Adicionar observações</li>
+                                <li>Anexar arquivos</li>
+                                <li>Salvar como rascunho, caso ainda não queira finalizar (o sistema mantém as respostas preenchidas até o momento)</li>
+                            </ul>
+                        </li>
+                        <li>Quando todos os campos obrigatórios estiverem preenchidos, clique em <strong>Finalizar Avaliação</strong><br><strong class="text-indianred">Após finalizada, a avaliação não poderá ser alterada</strong></li>
+                    </ul>
+
+                </div>
+            </section>
+
+
+            <!-- 8. COMO PUBLICAR -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="step-number">8</div>
+                    <h3 class="card-title">Como publicar ao fornecedor</h3>
+                </div>
+
+                <div class="guide-card">
+                    <p>Dependendo de como o administrador configurou o sistema, pode ser possível enviar as respostas da avaliação ao fornecedor</p>
+
+                    <ol>
+                        <li>Após finalizar a avaliação, localize-a novamente e clique no <strong>ícone de lápis</strong> para editá-la</li>
+                        <li>Role a tela para baixo até encontrar o campo <strong>Deseja publicar a avaliação?</strong></li>
+                        <li>Selecione a opção <strong>“PUBLICADO”</strong>, clique em <strong>Salvar</strong> e preencha os dados solicitados</li>
+                        <li>Você pode escolher entre notificar ou não os representantes da empresa</li>
+                        <li>Se quiser despublicar, basta seguir o mesmo caminho e selecionar <strong>“NÃO PUBLICADO”</strong></li>
+                        <li>Após publicada, o fornecedor poderá visualizar as respostas da avaliação dentro do cadastro da empresa</li>
+                        <li class="text-indianred">O fornecedor não saberá a nota que tirou. Ele apenas verá as respostas que você deu</span></li>
+                    </ol>
+
+                </div>
+            </section>
+
+
+            <!-- 9.  -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="step-number">9</div>
+                    <h3 class="card-title">Gerando ocorrências através da avaliação</h3>
+                </div>
+
+                <div class="guide-card">
+                    <ul>
+                        <li>Acesse a avaliação desejada</li>
+                        <li>Clique em <strong>Gerar Ocorrência</strong></li>
+                        <li>Preencha os campos solicitados:
+                            <ul>
+                                <li>Selecione a pergunta que motivou a ocorrência</li>
+                                <li>Descreva a ocorrência com o <strong>Título</strong> e <strong>Descrição</strong></li>
+                                <li>(Opcional) Adicione um prazo para o fornecedor responder</li>
+                                <li>Preencha os demais campos, se houver</li>
+                                <li>Clique em <strong>Salvar</strong></li>
+                            </ul>
+                        </li>
+                        <li>Após gerar uma ocorrência, ela poderá ser visualizada logo abaixo do botão “Gerar Ocorrência”. Nessa listagem, é possível acessar a ocorrência ou arquivá-la.</li>
+                        <li>Assim que a avaliação for finalizada, a ocorrência será enviada automaticamente ao fornecedor correspondente</li>
+                    </ul>
+                </div>
+            </section>
+            
+        
+            
+
+            <section id="secao_avaliacoes" class="bg-primary content-card" style="padding: 15px;">
+                <h3 class="text-primary-light">Finalização</h3>
+            </section>
+
+            <!-- FINALIZAÇÃO E PRÓXIMOS PASSOS -->
+            <section id="finalizacao" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">1</div>
+                    <div>
+                        <h3 class="card-title">Finalização e Próximos Passos</h3>
+                        <p class="card-subtitle">Atividades a serem concluídas antes do próximo Encontro</p>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+
+                    <div class="grid-2-cols">
+                        <div class="access-box">
+                            <div class="access-header">
+                                <div class="access-icon"><i class="fa-solid fa-rotate-left"></i></div>
+                                <span class="access-title">Realizar a recapitulação dos tópicos trabalhados no encontro</span>
+                            </div>
+                            <ul class="access-list">
+                                <li>Configuramos bastante coisa juntos</li>
+                                <li>Alguma ficarão pendentes de uma defiição posterior</li>
+                            </ul>
+                        </div>
+
+                        <div class="access-box">
+                            <div class="access-header">
+                                <div class="access-icon"><i class="fa-solid fa-tasks"></i></div>
+                                <span class="access-title">Listar as tarefas pendentes para o cliente antes do próximo encontro</span>
+                            </div>
+                            <ul class="access-list">
+                                <li>Preenchimento da planilha de migração de dados</li>
+                                <li>Usuários que serão da equipe separada de gestão de terceiros</li>
+                                <li>Enviar modelos de formulários que o fornecedor terá que preencher</li>
+                                <li>Enviar modelos de avaliações que os usuários internos terão que responder</li>
+                                <li>Anotar dúvidas para serem tratadas na reunião seguinte</li>
+                            </ul>
+                        </div>
+
+                        <div class="access-box">
+                            <div class="access-header">
+                                <div class="access-icon"><i class="fa-regular fa-paper-plane"></i></div>
+                                <span class="access-title">Informar que vai enviar a ata da reunião com:</span>
+                            </div>
+                            <ul class="access-list">
+                                <li>Tópicos que vimos hoje e os que ficaram pendentes</li>
+                                <li>Materiais de apoio</li>
+                                <li>Link da planilha</li>
+                            </ul>
+                        </div>
+
+                        <div class="access-box">
+                            <div class="access-header">
+                                <div class="access-icon"><i class="fa-regular fa-comment"></i></div>
+                                <span class="access-title">Demais definições</span>
+                            </div>
+                            <ul class="access-list">
+                                <li>Colocar o canal do WhatsApp à disposição para dúvidas pontuais.</li>
+                                <li>Agendar/confirmar a data e horário do próximo encontro.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CHECKLIST INTERATIVO -->
+            <section id="checklists" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h3 class="card-title">Tarefas</h3>
+                        <p class="card-subtitle">Atividades internas a serem concluídas antes do próximo encontro</p>
+                    </div>
+                </div>
+
+                <div class="checklist-container" id="checklistContainer">
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Copiar Anotações</span>
+                            <span class="task-subtitle">Copie as anotações feitas ao lado e adicione como comentário na task "Etapa 3" da jornada Onboarding (CustomerX).</span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Enviar ata de reunião</span>
+                            <span class="task-subtitle">Utilize o template da CustomerX (<i>ONBOARDING | Etapa 4 - Módulos Adicionais</i>) ou o daqui para enviar a ata de reunião por e-mail. Incluir <strong>renato.pedroso@efcaz.com.br</strong> como CCO.</span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Baixar o e-mail em PDF e anexar na tarefa da CX</span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Resolver todas as dúvidas ou solicitações pendentes</span>
+                            <span class="task-subtitle">Retornar ao cliente sobre essas pendências</span>
+                        </div>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <div class="task-content">
+                            <span class="task-title">Planilhas</span>
+                            <span class="task-subtitle">Verificar andamento das planilhas durante a semana</span>
+                        </div>
+                    </label>
+                </div>
+            </section>
+
+
+            <!-- TEMPLATE DE E-MAIL -->
+            <section id="template-email" class="content-card">
+                <div class="card-header">
+                    <div class="step-number">3</div>
+                    <div>
+                        <h3 class="card-title">Template para ata de reunião</h3>
+                        <p class="card-subtitle">Código HTML para ser usado na formatação do e-mail</p>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+                    <ul>
+                        <li>Utilize o template de e-mail disponível na CustomerX; ou</li>
+                        <li>A extensão <strong>HTMaiL</strong> permite formatar e-mails com HTML</li>
+                    </ul>
+
+                    <div>
+                        <button class="btn btn-primary" onclick="copyGithubFile('https://raw.githubusercontent.com/EFCAZ/KBInterno/refs/heads/main/paginas/Onboarding/Etapa%204/etapa_4_ata_reuniao.html', this)">
+                            <i class="fa-regular fa-copy"></i>
+                            <span>Copiar template HTML</span>
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Botão Flutuante Subir ao Topo (Centralizado) -->
+    <button id="btnBackToTop" class="btn-back-to-top" onclick="scrollToTop()" title="Voltar ao topo">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            &copy; 2026 Plataforma SRM Efcaz - Guia do CS Onboarding
+        </div>
+    </footer>
+
+    <!-- Script JS Externo -->
+    <script src="https://cdn.jsdelivr.net/gh/EFCAZ/KBInterno@main/assets/js/scripts.js"></script>
+
+    <script>
+        // Navegação entre Terceiros, Ocorrências e Avaliações
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Mapeamento dos botões e suas respectivas seções
+            const modulesConfig = [
+                { btnText: 'Terceiros', sectionId: 'secao_terceiros' },
+                { btnText: 'Ocorrências', sectionId: 'secao_ocorrencias' },
+                { btnText: 'Avaliações', sectionId: 'secao_avaliacoes' }
+            ];
+
+            const moduleButtons = document.querySelectorAll('.modules.sidebar-card a');
+
+            function alternarModulo(targetBtn) {
+                const selectedText = targetBtn.textContent.trim();
+
+                // Alterna os botões (aplica btn-primary-light no selecionado e btn-primary nos outros)
+                moduleButtons.forEach(btn => {
+                    if (btn === targetBtn) {
+                        btn.classList.remove('btn-primary');
+                        btn.classList.add('btn-primary-light');
+                    } else {
+                        btn.classList.remove('btn-primary-light');
+                        btn.classList.add('btn-primary');
+                    }
+                });
+
+            }
+
+            // 2. Adiciona o evento de clique aos botões
+            moduleButtons.forEach(btn => {
+                btn.addEventListener('click', () => alternarModulo(btn));
+            });
+
+            // 3. Define a exibição inicial ao carregar a página (Terceiros ativo por padrão)
+            const btnTerceiros = Array.from(moduleButtons).find(btn => btn.textContent.trim() === 'Terceiros');
+            if (btnTerceiros) {
+                alternarModulo(btnTerceiros);
+            }
+        });
+
+
+        // Função para criar elemento temporário e executar a cópia
+        function fallbackCopy(textToCopy, buttonElement, originalLabel) {
+            const textArea = document.createElement('textarea');
+            textArea.value = textToCopy;
+
+            textArea.style.position = 'fixed';
+            textArea.style.top = '0';
+            textArea.style.left = '0';
+            textArea.style.opacity = '0';
+            
+            document.body.appendChild(textArea);
+            
+            textArea.focus();
+            textArea.select();
+
+            let successful = false;
+            try {
+                successful = document.execCommand('copy');
+            } catch (err) {
+                console.error('Erro ao executar copy via execCommand:', err);
+            }
+
+            document.body.removeChild(textArea);
+
+            if (successful) {
+                showSuccess(buttonElement, originalLabel);
+            } else {
+                alert('Não foi possível copiar o texto automaticamente.');
+            }
+        }
+
+        // Função universal de cópia
+        function executeCopy(textToCopy, buttonElement, originalLabel) {
+            if (!textToCopy || !textToCopy.trim()) {
+                alert('Não há texto para copiar!');
+                return;
+            }
+
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(textToCopy)
+                    .then(() => {
+                        showSuccess(buttonElement, originalLabel);
+                    })
+                    .catch(() => {
+                        fallbackCopy(textToCopy, buttonElement, originalLabel);
+                    });
+            } else {
+                fallbackCopy(textToCopy, buttonElement, originalLabel);
+            }
+        }
+
+        function showSuccess(btn, originalHTML) {
+            btn.innerHTML = '<i class="fa-solid fa-check"></i> Copiado!';
+            btn.style.backgroundColor = '#10b981';
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+                btn.style.backgroundColor = '';
+            }, 2000);
+        }
+
+        // Copiar Anotações
+        function copyNotes() {
+            // Mapeamento dos checkboxes de obrigatoriedade
+            const checkedMandatory = Array.from(document.querySelectorAll('input[name="mandatory"]:checked'))
+                .map(cb => `- ${cb.value}`)
+                .join('\n');
+
+            const mandatoryContent = checkedMandatory.length > 0 ? checkedMandatory : 'Nenhum selecionado';
+
+            const fields = [
+                { label: 'Haverá equipe separada para gestão de terceiros?', id: 'notaEquipeTerceiros', type: 'text' },
+                { label: 'Há modelos de formulários ou avaliações?', id: 'notaModelosAvaliacoes', type: 'text' },
+                { label: 'OUTROS', id: 'notaOutros', type: 'text' }
+            ];
+
+            const formattedNotes = fields.map(field => {
+                if (field.customContent !== undefined) {
+                    return `${field.label}\n${field.customContent}`;
+                }
+                const el = document.getElementById(field.id);
+                const value = el ? el.value.trim() : '';
+                const content = value.length > 0 ? value : 'Nenhuma anotação';
+                return `${field.label}\n${content}`;
+            }).join('\n\n');
+
+            const btn = document.querySelector('.btn-copy-notes');
+            executeCopy(formattedNotes, btn, 'Copiar Anotações');
+        }
+
+        // Copiar Template de arquivo HTML hospedado no GitHub
+        function copyGithubFile(rawUrl, btn) {
+            const originalLabel = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Carregando...';
+
+            let fetchUrl = rawUrl
+                .replace('https://raw.githubusercontent.com/', 'https://cdn.jsdelivr.net/gh/')
+                .replace('/refs/heads/main/', '@main/')
+                .replace('/main/', '@main/');
+
+            fetch(fetchUrl)
+                .then(response => {
+                    if (!response.ok) throw new Error('Erro ao buscar arquivo: ' + response.statusText);
+                    return response.text();
+                })
+                .then(content => {
+                    executeCopy(content, btn, originalLabel);
+                })
+                .catch(err => {
+                    console.error(err);
+                    alert('Erro ao carregar o arquivo do GitHub.');
+                    btn.innerHTML = originalLabel;
+                });
+        }
+    </script>
+
+</body>
+</html>

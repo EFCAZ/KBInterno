@@ -54,13 +54,16 @@
 }
 
 /* CLASSES DE CORES REUTILIZÁVEIS */
-.bg-primary { background-color: var(--primary); }
+.bg-primary { background-color: var(--primary) !important; }
+.bg-primary-light { background-color: var(--primary-light) !important; }
 .bg-emerald { background-color: var(--emerald-600); }
 .text-primary { color: var(--primary); }
 .text-primary-light { color: var(--primary-light); }
 .text-primary-dark { color: var(--primary-dark); }
 .text-emerald { color: var(--emerald-600); }
 .text-mediumseagreen { color: mediumseagreen; }
+.text-amber { color: var(--amber-500); }
+.text-amber-dark { color: var(--amber-800); }
 .text-red { color: var(--red-700); }
 .text-indianred { color: indianred; }
 .flex-align-center { display: flex; align-items: center; gap: 12px; }
@@ -416,7 +419,7 @@ body {
 
 .sidebar-card .notes-checkbox-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 8px;
     font-size: 0.85rem;
     cursor: pointer;
@@ -544,12 +547,13 @@ body {
 .modules {
     background-color: var(--primary);
     flex-direction: row;
-    padding: 10px;
+    justify-content: space-between;
+    padding: 7px;
 }
 
-.modules button {
+.modules a {
     padding: 5px 10px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
 }
 
 
@@ -890,23 +894,23 @@ details.script-box summary .summary-text {
     margin-left: 25px;
 }
 
-.script-content .destaque, .script-content .destaque-variacao, .script-content .destaque-anotacao {
+.destaque, .destaque-variacao, .destaque-anotacao {
     font-style: normal;
 }
 
-.script-content .destaque {
+.destaque {
     color: darkcyan;
 }
 
-.script-content .destaque2 {
+.destaque2 {
     color: palegoldenrod;
 }
 
-.script-content .destaque-variacao {
+.destaque-variacao {
     color: darkolivegreen;
 }
 
-.script-content .destaque-anotacao {
+.destaque-anotacao {
     background-color: yellow;
     color: #000;
     font-weight: bold;
@@ -967,7 +971,7 @@ details.accordion-light input, details.script-box input {
 }
 
 .accordion-light-content {
-    padding: 7px;
+    padding: 20px;
     border-top: 1px solid var(--slate-200);
     font-size: 0.875rem;
     line-height: 1.6;
@@ -997,6 +1001,13 @@ details.accordion-light input, details.script-box input {
 
 
 /* GRIDS UTILITÁRIOS */
+
+.grid-1-cols {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+}
+
 .grid-2-cols {
     display: grid;
     grid-template-columns: 1fr;
